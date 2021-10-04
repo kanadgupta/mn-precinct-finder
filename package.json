@@ -4,6 +4,7 @@
   "description": "A simple Node app built on fastify, instantly up and running.",
   "main": "server.js",
   "scripts": {
+    "deno": "deno run -q -A --unstable lib/postprocess.js lib/data/precinct-table.xlsx",
     "start": "node server.js"
   },
   "dependencies": {
