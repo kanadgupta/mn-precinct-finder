@@ -21,10 +21,16 @@
   "repository": {
     "url": "https://glitch.com/edit/#!/glitch-hello-node"
   },
+  "prettier": "@readme/eslint-config/prettier",
   "license": "MIT",
   "keywords": [
     "node",
     "glitch",
     "express"
-  ]
+  ],
+  "devDependencies": {
+    "@readme/eslint-config": "^7.2.2",
+    "eslint": "^7.32.0",
+    "prettier": "^2.4.1"
+  }
 }
