@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "deno": "deno run -q -A --unstable lib/postprocess.js lib/data/precinct-table.xlsx",
-    "dev": "nodemon server.js",
+    "dev": "nodemon server.js -e css,hbs,js,json",
     "start": "node server.js"
   },
   "dependencies": {
