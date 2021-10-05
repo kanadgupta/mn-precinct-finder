@@ -4,6 +4,7 @@
  */
 
 const path = require('path');
+const findPrecinct = require('./lib/find-precinct');
 
 // Require the fastify framework and instantiate it
 const fastify = require('fastify')({
@@ -39,37 +40,76 @@ if (seo.url === 'glitch-default') {
 }
 
 /**
+ * Creates default object for usage across various endpoints
+ * @param {Object} request The Fastify `request` object
+ * @param {*} reply The Fastify `reply` object
+ * @returns An object containing the default return data
+ */
+function createDefaultParams(request, reply) {
+  // params is an object we'll pass to our handlebars template
+  let params = {};
+
+  if (request.query.lat && request.query.long) {
+    const { lat, long } = request.query;
+    try {
+      const precinct = findPrecinct([long, lat]);
+      params = {
+        // TODO: reverse geocode this!
+        address: 'TBD',
+        precinct,
+      };
+    } catch (e) {
+      reply.code(404);
+      params = {
+        addressError: e.message,
+      };
+    }
+  }
+
+  if (request.query.address) {
+    params = {
+      // TODO: format address and geocode!
+      address: request.query.address,
+      precinct: {
+        Precinct: 'TBD',
+        PrecinctID: 'TBD',
+        County: 'TBD',
+        CountyID: 'TBD',
+        CongDist: 'TBD',
+        MNSenDist: 'TBD',
+        MNLegDist: 'TBD',
+        CtyComDist: 'TBD',
+        Judicial: 'TBD',
+        Park: 'TBD',
+        Hospital: 'TBD',
+        Ward: 'TBD',
+        SoilAndWater: 'TBD',
+        PrecinctCode: 'TBD',
+        MCDCode: 'TBD',
+        MCDName: 'TBD',
+      },
+    };
+  }
+
+  // If someone clicked the option for a random address it'll be passed in the querystring
+  if (request.query.example) {
+    // This is for Fair State? Idk
+    const precinct = findPrecinct([-93.2497537, 45.013565]);
+    params = { address: '2506 Central Ave NE, Minneapolis, MN 55418', precinct };
+  }
+
+  return params;
+}
+
+/**
  * Our home page route
  *
  * Returns src/pages/index.hbs with data built into it
  */
 fastify.get('/', function (request, reply) {
-  // params is an object we'll pass to our handlebars template
-  let params = {};
-
-  if (request.query.lat && request.query.long) {
-    params = {
-      address: `${request.query.lat} and ${request.query.long}`,
-    };
-    // do something with the address!
-  }
-
-  if (request.query.address) {
-    params = {
-      address: request.query.address,
-    };
-    // do something with the address!
-  }
-
-  // If someone clicked the option for a random address it'll be passed in the querystring
-  if (request.query.example) {
-    // Add the color properties to the params object
-    params = {
-      address: '123 Main Street',
-    };
-  }
-
   const accept = request.accepts(); // Accepts object via fastify-accepts
+
+  const params = createDefaultParams(request, reply);
 
   switch (accept.type(['json', 'html'])) {
     case 'json':

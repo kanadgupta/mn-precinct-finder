@@ -121,8 +121,17 @@ body {
   justify-content: left;
 }
 
-p {
+ul {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+p, li {
   font-size: 1.25rem;
+}
+
+li.hidden {
+  display: none;
 }
 
 /* Title h1 style */
@@ -131,7 +140,7 @@ p {
   font-family: HK Grotesk;
   font-style: normal;
   font-weight: bold;
-  font-size: 100px;
+  font-size: 70px;
   line-height: 105%;
   margin: 2rem 0 0;
 }
@@ -148,26 +157,26 @@ p {
 }
 
 /* Styles for our custom color form and its results */
-.color-info {
+.precinct-info {
   margin-left: 5px;
 }
-.color-search {
+.address-form {
   margin-top: 3rem;
 }
-.color-form {
+.form-wrapper {
   width: 90%;
   max-width: 500px;
   margin-left: 5px;
 }
-.color-form a:not(.btn--remix) {
+.form-wrapper a:not(.btn--remix) {
   font-weight: bold;
   color: var(--color-text-main);
   margin-top: 8px;
 }
-.color-form button {
+.form-wrapper button {
   margin-top: 8px;
 }
-.color-form button:hover {
+.form-wrapper button:hover {
   cursor: pointer;
   box-shadow: -8px 4px 20px #9BE7D8;
 }
