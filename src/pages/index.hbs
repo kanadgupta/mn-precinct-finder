@@ -30,16 +30,6 @@
          Checking for a custom "color" parameter from server.js -->
   </head>
   <body>
-    <script>
-      function submitCurrentLocation(e) { e.preventDefault(); // TODO: set loading state
-      navigator.geolocation.getCurrentPosition(function(position) { const lat = position.coords.latitude; const long =
-      position.coords.longitude; const queryString = new URLSearchParams({ lat, long }) const pageUrl = '?' +
-      queryString.toString(); window.history.pushState('', '', pageUrl); window.location.reload(); }); } function
-      toggleInfo(e) { e.preventDefault(); document.querySelectorAll('li.extra').forEach(item => {
-      item.classList.toggle('hidden'); }); const isHidden =
-      document.querySelector('li.extra').classList.contains('hidden'); e.target.innerText = isHidden ? 'Show More...' :
-      'Show Less...'; e.target.setAttribute('aria-expanded', !isHidden); }
-    </script>
     <div class='wrapper'>
       <div class='content' role='main'>
 
@@ -165,5 +155,35 @@
         Remix on Glitch
       </a>
     </footer>
+    <script>
+      function submitCurrentLocation(e) {
+        e.preventDefault();
+        e.submitter.innerText = "Loading...";
+        e.submitter.setAttribute('disabled', 'disabled');
+        navigator.geolocation.getCurrentPosition(function(position) {
+          const lat = position.coords.latitude;
+          const long = position.coords.longitude;
+
+          const queryString = new URLSearchParams({ lat, long });
+          const pageUrl = '?' + queryString.toString();
+          window.history.pushState('', '', pageUrl);
+
+          window.location.reload();
+          window.scrollTo(0, 0);
+        });
+      } 
+
+      function toggleInfo(e) {
+        e.preventDefault();
+        // Toggle display of every hidden item
+        document.querySelectorAll('li.extra').forEach(item => {
+          item.classList.toggle('hidden');
+        });
+        // Update attributes on toggle element
+        const isHidden = document.querySelector('li.extra').classList.contains('hidden');
+        e.target.innerText = isHidden ? 'Show More...' : 'Show Less...';
+        e.target.setAttribute('aria-expanded', !isHidden);
+      }
+    </script>
   </body>
 </html>
