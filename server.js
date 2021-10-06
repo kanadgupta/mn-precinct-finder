@@ -5,7 +5,7 @@
 
 const path = require('path');
 const findPrecinct = require('./lib/find-precinct');
-const { forwardGeocode } = require('./lib/geocode-address');
+const { forwardGeocode, reverseGeocode } = require('./lib/geocode-address');
 
 // Require the fastify framework and instantiate it
 const fastify = require('fastify')({
@@ -54,9 +54,9 @@ async function createDefaultParams(request, reply) {
     const { lat, long } = request.query;
     try {
       const precinct = findPrecinct([long, lat]);
+      const address = await reverseGeocode(long, lat);
       params = {
-        // TODO: reverse geocode this!
-        address: 'TBD',
+        address,
         precinct,
       };
     } catch (e) {
