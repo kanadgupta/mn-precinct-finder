@@ -5,7 +5,7 @@
 
 const path = require('path');
 const findPrecinct = require('./lib/find-precinct');
-const geocodeAddress = require('./lib/geocode-address');
+const { forwardGeocode } = require('./lib/geocode-address');
 
 // Require the fastify framework and instantiate it
 const fastify = require('fastify')({
@@ -69,7 +69,7 @@ async function createDefaultParams(request, reply) {
 
   if (request.query.address) {
     try {
-      params = await geocodeAddress(request.query.address);
+      params = await forwardGeocode(request.query.address);
     } catch (error) {
       reply.code(error.status);
       params = { error };
