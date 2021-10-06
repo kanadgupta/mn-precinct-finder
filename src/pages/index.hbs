@@ -1,3 +1,5 @@
+{{!-- DO NOT LET PRETTIER REMOVE THIS --}}
+<!DOCTYPE html>
 <html lang='en'>
   <head>
 
@@ -41,8 +43,8 @@
           <p class='precinct-info'>
             The polling place for
             <b>{{address}}</b>
-            is
-            <b><i>[insert polling place here]</i></b>! (<a href='/'>Reset</a>)
+            is...<br/><br/>
+            <b><i>🗳️ [insert polling place here!]</i></b>
           </p>
           <p class='precinct-info'>
             Before you vote, it might be helpful to know a few things...
@@ -50,37 +52,45 @@
           <ul class='precinct-info'>
             <li><b>Precinct:</b> {{precinct.Precinct}}</li>
             <li><b>Park Board District:</b> {{precinct.Park}}</li>
-            <li class='extra hidden'><b>Congressional District:</b> {{precinct.CongDist}}</li>
+            <li class='extra hidden'><b>U.S. Congressional District:</b> {{precinct.CongDist}}</li>
             <li class='extra hidden'><b>County:</b> {{precinct.County}}</li>
-            <li class='extra hidden'><b>Minor Civil Division (MCD):</b> {{precinct.MCDName}}</li>
             <li class='extra hidden'><b>County Commissioner District:</b> {{precinct.CtyComDist}}</li>
             <li class='extra hidden'><b>State Senate District:</b> {{precinct.MNSenDist}}</li>
             <li class='extra hidden'><b>State Legislative District:</b> {{precinct.MNLegDist}}</li>
             <li class='extra hidden'><b>State Judicial District:</b> {{precinct.Judicial}}</li>
+            {{!-- <li class='extra hidden'><b>Minor Civil Division (MCD):</b> {{precinct.MCDName}}</li> --}}
             {{! TODO: do I add these two properties back eventually? }}
             {{!-- <li class="extra hidden"><b>Soil and Water District:</b> {{precinct.SoilAndWater}}</li> --}}
             {{!-- <li class="extra hidden"><b>Hospital District:</b> {{precinct.Hospital}}</li> --}}
-            <li class='extra hidden'><b>County ID:</b> {{precinct.CountyID}}</li>
-            <li class='extra hidden'><b>MCD Code:</b> {{precinct.MCDCode}}</li>
-            <li class='extra hidden'><b>Precinct Code:</b> {{precinct.PrecinctCode}}</li>
+            {{!-- <li class='extra hidden'><b>County ID:</b> {{precinct.CountyID}}</li> --}}
+            {{!-- <li class='extra hidden'><b>MCD Code:</b> {{precinct.MCDCode}}</li> --}}
+            {{!-- <li class='extra hidden'><b>Precinct Code:</b> {{precinct.PrecinctCode}}</li> --}}
             <li><a aria-expanded='false' onclick='toggleInfo(event)' href=''>Show More...</a></li>
           </ul>
         {{/if}}
 
-        {{#if addressError}}
+        {{#if error}}
           <p class='precinct-info'>
-
-            <!-- The server script passes addressError if the user submission can't be matched -->
-            Hmm. Couldn't find a polling place for
-            <b>"{{addressError}}"</b>.
-            <a href='?example=go'>Want to see an example?</a>
+            <!-- The server script passes error if the user submission can't be matched -->
+            Hmm...
+            <b>{{error.message}}</b>
+            {{#if error.suggestion}}
+              {{error.suggestion}}
+            {{/if}}
           </p>
+          {{#if error.addresses}}
+            <ul class='precinct-info'>
+              {{#each error.addresses}}
+                <li><a href='{{this.href}}'>{{this.text}}</a></li>
+              {{/each}}
+            </ul>
+          {{/if}}
         {{/if}}
 
         <div class='form-wrapper'>
 
           <!-- Our default paragraph/message -->
-          {{#unless addressError}}
+          {{#unless error}}
             {{#unless precinct}}
 
               <!-- There are fancier ways to do this, 
@@ -99,11 +109,15 @@
 
               <!-- We use the handlebars "#if" statement so the form can adapt to its situation -->
               {{#if precinct}}
-                Try another address?<br />
+                Let's try another address!<br />
               {{else}}
-                What's your address?<br />
+                {{#if error}}
+                  Let's try again!<br />
+                {{else}}
+                  What's your address?<br />
+                {{/if}}
               {{/if}}
-              <input id='address' name='address' required='required' type='text' />
+              <input id='address' name='address' required='required' type='text' value='{{error.query}}' />
             </label>
 
             <!-- If the user submits a value through the form 

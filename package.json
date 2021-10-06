@@ -9,7 +9,9 @@
     "start": "node server.js"
   },
   "dependencies": {
+    "@mapbox/mapbox-sdk": "^0.13.2",
     "@turf/boolean-point-in-polygon": "^6.5.0",
+    "dotenv": "^10.0.0",
     "fastify": "^3.22.0",
     "fastify-accepts": "^2.1.0",
     "fastify-static": "^4.2.3",

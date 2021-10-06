@@ -9,6 +9,8 @@
 - [ ] OpenAPI generation via [`fastify-swagger`](https://github.com/fastify/fastify-swagger)
 - [ ] JSON Schema Validation for processed data file(s)
 - [ ] Docs on ReadMe! :owl:
+- [ ] Unit tests for `findPrecinct` and `geocodeAddress` functions
+- [ ] Enhance error handling for `findPrecinct`
 
 ## Nice To have
 - [ ] Address autocomplete via Google Maps Places API

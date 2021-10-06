@@ -5,6 +5,7 @@
 
 const path = require('path');
 const findPrecinct = require('./lib/find-precinct');
+const geocodeAddress = require('./lib/geocode-address');
 
 // Require the fastify framework and instantiate it
 const fastify = require('fastify')({
@@ -45,7 +46,7 @@ if (seo.url === 'glitch-default') {
  * @param {*} reply The Fastify `reply` object
  * @returns An object containing the default return data
  */
-function createDefaultParams(request, reply) {
+async function createDefaultParams(request, reply) {
   // params is an object we'll pass to our handlebars template
   let params = {};
 
@@ -67,28 +68,12 @@ function createDefaultParams(request, reply) {
   }
 
   if (request.query.address) {
-    params = {
-      // TODO: format address and geocode!
-      address: request.query.address,
-      precinct: {
-        Precinct: 'TBD',
-        PrecinctID: 'TBD',
-        County: 'TBD',
-        CountyID: 'TBD',
-        CongDist: 'TBD',
-        MNSenDist: 'TBD',
-        MNLegDist: 'TBD',
-        CtyComDist: 'TBD',
-        Judicial: 'TBD',
-        Park: 'TBD',
-        Hospital: 'TBD',
-        Ward: 'TBD',
-        SoilAndWater: 'TBD',
-        PrecinctCode: 'TBD',
-        MCDCode: 'TBD',
-        MCDName: 'TBD',
-      },
-    };
+    try {
+      params = await geocodeAddress(request.query.address);
+    } catch (error) {
+      reply.code(error.status);
+      params = { error };
+    }
   }
 
   // If someone clicked the option for a random address it'll be passed in the querystring
@@ -106,14 +91,15 @@ function createDefaultParams(request, reply) {
  *
  * Returns src/pages/index.hbs with data built into it
  */
-fastify.get('/', function (request, reply) {
+fastify.get('/', async function (request, reply) {
   const accept = request.accepts(); // Accepts object via fastify-accepts
 
-  const params = createDefaultParams(request, reply);
+  const params = await createDefaultParams(request, reply);
 
   switch (accept.type(['json', 'html'])) {
     case 'json':
-      reply.send(params);
+      if (params.error) reply.send({ ...params.error.toJSON() });
+      else reply.send(params);
       break;
     // The Handlebars code will be able to access the parameter values and build them into the page
     case 'html':
