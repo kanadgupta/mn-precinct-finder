@@ -4,6 +4,8 @@
  */
 
 const path = require('path');
+const MessagingResponse = require('twilio').twiml.MessagingResponse;
+
 const findPrecinct = require('./lib/find-precinct');
 const { forwardGeocode, reverseGeocode } = require('./lib/geocode-address');
 
@@ -14,7 +16,9 @@ const fastify = require('fastify')({
   logger: false,
 });
 
-// ADD FAVORITES ARRAY VARIABLE FROM TODO HERE
+// Add support for application/x-www-form-urlencoded
+// Needed for Twilio payloads
+fastify.register(require('fastify-formbody'));
 
 // Setup our static files
 fastify.register(require('fastify-static'), {
@@ -109,6 +113,25 @@ fastify.get('/', async function (request, reply) {
       reply.view('/src/pages/index.hbs', { ...params, seo });
       break;
   }
+});
+
+/**
+ * Function for responding to Twilio SMS payloads
+ */
+fastify.post('/twilio', async function (request, reply) {
+  if (!request.body.Body) return reply.code(400);
+
+  const twiml = new MessagingResponse();
+
+  try {
+    const params = await forwardGeocode(request.body.Body);
+    twiml.message(`Address: ${params.address}\n\nPrecinct: ${params.precinct.Precinct}\n\nPolling Place: TBD`);
+  } catch (e) {
+    twiml.message(e.message);
+  }
+
+  reply.raw.writeHead(200, { 'Content-Type': 'text/xml' });
+  return reply.raw.end(twiml.toString());
 });
 
 // Run the server and report out to the logs
