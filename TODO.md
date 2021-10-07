@@ -2,8 +2,13 @@
 
 - [x] Implement GeoJSON precinct finder via [`@turf`](https://www.npmjs.com/package/@turf/boolean-point-in-polygon)
 - [x] Add workflow for syncing changes to Glitch
-- [ ] Geocoding functionality via Mapbox(?) API
-- [ ] Add endpoint for Twilio
+- [x] Geocoding functionality via Mapbox(?) API
+- [x] Add endpoint for Twilio
+- [ ] Remove reverse geocoder, link to coordinates instead
+- [ ] (sigh) Migrate to Google Maps Geocoder so we can link out to Google Maps... links:
+  - [Server-side API](https://developers.google.com/maps/documentation/geocoding/overview)
+  - [Client-side Autocomplete](https://developers.google.com/maps/documentation/javascript/places-autocomplete)
+  - [Maps URL Reference](https://developers.google.com/maps/documentation/urls/get-started)
 - [ ] Add support for Google Sheets user-agent
 - [ ] [Schema Validation](https://www.fastify.io/docs/latest/Validation-and-Serialization/)
 - [ ] OpenAPI generation via [`fastify-swagger`](https://github.com/fastify/fastify-swagger)
