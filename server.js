@@ -130,8 +130,7 @@ fastify.post('/twilio', async function (request, reply) {
     twiml.message(e.message);
   }
 
-  reply.raw.writeHead(200, { 'Content-Type': 'text/xml' });
-  return reply.raw.end(twiml.toString());
+  return reply.type('text/xml').send(twiml.toString());
 });
 
 // Run the server and report out to the logs
