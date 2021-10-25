@@ -1,0 +1,672 @@
+{
+  "Minneapolis W-1 P-1": {
+    "address": "2919 Randolph St NE",
+    "building": "River Village",
+    "directions": ""
+  },
+  "Minneapolis W-1 P-2": {
+    "address": "1810 34th Ave NE",
+    "building": "Waite Park Recreation Center",
+    "directions": ""
+  },
+  "Minneapolis W-1 P-3": {
+    "address": "2955 Hayes St NE",
+    "building": "Northeast Middle School",
+    "directions": "enter via side/rear off 29th Ave NE"
+  },
+  "Minneapolis W-1 P-4": {
+    "address": "1320 29th Ave NE",
+    "building": "Audubon Park Recreation Center",
+    "directions": ""
+  },
+  "Minneapolis W-1 P-5": {
+    "address": "2251 Hayes St NE",
+    "building": "Windom Park NE Recreation Center",
+    "directions": ""
+  },
+  "Minneapolis W-1 P-6": {
+    "address": "1815 Central Ave NE",
+    "building": "Parker Skyview Highrise",
+    "directions": ""
+  },
+  "Minneapolis W-1 P-7": {
+    "address": "901 15th Ave SE",
+    "building": "Van Cleve Park Recreation Center (Gym)",
+    "directions": ""
+  },
+  "Minneapolis W-1 P-8": {
+    "address": "1717 Washington St NE",
+    "building": "Holland Highrise",
+    "directions": ""
+  },
+  "Minneapolis W-1 P-9": {
+    "address": "2030 Monroe St NE",
+    "building": "Edison High School (Gym lobby)",
+    "directions": ""
+  },
+  "Minneapolis W-1 P-10": {
+    "address": "3300 Central Ave NE",
+    "building": "Columbia Manor / Golf Club",
+    "directions": ""
+  },
+  "Minneapolis W-2 P-1": {
+    "address": "2730 31st St E",
+    "building": "Holy Trinity Lutheran Church",
+    "directions": ""
+  },
+  "Minneapolis W-2 P-2": {
+    "address": "3100 28th St E",
+    "building": "Sullivan Community School",
+    "directions": ""
+  },
+  "Minneapolis W-2 P-3": {
+    "address": "901 15th Ave SE",
+    "building": "Van Cleve Park Recreation Center (Multipurpose)",
+    "directions": ""
+  },
+  "Minneapolis W-2 P-4": {
+    "address": "84 Church St SE",
+    "building": "Northrop Auditorium",
+    "directions": ""
+  },
+  "Minneapolis W-2 P-5": {
+    "address": "66 Malcolm Ave SE",
+    "building": "Pratt Community School",
+    "directions": ""
+  },
+  "Minneapolis W-2 P-6": {
+    "address": "1500 Franklin Ave SE",
+    "building": "St. Frances Cabrini Church",
+    "directions": ""
+  },
+  "Minneapolis W-2 P-7": {
+    "address": "720 22nd Ave S",
+    "building": "Augsburg University Christensen Center",
+    "directions": ""
+  },
+  "Minneapolis W-2 P-8": {
+    "address": "2728 39th Ave S",
+    "building": "Brackett Park Recreation Center",
+    "directions": ""
+  },
+  "Minneapolis W-2 P-9": {
+    "address": "2313 28th Ave S",
+    "building": "Matthews Park Recreation Center",
+    "directions": ""
+  },
+  "Minneapolis W-2 P-10": {
+    "address": "324 Harvard St SE",
+    "building": "Grace University Lutheran Church",
+    "directions": ""
+  },
+  "Minneapolis W-2 P-11": {
+    "address": "3017 E 31st St",
+    "building": "Longfellow High School",
+    "directions": ""
+  },
+  "Minneapolis W-3 P-1": {
+    "address": "601 13th Ave SE",
+    "building": "University Lutheran Church of Hope",
+    "directions": ""
+  },
+  "Minneapolis W-3 P-2": {
+    "address": "500 8th Ave SE",
+    "building": "First Congregational Church of MN",
+    "directions": ""
+  },
+  "Minneapolis W-3 P-3": {
+    "address": "415 4th Ave SE",
+    "building": "Marcy Open School",
+    "directions": ""
+  },
+  "Minneapolis W-3 P-4": {
+    "address": "828 Spring St NE",
+    "building": "Spring Manor Highrise",
+    "directions": ""
+  },
+  "Minneapolis W-3 P-5": {
+    "address": "425 5th St NE",
+    "building": "Webster Elementary School",
+    "directions": ""
+  },
+  "Minneapolis W-3 P-6": {
+    "address": "1700 2nd St NE",
+    "building": "East Side Neighborhood Services",
+    "directions": ""
+  },
+  "Minneapolis W-3 P-7": {
+    "address": "277 12th Ave N",
+    "building": "Twin Cities International School",
+    "directions": ""
+  },
+  "Minneapolis W-3 P-8": {
+    "address": "15 1st St S",
+    "building": "River Towers Condominiums",
+    "directions": ""
+  },
+  "Minneapolis W-3 P-9": {
+    "address": "1011 Washington Ave S",
+    "building": "Open Book",
+    "directions": ""
+  },
+  "Minneapolis W-3 P-10": {
+    "address": "1025 Broadway St NE",
+    "building": "National Guard Armory",
+    "directions": ""
+  },
+  "Minneapolis W-3 P-11": {
+    "address": "514 3rd St N",
+    "building": "Neu Neu Event Center",
+    "directions": " Suite 101"
+  },
+  "Minneapolis W-3 P-12": {
+    "address": "300 Nicollet Mall",
+    "building": "Minneapolis Central Library",
+    "directions": ""
+  },
+  "Minneapolis W-3 P-13": {
+    "address": "601 13th Ave SE",
+    "building": "University Lutheran Church of Hope",
+    "directions": ""
+  },
+  "Minneapolis W-4 P-1": {
+    "address": "5001 Humboldt Ave N",
+    "building": "Creekview Park Recreation Center",
+    "directions": ""
+  },
+  "Minneapolis W-4 P-2": {
+    "address": "5025 Bryant Ave N",
+    "building": "Jenny Lind Elementary School",
+    "directions": "park/enter on Dupont Ave N side"
+  },
+  "Minneapolis W-4 P-3": {
+    "address": "3350 4th St N",
+    "building": "Cityview Community School",
+    "directions": ""
+  },
+  "Minneapolis W-4 P-4": {
+    "address": "2600 44th Ave N",
+    "building": "Loring Community School",
+    "directions": ""
+  },
+  "Minneapolis W-4 P-5": {
+    "address": "1615 Dowling Ave N",
+    "building": "Folwell Park Recreation Center",
+    "directions": ""
+  },
+  "Minneapolis W-4 P-6": {
+    "address": "1314 44th Ave N",
+    "building": "Hamilton Manor Highrise",
+    "directions": ""
+  },
+  "Minneapolis W-4 P-7": {
+    "address": "4021 Thomas Ave N",
+    "building": "Minneapolis School of New Music",
+    "directions": ""
+  },
+  "Minneapolis W-4 P-8": {
+    "address": "3333 Penn Ave N",
+    "building": "Lucy Craft Laney School",
+    "directions": ""
+  },
+  "Minneapolis W-5 P-1": {
+    "address": "2001 Plymouth Ave N",
+    "building": "Urban Research & Outreach Center (UROC)",
+    "directions": ""
+  },
+  "Minneapolis W-5 P-2": {
+    "address": "1315 Lowry Ave N",
+    "building": "North Regional Library",
+    "directions": ""
+  },
+  "Minneapolis W-5 P-3": {
+    "address": "1801 James Ave",
+    "building": "North Commons Park Recreation Center",
+    "directions": ""
+  },
+  "Minneapolis W-5 P-4": {
+    "address": "1500 James Ave N",
+    "building": "North High School (Gym)",
+    "directions": ""
+  },
+  "Minneapolis W-5 P-5": {
+    "address": "1501 Aldrich Ave N",
+    "building": "Franklin Middle School",
+    "directions": ""
+  },
+  "Minneapolis W-5 P-6C": {
+    "address": "350 Van White Memorial Blvd",
+    "building": "Heritage Commons at Pond's Edge",
+    "directions": ""
+  },
+  "Minneapolis W-5 P-7": {
+    "address": "1301 10th  Ave N",
+    "building": "Phyllis Wheatley Community Center",
+    "directions": ""
+  },
+  "Minneapolis W-5 P-8": {
+    "address": "621 29th Ave N",
+    "building": "Farview Park Recreation Center",
+    "directions": ""
+  },
+  "Minneapolis W-5 P-9": {
+    "address": "503 Irving Ave N",
+    "building": "Harrison Park Recreation Center",
+    "directions": ""
+  },
+  "Minneapolis W-6 P-1": {
+    "address": "2121 Minnehaha Ave",
+    "building": "Heltzer Manor Highrise",
+    "directions": ""
+  },
+  "Minneapolis W-6 P-2": {
+    "address": "2910 Franklin Ave E",
+    "building": "Seward Tower East",
+    "directions": ""
+  },
+  "Minneapolis W-6 P-3": {
+    "address": "420 15th Ave S",
+    "building": "Brian Coyle Community Center",
+    "directions": ""
+  },
+  "Minneapolis W-6 P-4": {
+    "address": "1000 E 14th St",
+    "building": "Elliot Park Recreation Center",
+    "directions": ""
+  },
+  "Minneapolis W-6 P-5": {
+    "address": "2323 11th Ave S",
+    "building": "Phillips Community Center",
+    "directions": ""
+  },
+  "Minneapolis W-6 P-6": {
+    "address": "924 E 21st St",
+    "building": "Mindekirken (Norwegian Lutheran Memorial Church)",
+    "directions": ""
+  },
+  "Minneapolis W-6 P-7": {
+    "address": "2540 Park Ave",
+    "building": "St. Mary’s University Center",
+    "directions": ""
+  },
+  "Minneapolis W-6 P-8": {
+    "address": "2540 Park Ave",
+    "building": "St. Mary’s University Center",
+    "directions": ""
+  },
+  "Minneapolis W-6 P-9": {
+    "address": "1900 Nicollet Ave",
+    "building": "Plymouth Congregational Church",
+    "directions": ""
+  },
+  "Minneapolis W-7 P-1C": {
+    "address": "252 Upton Ave S",
+    "building": "Bryn Mawr Community School",
+    "directions": ""
+  },
+  "Minneapolis W-7 P-2D": {
+    "address": "1917 Logan Ave S",
+    "building": "St. Paul's Episcopal Church",
+    "directions": ""
+  },
+  "Minneapolis W-7 P-3": {
+    "address": "725 Vineland Place",
+    "building": "Walker Art Center",
+    "directions": ""
+  },
+  "Minneapolis W-7 P-4D": {
+    "address": "2013 Penn Ave S",
+    "building": "Kenwood School",
+    "directions": ""
+  },
+  "Minneapolis W-7 P-5": {
+    "address": "519 Oak Grove St",
+    "building": "St. Mark's Episcopal Cathedral",
+    "directions": ""
+  },
+  "Minneapolis W-7 P-6": {
+    "address": "1200 Marquette Ave",
+    "building": "Westminster Presbyterian Church",
+    "directions": ""
+  },
+  "Minneapolis W-7 P-7": {
+    "address": "252 Upton Ave. S",
+    "building": "Bryn Mawr Community School",
+    "directions": ""
+  },
+  "Minneapolis W-7 P-8": {
+    "address": "1421 Spruce Place",
+    "building": "Emerson Spanish Immersion School",
+    "directions": ""
+  },
+  "Minneapolis W-7 P-9": {
+    "address": "2324 Emerson Ave S",
+    "building": "Temple Israel",
+    "directions": ""
+  },
+  "Minneapolis W-7 P-10": {
+    "address": "1900 Nicollet Ave",
+    "building": "Plymouth Congregational Church",
+    "directions": ""
+  },
+  "Minneapolis W-8 P-1": {
+    "address": "3121 Pillsbury Ave",
+    "building": "Horn Towers Highrise",
+    "directions": ""
+  },
+  "Minneapolis W-8 P-2": {
+    "address": "312 34th St W",
+    "building": "Lyndale Community School",
+    "directions": ""
+  },
+  "Minneapolis W-8 P-3": {
+    "address": "310 38th St E",
+    "building": "Sabathani Community Center",
+    "directions": ""
+  },
+  "Minneapolis W-8 P-4": {
+    "address": "4537 3rd Ave S",
+    "building": "St. Joan of Arc Church",
+    "directions": ""
+  },
+  "Minneapolis W-8 P-5": {
+    "address": "4537 3rd Ave S",
+    "building": "St. Joan of Arc Church",
+    "directions": ""
+  },
+  "Minneapolis W-8 P-6": {
+    "address": "4055 Nicollet Ave",
+    "building": "Martin Luther King Park Recreation Center (Multipurpose)",
+    "directions": ""
+  },
+  "Minneapolis W-8 P-7": {
+    "address": "4055 Nicollet Ave",
+    "building": "Martin Luther King Park Recreation Center (Gym)",
+    "directions": ""
+  },
+  "Minneapolis W-8 P-8": {
+    "address": "4120 17th Ave S",
+    "building": "Bethel Evangelical Lutheran Church",
+    "directions": ""
+  },
+  "Minneapolis W-9 P-1": {
+    "address": "3450 4th Ave S",
+    "building": "Central Gym Park Recreation Center",
+    "directions": "4th Ave S entrance"
+  },
+  "Minneapolis W-9 P-2": {
+    "address": "3400 15th Ave S",
+    "building": "Powderhorn Park Recreation Center (Gym)",
+    "directions": ""
+  },
+  "Minneapolis W-9 P-3": {
+    "address": "1098 Andersen Lane",
+    "building": "Andersen Elementary School",
+    "directions": "use door no. 15 off 12th Ave at 27th St"
+  },
+  "Minneapolis W-9 P-4": {
+    "address": "2307 17th Ave S",
+    "building": "East Phillips Park Recreation Center",
+    "directions": ""
+  },
+  "Minneapolis W-9 P-5": {
+    "address": "3104 16th Ave S",
+    "building": "Walker Community Church",
+    "directions": ""
+  },
+  "Minneapolis W-9 P-6": {
+    "address": "3332 20th Ave S",
+    "building": "Corcoran Park Recreation Center",
+    "directions": ""
+  },
+  "Minneapolis W-9 P-7": {
+    "address": "3400 15th Ave S",
+    "building": "Powderhorn Park Recreation Center (Multipurpose)",
+    "directions": ""
+  },
+  "Minneapolis W-9 P-8": {
+    "address": "2730 31st St E",
+    "building": "Holy Trinity Lutheran Church",
+    "directions": ""
+  },
+  "Minneapolis W-9 P-9": {
+    "address": "3045 Park Avenue",
+    "building": "Church of Gichitwaa Kateri",
+    "directions": ""
+  },
+  "Minneapolis W-10 P-1": {
+    "address": "1200 W 26th St",
+    "building": "Jefferson Community School (Auditorium)",
+    "directions": ""
+  },
+  "Minneapolis W-10 P-2": {
+    "address": "1200 W 26th St",
+    "building": "Jefferson Community School (Lower Gym)",
+    "directions": ""
+  },
+  "Minneapolis W-10 P-3A": {
+    "address": "3450 Irving Ave S",
+    "building": "St Mary's Greek Orthodox Church",
+    "directions": ""
+  },
+  "Minneapolis W-10 P-4": {
+    "address": "3101 Bryant Ave S",
+    "building": "Bryant Square Park Recreation Center",
+    "directions": ""
+  },
+  "Minneapolis W-10 P-5A": {
+    "address": "3737 Bryant Ave S",
+    "building": "Walker Methodist Health Center",
+    "directions": ""
+  },
+  "Minneapolis W-10 P-6": {
+    "address": "3400 Dupont Ave S",
+    "building": "First Universalist Church",
+    "directions": ""
+  },
+  "Minneapolis W-10 P-7": {
+    "address": "425 26th St W",
+    "building": "Whittier Park Recreation Center",
+    "directions": ""
+  },
+  "Minneapolis W-10 P-8": {
+    "address": "315 26th St W",
+    "building": "Whittier International School",
+    "directions": ""
+  },
+  "Minneapolis W-10 P-9": {
+    "address": "2501 Stevens Ave",
+    "building": "Minneapolis College of Art and Design (MCAD)",
+    "directions": ""
+  },
+  "Minneapolis W-10 P-10": {
+    "address": "610 W 28th St",
+    "building": "Spring House Ministry Center",
+    "directions": ""
+  },
+  "Minneapolis W-10 P-11": {
+    "address": "1200 W 26th St",
+    "building": "Jefferson Community School (Lower Gym)",
+    "directions": ""
+  },
+  "Minneapolis W-11 P-1": {
+    "address": "4747 Lyndale Ave S",
+    "building": "Knox Presbyterian Church",
+    "directions": ""
+  },
+  "Minneapolis W-11 P-2": {
+    "address": "106 Diamond Lake Road E",
+    "building": "Mayflower Church",
+    "directions": ""
+  },
+  "Minneapolis W-11 P-3": {
+    "address": "5843 Wentworth Ave S",
+    "building": "Windom South Park Recreation Center",
+    "directions": ""
+  },
+  "Minneapolis W-11 P-4": {
+    "address": "906 47th St E",
+    "building": "McRae Park Recreation Center",
+    "directions": ""
+  },
+  "Minneapolis W-11 P-5": {
+    "address": "414 Diamond Lk Rd E",
+    "building": "Pearl Park Recreation Center",
+    "directions": ""
+  },
+  "Minneapolis W-11 P-6": {
+    "address": "5426 12th Ave S",
+    "building": "Our Lady of Peace Church",
+    "directions": ""
+  },
+  "Minneapolis W-11 P-7": {
+    "address": "5501 Chicago Ave",
+    "building": "Urban Refuge Church",
+    "directions": ""
+  },
+  "Minneapolis W-11 P-8": {
+    "address": "5625 23rd Ave S",
+    "building": "Wenonah Campus - Lake Nokomis Community School",
+    "directions": ""
+  },
+  "Minneapolis W-11 P-9": {
+    "address": "3030 53rd St. E",
+    "building": "Keewaydin Park Recreation Center",
+    "directions": ""
+  },
+  "Minneapolis W-11 P-10": {
+    "address": "5760 Portland Ave",
+    "building": "Diamond Lake Lutheran Church",
+    "directions": ""
+  },
+  "Minneapolis W-12 P-8": {
+    "address": "3435 36th Ave S",
+    "building": "Longfellow Park Recreation Center",
+    "directions": ""
+  },
+  "Minneapolis W-12 P-1": {
+    "address": "3733 43rd Ave S",
+    "building": "Howe Elementary School",
+    "directions": ""
+  },
+  "Minneapolis W-12 P-2": {
+    "address": "4600 42nd St E",
+    "building": "St Peder's Evangelical Lutheran Church",
+    "directions": ""
+  },
+  "Minneapolis W-12 P-3": {
+    "address": "4305 42nd St E",
+    "building": "Hiawatha School Park Recreation Center",
+    "directions": ""
+  },
+  "Minneapolis W-12 P-4": {
+    "address": "2401 Minnehaha Pkwy E",
+    "building": "Nokomis Community Center",
+    "directions": ""
+  },
+  "Minneapolis W-12 P-5": {
+    "address": "3701 50th St E",
+    "building": "Minnehaha United Methodist Church",
+    "directions": ""
+  },
+  "Minneapolis W-12 P-6": {
+    "address": "5101 Minnehaha Ave",
+    "building": "Minnesota Veterans Home (Bldg No. 21)",
+    "directions": ""
+  },
+  "Minneapolis W-12 P-7": {
+    "address": "1900 40th St E",
+    "building": "Sibley Park Recreation Center",
+    "directions": ""
+  },
+  "Minneapolis W-12 P-9": {
+    "address": "3201 43rd St E",
+    "building": "St. Helena Catholic Church",
+    "directions": "parking lot entrance"
+  },
+  "Minneapolis W-12 P-10": {
+    "address": "5531 39th Ave. S",
+    "building": "Morris Park Recreation Center",
+    "directions": ""
+  },
+  "Minneapolis W-12 P-11": {
+    "address": "5212 41st Ave S",
+    "building": "Trinity Lutheran Church of Minnehaha Falls",
+    "directions": ""
+  },
+  "Minneapolis W-12 P-12": {
+    "address": "4029 28th Ave S",
+    "building": "Roosevelt High School",
+    "directions": ""
+  },
+  "Minneapolis W-12 P-13": {
+    "address": "5209 30th Ave S",
+    "building": "Keewaydin Campus - Lake Nokomis Community School (Gym)",
+    "directions": ""
+  },
+  "Minneapolis W-13 P-1": {
+    "address": "3537 Zenith Ave S",
+    "building": "Bakken Museum",
+    "directions": ""
+  },
+  "Minneapolis W-13 P-2": {
+    "address": "4201 Sheridan Ave S",
+    "building": "St. John's Episcopal Church",
+    "directions": ""
+  },
+  "Minneapolis W-13 P-3": {
+    "address": "3100 43rd St W",
+    "building": "Linden Hills Park Recreation Center",
+    "directions": ""
+  },
+  "Minneapolis W-13 P-4": {
+    "address": "2914 W 44th St",
+    "building": "St Thomas the Apostle (Gym)",
+    "directions": ""
+  },
+  "Minneapolis W-13 P-5": {
+    "address": "3523 48th St W",
+    "building": "Pershing Park Recreation Center",
+    "directions": ""
+  },
+  "Minneapolis W-13 P-6": {
+    "address": "1345 Minnehaha Pkwy",
+    "building": "Lynnhurst Park Recreation Center",
+    "directions": "use Parkway entrance"
+  },
+  "Minneapolis W-13 P-7": {
+    "address": "5720 Emerson Ave S",
+    "building": "Kenny Community School",
+    "directions": ""
+  },
+  "Minneapolis W-13 P-8": {
+    "address": "2500 57th St W",
+    "building": "Armatage Park Recreation Center",
+    "directions": ""
+  },
+  "Minneapolis W-13 P-9": {
+    "address": "5757 Irving Ave S",
+    "building": "Anthony Middle School",
+    "directions": ""
+  },
+  "Minneapolis W-13 P-10": {
+    "address": "4557 Colfax Ave S",
+    "building": "Sts. Luke & James Episcopal Church",
+    "directions": ""
+  },
+  "Minneapolis W-13 P-11": {
+    "address": "4901 Chowen Ave S",
+    "building": "Lake Harriet United Methodist Church",
+    "directions": ""
+  },
+  "Minneapolis W-13 P-12": {
+    "address": "5029 Zenith Ave S",
+    "building": "Christ The King Church",
+    "directions": ""
+  },
+  "Minneapolis W-13 P-13": {
+    "address": "5025 Knox Ave S",
+    "building": "Mount Olivet Lutheran Church",
+    "directions": ""
+  }
+}
