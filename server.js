@@ -58,9 +58,10 @@ async function createDefaultParams(request, reply) {
     const { lat, long } = request.query;
     try {
       const precinct = findPrecinct([long, lat]);
-      const address = await reverseGeocode(long, lat);
+      const { address, gmaps } = await reverseGeocode(long, lat);
       params = {
         address,
+        gmaps,
         precinct,
       };
     } catch (e) {
