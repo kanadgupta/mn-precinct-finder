@@ -40,15 +40,27 @@
 
         <!-- Add text indicating that we've changed color OR had an error -->
         {{#if precinct}}
-          <p class='precinct-info'>
-            The polling place for
-            <b><a href='{{gmaps}}' rel='noopener' target='_blank'>{{address}}</a></b>
-            is...<br /><br />
-            <b><i>🗳️ [insert polling place here!]</i></b>
-          </p>
-          <p class='precinct-info'>
-            Before you vote, it might be helpful to know a few things...
-          </p>
+          {{#if mplsPollingPlace21.address}}
+            <p class='precinct-info'>
+              The polling place for
+              <b><a href='{{gmaps}}' rel='noopener' target='_blank'>{{address}}</a></b>
+              is...<br /><br />
+              <b>🗳️
+                <a href='{{mplsPollingPlace21.gmapsUrl}}' rel='noopener' target='_blank'>{{mplsPollingPlace21.building}}
+                  -
+                  {{mplsPollingPlace21.address}}</a></b>
+            </p>
+            <p class='precinct-info'>
+              Before you vote, it might be helpful to know a few things...
+            </p>
+          {{else}}
+            <p class='precinct-info'>
+              Hmm...
+              <b><a href='{{gmaps}}' rel='noopener' target='_blank'>{{address}}</a></b>
+              doesn't appear to be in Minneapolis!<br /><br />In any case, here's some info about your electoral
+              boundaries!
+            </p>
+          {{/if}}
           <ul class='precinct-info'>
             <li><b>Precinct:</b> {{precinct.Precinct}}</li>
             <li><b>Park Board District:</b> {{precinct.Park}}</li>

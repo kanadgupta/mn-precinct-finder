@@ -8,6 +8,8 @@ describe('#getPollingPlace', () => {
       address: '2955 Hayes St NE',
       building: 'Northeast Middle School',
       directions: 'enter via side/rear off 29th Ave NE',
+      gmapsUrl:
+        'https://www.google.com/maps/search/?api=1&query=Northeast+Middle+School+2955+Hayes+St+NE&query_place_id=ChIJf6uXUNAts1IRx9gO5VPsm0M',
     });
   });
 

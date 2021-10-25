@@ -9,6 +9,7 @@ const MessagingResponse = require('twilio').twiml.MessagingResponse;
 const buildMapsUrl = require('./lib/build-maps-url');
 const findPrecinct = require('./lib/find-precinct');
 const { forwardGeocode, reverseGeocode } = require('./lib/geocode-address');
+const getPollingPlace = require('./lib/get-polling-place');
 
 // Require the fastify framework and instantiate it
 const fastify = require('fastify')({
@@ -89,6 +90,11 @@ async function createDefaultParams(request, reply) {
     const precinct = findPrecinct([-93.2497537, 45.013565]);
     const gmaps = buildMapsUrl(address);
     params = { address, gmaps, precinct };
+  }
+
+  // Add Minneapolis polling place
+  if (params?.precinct?.Precinct) {
+    params.mplsPollingPlace21 = getPollingPlace(params.precinct.Precinct);
   }
 
   return params;
