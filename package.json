@@ -24,7 +24,8 @@
     "twilio": "^3.69.0"
   },
   "engines": {
-    "node": "14.x"
+    "node": "14.x",
+    "npm": "^7"
   },
   "repository": {
     "url": "https://glitch.com/edit/#!/glitch-hello-node"
