@@ -6,6 +6,7 @@
 const path = require('path');
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
 
+const buildMapsUrl = require('./lib/build-maps-url');
 const findPrecinct = require('./lib/find-precinct');
 const { forwardGeocode, reverseGeocode } = require('./lib/geocode-address');
 
@@ -84,8 +85,10 @@ async function createDefaultParams(request, reply) {
   // If someone clicked the option for a random address it'll be passed in the querystring
   if (request.query.example) {
     // This is for Fair State? Idk
+    const address = '2506 Central Ave NE, Minneapolis, MN 55418';
     const precinct = findPrecinct([-93.2497537, 45.013565]);
-    params = { address: '2506 Central Ave NE, Minneapolis, MN 55418', precinct };
+    const gmaps = buildMapsUrl(address);
+    params = { address, gmaps, precinct };
   }
 
   return params;
