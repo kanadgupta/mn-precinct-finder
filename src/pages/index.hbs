@@ -2,13 +2,6 @@
 <!DOCTYPE html>
 <html lang='en'>
   <head>
-
-    <!-- 
-      This is the main Handlebars template for the site 
-      - When the user visits the homepage or submits a color the app calls the endpoints in server.js
-      - The server script passes data in here and the Handlebars code builds it into the HTML page
-    -->
-
     <meta charset='utf-8' />
     <link rel='icon' href='https://fav.farm/🗳️' />
     <meta name='viewport' content='width=device-width, initial-scale=1' />
@@ -26,9 +19,6 @@
 
     <!-- Import the webpage's stylesheet -->
     <link rel='stylesheet' href='/style.css' />
-
-    <!-- This is a handlebars IF statement
-         Checking for a custom "color" parameter from server.js -->
   </head>
   <body>
     <div class='wrapper'>
@@ -37,7 +27,7 @@
         <!-- This is the start of content for our page -->
         <h1 class='title'>MPLS 2021 Poll Finder</h1>
 
-        <!-- Add text indicating that we've changed color OR had an error -->
+        <!-- Add text indicating that we've found the precinct OR had an error -->
         {{#if precinct}}
           {{#if mplsPollingPlace21.address}}
             <p class='precinct-info'>
@@ -102,22 +92,13 @@
           <!-- Our default paragraph/message -->
           {{#unless error}}
             {{#unless precinct}}
-
-              <!-- There are fancier ways to do this, 
-                 but nesting two "#unless" statements sets up an 
-                 "if these are both missing..." condition -->
               <p>
                 The open-source, API-backed poll finder that Steve Simon never built 💔
               </p>
             {{/unless}}
           {{/unless}}
-
-          <!-- The "What's your favorite color?" form sends a POST request to the server
-               Check server.js to see how it works -->
           <form class='address-form' method='get'>
             <label for='address'>
-
-              <!-- We use the handlebars "#if" statement so the form can adapt to its situation -->
               {{#if precinct}}
                 Let's try another address!<br />
               {{else}}
@@ -129,34 +110,24 @@
               {{/if}}
               <input id='address' name='address' required='required' type='text' value='{{error.query}}' />
             </label>
-
-            <!-- If the user submits a value through the form 
-                 it'll be passed to the server in the request body  -->
             <button type='submit'>Submit</button>
           </form>
 
-          <!-- The "What's your favorite color?" form sends a POST request to the server
-               Check server.js to see how it works -->
           <form class='address-form' onsubmit='submitCurrentLocation(event)'>
             <label for='currentLocation'>
               Or, try looking it up for your current location!
               <i>(experimental)</i><br />
-              <!-- If the user submits a value through the form 
-                  it'll be passed to the server in the request body  -->
               <button id='currentLocation' type='submit'>Current Location</button>
             </label>
           </form>
-
-          <!-- This example link communicates with the server (server.js) 
-               using a querystring and GET request instead of a form POST -->
           <br />Need an example?
           <a href='?example=go'>Click here!</a>
         </div>
 
-        <!-- Instructions on using this project -->
         <div class='instructions'>
           <h2>
             Using this project
+        <!-- FAQ -->
           </h2>
           <p>
             This is the Glitch
@@ -168,17 +139,6 @@
 
       </div>
     </div>
-    <!-- The footer holds our remix button — you can use it for structure or cut it out ✂ -->
-    <footer class='footer'>
-      <div class='links'></div>
-      <a class='btn--remix' target='_top' href='https://glitch.com/edit/#!/remix/glitch-hello-node'>
-        <img
-          src='https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2FLogo_Color.svg?v=1618199565140'
-          alt=''
-        />
-        Remix on Glitch
-      </a>
-    </footer>
     {{! prettier-ignore }}
     <script>
       function submitCurrentLocation(e) {
