@@ -29,4 +29,4 @@ You'll get best use out of this project if you're familiar with basic JavaScript
 ← `src/seo.json`: When you're ready to share your new site or add a custom domain, change SEO/meta settings in here.
 
 ## Credits
-This site was built this with Glitch! Thanks Glitch.
+This site was prototyped using [Glitch](https://glitch.com)'s Hello Node template! Thanks Glitch.
