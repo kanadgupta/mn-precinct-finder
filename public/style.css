@@ -119,6 +119,7 @@ body {
   flex-direction: column;
   align-items: left;
   justify-content: left;
+  max-width: 1000px;
 }
 
 ul {
@@ -137,13 +138,14 @@ li.hidden {
 
 /* Title h1 style */
 .title {
-  color: #2800FF;
+  color: #2800ff !important;
   font-family: HK Grotesk;
   font-style: normal;
   font-weight: bold;
   font-size: 70px;
   line-height: 105%;
   margin: 2rem 0 0;
+  text-decoration: none;
 }
 
 /* Very light scaling for our illustration */
@@ -160,6 +162,10 @@ li.hidden {
 /* Styles for our custom color form and its results */
 .precinct-info {
   margin-left: 5px;
+}
+.directions {
+  font-size: 1rem;
+  margin-top: 0;
 }
 .address-form {
   margin-top: 3rem;
@@ -200,11 +206,12 @@ label {
   font-weight: bold;
 }
 
-/* Instructions */
-.instructions {
-  margin: 1rem auto 0;
+/* FAQ Wrapper */
+.faq-wrapper {
+  margin: 1rem auto 0 5px;
 }
-.instructions p {
+.faq-wrapper p,
+.faq-wrapper li {
   font-size: 1rem;
 }
 h2 {
