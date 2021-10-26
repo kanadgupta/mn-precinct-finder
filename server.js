@@ -110,14 +110,14 @@ fastify.get('/', async function (request, reply) {
 
   const params = await createDefaultParams(request, reply);
 
-  switch (accept.type(['json', 'html'])) {
-    case 'json':
-      if (params.error) reply.send({ ...params.error.toJSON() });
-      else reply.send(params);
-      break;
+  switch (accept.type(['html', 'json'])) {
     // The Handlebars code will be able to access the parameter values and build them into the page
     case 'html':
       reply.view('/src/pages/index.hbs', { ...params, seo });
+      break;
+    case 'json':
+      if (params.error) reply.send({ ...params.error.toJSON() });
+      else reply.send(params);
       break;
     default:
       reply.view('/src/pages/index.hbs', { ...params, seo });
