@@ -8,6 +8,7 @@
   - [Server-side API](https://developers.google.com/maps/documentation/geocoding/overview)
   - [Client-side Autocomplete](https://developers.google.com/maps/documentation/javascript/places-autocomplete)
   - [Maps URL Reference](https://developers.google.com/maps/documentation/urls/get-started)
+- [x] Unit tests for `findPrecinct` and `geocodeAddress` functions
 - [ ] Remove reverse geocoder, link to coordinates instead
 - [ ] Add address verification prior to running through geocoder to sanitize geocoder API requests
 - [ ] Add support for Google Sheets user-agent
@@ -15,7 +16,6 @@
 - [ ] OpenAPI generation via [`fastify-swagger`](https://github.com/fastify/fastify-swagger)
 - [ ] JSON Schema Validation for processed data file(s)
 - [ ] Docs on ReadMe! :owl:
-- [ ] Unit tests for `findPrecinct` and `geocodeAddress` functions
 - [ ] Enhance error handling for `findPrecinct`
 
 ## Nice To have
