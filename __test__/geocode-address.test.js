@@ -57,13 +57,13 @@ describe('#forwardGeocode', () => {
   });
 
   it('should throw if response is unknown error', async () => {
-    nock('https://maps.googleapis.com:443').get('/maps/api/geocode/json').query(true).reply(200, {
+    nock('https://maps.googleapis.com:443').get('/maps/api/geocode/json').query(true).reply(400, {
       error_message: 'some error message',
       status: 'UNKNOWN_ERROR',
     });
 
     await expect(forwardGeocode('unknown error address')).rejects.toStrictEqual(
-      new GeocodingError([], 'unknown error address')
+      new Error('Request failed with status code 400')
     );
   });
 
