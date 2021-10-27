@@ -195,6 +195,24 @@
             create API-driven tools, which can (hopefully!) reduce some of the barriers to providing information for
             people. 🌱
           </p>
+          <h3>You mentioned that it's API-driven! How does that work?</h3>
+          <p>You can retrieve a JSON version of data provided on the website by passing an
+            <code>Accept</code>
+            header in your request that specifies
+            <code>application/json</code>. You can also pass a
+            <code>format=json</code>
+            query parameter (<a href='/?example=go&format=json' rel='noopener' target='_blank'>like this!</a>) and that
+            should also do the trick.
+          </p>
+          <p>The markup on this webpage also includes a few hidden tricks for Google Sheets users to easily integrate
+            this data into their workflows. You can grab the XPath selectors of certain fields on the page and then use
+            formulas like these to import the data:</p>
+          <ul>
+            <li><code>=IMPORTXML("{{seo.url}}?address="&ENCODEURL("100 Main St"),"//*[@id='Precinct']")</code></li>
+            <li><code>=IMPORTXML("https://mpls.vote?address="&ENCODEURL("100 Main St"),"//*[@id='address']")</code></li>
+            <li><code>=IMPORTXML("{{seo.url}}?address="&ENCODEURL("100 Main St"),"//*[@id='mplsPollingPlace21']")</code></li>
+          </ul>
+          <p>API docs TBA! 🦉</p>
           <h3>Do you have a privacy policy?</h3>
           <p>This is a humble proof-of-concept so it doesn't have a formal privacy policy, but this application does not
             load with any invasive analytics/tracking scripts, nor does it log any of the information you send. Oh, and
