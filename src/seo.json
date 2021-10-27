@@ -2,5 +2,5 @@
   "glitch-help-instructions": "For a custom domain, change the 'url' parameter from 'glitch-default' to your domain _without_ a traling slash, like 'https://www.example.com'",
   "title": "MPLS 2021 Poll Finder",
   "description": "A simple open-source poll finder for the Minneapolis 2021 election.",
-  "url": "glitch-default"
+  "url": "https://mpls.vote"
 }
