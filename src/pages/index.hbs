@@ -132,10 +132,10 @@
                 {{#if error}}
                   Let's try again!<br />
                 {{else}}
-                  What's your address?<br />
+                  What's your home address?<br />
                 {{/if}}
               {{/if}}
-              <input id='address-input' name='address' required='required' type='text' value='{{error.query}}' />
+              <input id='address-input' name='address' required='required' placeholder='123 Main St' type='text' value='{{error.query}}' />
             </label>
             <button type='submit'>Submit</button>
           </form>
