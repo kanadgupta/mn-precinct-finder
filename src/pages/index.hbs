@@ -125,7 +125,7 @@
             {{/unless}}
           {{/unless}}
           <form class='address-form' method='get'>
-            <label for='address'>
+            <label for='address-input'>
               {{#if precinct}}
                 Let's try another address!<br />
               {{else}}
@@ -135,7 +135,7 @@
                   What's your address?<br />
                 {{/if}}
               {{/if}}
-              <input id='address' name='address' required='required' type='text' value='{{error.query}}' />
+              <input id='address-input' name='address' required='required' type='text' value='{{error.query}}' />
             </label>
             <button type='submit'>Submit</button>
           </form>
