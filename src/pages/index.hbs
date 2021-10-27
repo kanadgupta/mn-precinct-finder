@@ -12,6 +12,7 @@
     <link rel='canonical' href='{{seo.url}}' />
     <meta name='description' content='{{seo.description}}' />
     <meta property='og:title' content='{{seo.title}}' />
+    <meta property='og:image' content='{{seo.image}}' />
     <meta property='og:type' content='article' />
     <meta property='og:url' content='{{seo.url}}' />
     <meta property='og:description' content='{{seo.description}}' />
@@ -35,11 +36,12 @@
               <a href='{{gmaps}}' id='address' rel='noopener' target='_blank'>{{address}}</a>
               is...<br /><br />
               🗳️
-              <a href='{{mplsPollingPlace21.gmapsUrl}}' id='mplsPollingPlace21' rel='noopener' target='_blank'><span
-                  id='mplsPollingPlace21-name'
-                >{{mplsPollingPlace21.building}}</span>
-                -
-                <span id='mplsPollingPlace21-address'>{{mplsPollingPlace21.address}}</span></a>
+              <b><a href='{{mplsPollingPlace21.gmapsUrl}}' id='mplsPollingPlace21' rel='noopener' target='_blank'><span
+                    id='mplsPollingPlace21-name'
+                  >{{mplsPollingPlace21.building}}</span>
+                  -
+                  <span id='mplsPollingPlace21-address'>{{mplsPollingPlace21.address}}</span></a></b>
+              🗳️
               {{#if mplsPollingPlace21.directions}}
                 <br />
                 <span class='directions precinct-info'>🚪 (<span
@@ -56,7 +58,7 @@
                 >vote early</a>
                 if possible!</b></p>
             <p class='precinct-info'>
-              Before you vote, it might be helpful to know a few things...
+              Before you vote, it might be helpful to know your electoral districts:
             </p>
           {{else}}
             <p class='precinct-info'>
@@ -82,13 +84,13 @@
               <span id='Judicial'>{{precinct.Judicial}}</span></li>
             <li class='extra hidden'><b>Minor Civil Division (MCD):</b>
               <span id='MCDName'>{{precinct.MCDName}}</span></li>
-            <li class='extra hidden'><b>Soil and Water District:</b>
+            {{!-- <li class='extra hidden'><b>Soil and Water District:</b>
               <span id='SoilAndWater'>{{precinct.SoilAndWater}}</span></li>
             <li class='extra hidden'><b>Hospital District:</b> <span id='Hospital'>{{precinct.Hospital}}</span></li>
             <li class='extra hidden'><b>County ID:</b> <span id='CountyID'>{{precinct.CountyID}}</span></li>
             <li class='extra hidden'><b>MCD Code:</b> <span id='MCDCode'>{{precinct.MCDCode}}</span></li>
-            <li class='extra hidden'><b>Precinct Code:</b> <span id='PrecinctCode'>{{precinct.PrecinctCode}}</span></li>
-            <li><a aria-expanded='false' onclick='toggleInfo(event)' href=''>Show More...</a></li>
+            <li class='extra hidden'><b>Precinct Code:</b> <span id='PrecinctCode'>{{precinct.PrecinctCode}}</span></li> --}}
+            <li><a aria-expanded='false' onclick='toggleInfo(event)' href=''>Show irrelevant info...</a></li>
           </ul>
         {{/if}}
 
@@ -110,47 +112,47 @@
           {{/if}}
         {{/if}}
 
+        {{#unless error}}
+          {{#unless precinct}}
+            <p class='intro subtitle'>
+              An open-source, API-backed poll finder that (mostly) doesn't suck ❤️
+            </p><p class='intro'>
+              ⚠️
+              <a href='#faq'>Check out the FAQ</a>
+              before diving in!
+            </p>
+          {{/unless}}
+        {{/unless}}
+        {{#unless precinct}}
+          <p class='intro'>👀 Need an example?
+            <a href='?example=go'>Click here!</a></p>
+        {{/unless}}
+
         <div class='form-wrapper'>
 
           <!-- Our default paragraph/message -->
-          {{#unless error}}
-            {{#unless precinct}}
-              <p>
-                The open-source, API-backed poll finder that Steve Simon never built 💔
-              </p><p>
-                ⚠️
-                <a href='#faq'>Check out the FAQ</a>
-                before diving in!
-              </p>
-            {{/unless}}
-          {{/unless}}
           <form class='address-form' method='get'>
             <label for='address-input'>
               {{#if precinct}}
-                Let's try another address!<br />
+                <span class='subtitle'>Let's try another address! 🏡</span><br />
               {{else}}
                 {{#if error}}
-                  Let's try again!<br />
+                  <span class='subtitle'>Let's try again! 🏡</span><br />
                 {{else}}
-                  What's your home address?<br />
+                  <span class='subtitle'>What's your home address? 🏡</span><br />
                 {{/if}}
               {{/if}}
-              <input id='address-input' name='address' required='required' placeholder='123 Main St, 55411' type='text' value='{{error.query}}' />
+              <input
+                id='address-input'
+                name='address'
+                required='required'
+                placeholder='123 Main St, 55411'
+                type='text'
+                value='{{error.query}}'
+              />
             </label>
-            <button type='submit'>Submit</button>
+            <button type='submit'>Search</button>
           </form>
-
-          <form class='address-form' onsubmit='submitCurrentLocation(event)'>
-            <label for='currentLocation'>
-              Or, try looking it up for your current location!
-              <i>(experimental)</i><br />
-              <button id='currentLocation' type='submit'>Current Location</button>
-            </label>
-          </form>
-          {{#unless precinct}}
-            <br />Need an example?
-            <a href='?example=go'>Click here!</a>
-          {{/unless}}
         </div>
 
         <!-- FAQ -->
@@ -230,29 +232,15 @@
             like, send your social security number through the form? This site won't see it or log it anywhere, but it's
             technically being sent to Google.
           </p>
+          <h3>Will elections save us?</h3>
+          <p>lol... you must be new here</p>
         </div>
-
       </div>
+      <footer class='footer'><span>made with &hearts; by
+          <a href='https://twitter.com/kanadgupta' rel='noopener' target='_blank'>kanad</a></span></footer>
     </div>
     {{! prettier-ignore }}
     <script>
-      function submitCurrentLocation(e) {
-        e.preventDefault();
-        e.submitter.innerText = "Loading...";
-        e.submitter.setAttribute('disabled', 'disabled');
-        navigator.geolocation.getCurrentPosition(function(position) {
-          const lat = position.coords.latitude;
-          const long = position.coords.longitude;
-
-          const queryString = new URLSearchParams({ lat, long });
-          const pageUrl = '?' + queryString.toString();
-          window.history.pushState('', '', pageUrl);
-
-          window.location.reload();
-          window.scrollTo(0, 0);
-        });
-      } 
-
       function toggleInfo(e) {
         e.preventDefault();
         // Toggle display of every hidden item
@@ -261,7 +249,7 @@
         });
         // Update attributes on toggle element
         const isHidden = document.querySelector('li.extra').classList.contains('hidden');
-        e.target.innerText = isHidden ? 'Show More...' : 'Show Less...';
+        e.target.innerText = isHidden ? 'Show irrelevant info...' : 'Hide irrelevant info...';
         e.target.setAttribute('aria-expanded', !isHidden);
       }
     </script>
