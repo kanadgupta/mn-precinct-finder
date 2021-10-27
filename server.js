@@ -11,6 +11,8 @@ const findPrecinct = require('./lib/find-precinct');
 const { forwardGeocode, reverseGeocode } = require('./lib/geocode-address');
 const getPollingPlace = require('./lib/get-polling-place');
 
+const env = process.env.NODE_ENV;
+
 // Require the fastify framework and instantiate it
 const fastify = require('fastify')({
   ignoreTrailingSlash: true,
@@ -142,13 +144,17 @@ fastify.post('/twilio', async function (request, reply) {
   return reply.type('text/xml').send(twiml.toString());
 });
 
-// Run the server and report out to the logs
-fastify.listen(process.env.PORT || 3000, '0.0.0.0', function (err, address) {
-  if (err) {
-    fastify.log.error(err);
-    process.exit(1);
-  }
-  // eslint-disable-next-line no-console
-  console.log(`Your app is listening on ${address}`);
-  fastify.log.info(`server listening on ${address}`);
-});
+if (env !== 'test') {
+  // Run the server and report out to the logs
+  fastify.listen(process.env.PORT || 3000, '0.0.0.0', function (err, address) {
+    if (err) {
+      fastify.log.error(err);
+      process.exit(1);
+    }
+    // eslint-disable-next-line no-console
+    console.log(`Your app is listening on ${address}`);
+    fastify.log.info(`server listening on ${address}`);
+  });
+}
+
+module.exports = fastify;
