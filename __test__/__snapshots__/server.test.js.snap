@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`fastify server tests GET / should return 200 with standard template 1`] = `
-"
+"<!DOCTYPE html>
 <html lang='en'>
   <head>
     <meta charset='utf-8' />
