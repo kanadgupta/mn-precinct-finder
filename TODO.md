@@ -10,6 +10,7 @@
   - [Maps URL Reference](https://developers.google.com/maps/documentation/urls/get-started)
 - [x] Unit tests for `findPrecinct` and `geocodeAddress` functions
 - [ ] Remove reverse geocoder, link to coordinates instead
+- [ ] Separate coordinates and example into separate endpoints
 - [ ] Add address verification prior to running through geocoder to sanitize geocoder API requests
 - [ ] Add support for Google Sheets user-agent
 - [ ] [Schema Validation](https://www.fastify.io/docs/latest/Validation-and-Serialization/)
