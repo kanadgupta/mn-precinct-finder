@@ -40,7 +40,6 @@ describe('fastify server tests', () => {
       const response = await app.inject({
         method: 'GET',
         url: '/?example=go',
-        headers: { Accept: 'application/json' },
       });
 
       expect(response.body).toMatchSnapshot();
