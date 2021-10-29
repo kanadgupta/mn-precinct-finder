@@ -21,3 +21,10 @@ jobs:
 
       - name: Run tests
         run: npm test
+
+      - name: Sync OpenAPI file to ReadMe
+        run: npm run docs
+        env:
+          NODE_ENV: ci
+          API_KEY: '${{ secrets.README_API_KEY }}'
+          SPEC_ID: '${{ secrets.README_SPEC_ID }}'

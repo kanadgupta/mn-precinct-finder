@@ -258,7 +258,7 @@ fastify.post('/twilio', { schema: { hide: true } }, async function (request, rep
   return reply.type('text/xml').send(twiml.toString());
 });
 
-if (env !== 'test') {
+if (!['ci', 'test'].includes(env)) {
   // Run the server and report out to the logs
   fastify.listen(process.env.PORT || 3000, '0.0.0.0', function (err, address) {
     if (err) {
