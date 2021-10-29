@@ -177,6 +177,7 @@ const opts = {
             },
           },
           precinct: {
+            description: 'An object containing Minnesota electoral boundaries.',
             type: 'object',
             properties: {
               CongDist: { description: 'U.S. Congressional District', example: '5', type: 'string' },
