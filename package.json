@@ -10,7 +10,8 @@
     "lint": "eslint .",
     "pretest": "npm run lint",
     "start": "node server.js",
-    "test": "jest --coverage"
+    "test": "jest",
+    "test-ci": "jest --ci --coverage"
   },
   "dependencies": {
     "@googlemaps/google-maps-services-js": "^3.2.5",
