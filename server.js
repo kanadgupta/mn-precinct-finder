@@ -50,7 +50,7 @@ fastify.register(require('fastify-swagger'), {
     },
     servers: [
       {
-        url: 'http://mpls.vote',
+        url: 'https://mpls.vote',
       },
     ],
   },
