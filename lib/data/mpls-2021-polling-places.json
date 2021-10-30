@@ -647,12 +647,6 @@
     "directions": "",
     "gmapsPlaceId": "ChIJpSBrrSIm9ocRlpLpsDx8X_k"
   },
-  "Minneapolis W-12 P-8": {
-    "address": "3435 36th Ave S",
-    "building": "Longfellow Park Recreation Center",
-    "directions": "",
-    "gmapsPlaceId": "ChIJKwxEkDQo9ocRzUchKKHiD3Q"
-  },
   "Minneapolis W-12 P-1": {
     "address": "3733 43rd Ave S",
     "building": "Howe Elementary School",
@@ -694,6 +688,12 @@
     "building": "Sibley Park Recreation Center",
     "directions": "",
     "gmapsPlaceId": "ChIJzYA2H2wo9ocRW7T4Z3H7aCk"
+  },
+  "Minneapolis W-12 P-8": {
+    "address": "3435 36th Ave S",
+    "building": "Longfellow Park Recreation Center",
+    "directions": "",
+    "gmapsPlaceId": "ChIJKwxEkDQo9ocRzUchKKHiD3Q"
   },
   "Minneapolis W-12 P-9": {
     "address": "3201 43rd St E",
