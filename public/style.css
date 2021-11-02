@@ -69,6 +69,19 @@ END Glitch hello-app default styles
 body {
   font-family: HK Grotesk;
   background-color: var(--color-bg);
+  margin: 0;
+}
+
+.notification-bar {
+  background-color: var(--color-primary);
+  display: flex;
+  justify-content: center;
+  padding: 0.2em 0;
+  font-weight: bold;
+  flex-wrap: wrap;
+  position: fixed;
+  width: 100%;
+  top: 0;
 }
 
 /* Page structure */
@@ -76,7 +89,8 @@ body {
   min-height: var(--wrapper-height);
   display: grid;
   place-items: center;
-  margin: 0 1rem;
+  margin: 1rem 1rem 0;
+  word-break: break-word;
 }
 .content {
   display: flex;
