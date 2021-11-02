@@ -207,14 +207,6 @@ exports[`fastify server tests GET /?example=go should return 200 with standard t
                   <span id='mplsPollingPlace21-address'>2030 Monroe St NE</span></a></b>
               🗳️
             </p>
-            <p class='precinct-info'>... but that info is for Election Day (Nov 2nd).
-              <b>You should
-                <a
-                  href='https://vote.minneapolismn.gov/voters/vote-early-in-person/'
-                  rel='noopener'
-                  target='_blank'
-                >vote early</a>
-                if possible!</b></p>
             <p class='precinct-info'>
               Before you vote, it might be helpful to know your electoral districts:
             </p>
