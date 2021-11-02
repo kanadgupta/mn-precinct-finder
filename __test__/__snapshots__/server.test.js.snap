@@ -19,6 +19,7 @@ exports[`fastify server tests GET / should return 200 with standard template 1`]
     <meta property='og:url' content='https://mpls.vote' />
     <meta property='og:description' content='An open-source, API-backed poll finder that (mostly) doesn&#x27;t suck ❤️' />
     <meta name='twitter:card' content='summary' />
+    <meta name='theme-color' content='#afece0' />
 
     <!-- Import the webpage's stylesheet -->
     <link rel='stylesheet' href='/style.css' />
@@ -185,6 +186,7 @@ exports[`fastify server tests GET /?example=go should return 200 with standard t
     <meta property='og:url' content='https://mpls.vote' />
     <meta property='og:description' content='An open-source, API-backed poll finder that (mostly) doesn&#x27;t suck ❤️' />
     <meta name='twitter:card' content='summary' />
+    <meta name='theme-color' content='#afece0' />
 
     <!-- Import the webpage's stylesheet -->
     <link rel='stylesheet' href='/style.css' />
