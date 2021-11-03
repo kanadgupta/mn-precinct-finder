@@ -648,52 +648,52 @@
     "gmapsPlaceId": "ChIJpSBrrSIm9ocRlpLpsDx8X_k"
   },
   "Minneapolis W-12 P-1": {
+    "address": "3435 36th Ave S",
+    "building": "Longfellow Park Recreation Center",
+    "directions": "",
+    "gmapsPlaceId": "ChIJKwxEkDQo9ocRzUchKKHiD3Q"
+  },
+  "Minneapolis W-12 P-2": {
     "address": "3733 43rd Ave S",
     "building": "Howe Elementary School",
     "directions": "",
     "gmapsPlaceId": "ChIJ_W4RTLYp9ocRjnmhnc4cWkU"
   },
-  "Minneapolis W-12 P-2": {
+  "Minneapolis W-12 P-3": {
     "address": "4600 42nd St E",
     "building": "St Peder's Evangelical Lutheran Church",
     "directions": "",
     "gmapsPlaceId": "ChIJ46R2s7op9ocRzucrovI-fCU"
   },
-  "Minneapolis W-12 P-3": {
+  "Minneapolis W-12 P-4": {
     "address": "4305 42nd St E",
     "building": "Hiawatha School Park Recreation Center",
     "directions": "",
     "gmapsPlaceId": "ChIJySQENK4p9ocRgaTW-WG7V6g"
   },
-  "Minneapolis W-12 P-4": {
+  "Minneapolis W-12 P-5": {
     "address": "2401 Minnehaha Pkwy E",
     "building": "Nokomis Community Center",
     "directions": "",
     "gmapsPlaceId": "ChIJffiZaIgo9ocRIQyLUHoyafo"
   },
-  "Minneapolis W-12 P-5": {
+  "Minneapolis W-12 P-6": {
     "address": "3701 50th St E",
     "building": "Minnehaha United Methodist Church",
     "directions": "",
     "gmapsPlaceId": "ChIJv1yd-v0o9ocRBIhvvG6gAR4"
   },
-  "Minneapolis W-12 P-6": {
+  "Minneapolis W-12 P-7": {
     "address": "5101 Minnehaha Ave",
     "building": "Minnesota Veterans Home (Bldg No. 21)",
     "directions": "",
     "gmapsPlaceId": "ChIJsYHRBxQp9ocRotKU-3sab_0"
   },
-  "Minneapolis W-12 P-7": {
+  "Minneapolis W-12 P-8": {
     "address": "1900 40th St E",
     "building": "Sibley Park Recreation Center",
     "directions": "",
     "gmapsPlaceId": "ChIJzYA2H2wo9ocRW7T4Z3H7aCk"
-  },
-  "Minneapolis W-12 P-8": {
-    "address": "3435 36th Ave S",
-    "building": "Longfellow Park Recreation Center",
-    "directions": "",
-    "gmapsPlaceId": "ChIJKwxEkDQo9ocRzUchKKHiD3Q"
   },
   "Minneapolis W-12 P-9": {
     "address": "3201 43rd St E",
