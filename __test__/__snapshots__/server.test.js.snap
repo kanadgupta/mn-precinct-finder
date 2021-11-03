@@ -19,14 +19,11 @@ exports[`fastify server tests GET / should return 200 with standard template 1`]
     <meta property='og:url' content='https://mpls.vote' />
     <meta property='og:description' content='An open-source, API-backed poll finder that (mostly) doesn&#x27;t suck ❤️' />
     <meta name='twitter:card' content='summary' />
-    <meta name='theme-color' content='#afece0' />
 
     <!-- Import the webpage's stylesheet -->
     <link rel='stylesheet' href='/style.css' />
   </head>
   <body>
-    <div class='notification-bar'>Did you vote today?&nbsp;
-      <a href='https://forms.gle/9EGD7oDasZAEmu38A' rel='noopener' target='_blank'>Fill out our turnout tracker!</a></div>
     <div class='wrapper'>
       <div class='content' role='main'>
 
@@ -186,14 +183,11 @@ exports[`fastify server tests GET /?example=go should return 200 with standard t
     <meta property='og:url' content='https://mpls.vote' />
     <meta property='og:description' content='An open-source, API-backed poll finder that (mostly) doesn&#x27;t suck ❤️' />
     <meta name='twitter:card' content='summary' />
-    <meta name='theme-color' content='#afece0' />
 
     <!-- Import the webpage's stylesheet -->
     <link rel='stylesheet' href='/style.css' />
   </head>
   <body>
-    <div class='notification-bar'>Did you vote today?&nbsp;
-      <a href='https://forms.gle/9EGD7oDasZAEmu38A' rel='noopener' target='_blank'>Fill out our turnout tracker!</a></div>
     <div class='wrapper'>
       <div class='content' role='main'>
 
