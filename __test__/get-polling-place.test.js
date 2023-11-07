@@ -40,4 +40,6 @@ describe('polling place data', () => {
       )
     ).toBe(true);
   });
+
+  it.todo('should check if all the Minneapolis precincts in the MN data exist in the polling place list');
 });
