@@ -4,44 +4,44 @@ describe('#findPrecinct', () => {
   it('should return precinct data if passed as array', () => {
     const precinct = findPrecinct([-93.265, 44.9778]);
     expect(precinct).toStrictEqual({
-      CongDist: '5',
+      Precinct: 'Minneapolis W-07 P-11',
+      PrecinctID: '270531705',
       County: 'Hennepin',
       CountyID: '27',
-      CtyComDist: '4',
+      CongDist: '5',
+      MNSenDist: '59',
+      MNLegDist: '59B',
+      CtyComDist: '03',
       Hospital: 'no data',
       Judicial: '04',
       MCDCode: '135',
       MCDName: 'Minneapolis',
-      MNLegDist: '59B',
-      MNSenDist: '59',
       Park: '4',
-      Precinct: 'Minneapolis W-3 P-9',
-      PrecinctCode: '1500',
-      PrecinctID: '270531500',
+      PrecinctCode: '1705',
       SoilAndWater: 'no data',
-      Ward: 'W-03',
+      Ward: 'W-07',
     });
   });
 
   it('should return precinct data if passed as geojson coordinate', () => {
     const precinct = findPrecinct({ type: 'Point', coordinates: [-93.265, 44.9778] });
     expect(precinct).toStrictEqual({
-      CongDist: '5',
+      Precinct: 'Minneapolis W-07 P-11',
+      PrecinctID: '270531705',
       County: 'Hennepin',
       CountyID: '27',
-      CtyComDist: '4',
+      CongDist: '5',
+      MNSenDist: '59',
+      MNLegDist: '59B',
+      CtyComDist: '03',
       Hospital: 'no data',
       Judicial: '04',
       MCDCode: '135',
       MCDName: 'Minneapolis',
-      MNLegDist: '59B',
-      MNSenDist: '59',
       Park: '4',
-      Precinct: 'Minneapolis W-3 P-9',
-      PrecinctCode: '1500',
-      PrecinctID: '270531500',
+      PrecinctCode: '1705',
       SoilAndWater: 'no data',
-      Ward: 'W-03',
+      Ward: 'W-07',
     });
   });
 

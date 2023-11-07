@@ -56,30 +56,30 @@ describe('fastify server tests', () => {
       expect(JSON.parse(response.body)).toStrictEqual({
         address: '2506 Central Ave NE, Minneapolis, MN 55418',
         gmaps: 'https://www.google.com/maps/search/?api=1&query=2506+Central+Ave+NE%2C+Minneapolis%2C+MN+55418',
+        mplsPollingPlace21: {
+          address: '1320 29th Ave NE',
+          building: 'Audubon Park Recreation Center',
+          directions: '',
+          gmapsUrl:
+            'https://www.google.com/maps/search/?api=1&query=Audubon+Park+Recreation+Center+1320+29th+Ave+NE&query_place_id=ChIJMzNMT9sts1IRYwD7TCQu1p4',
+        },
         precinct: {
-          Precinct: 'Minneapolis W-1 P-9',
-          PrecinctID: '270531400',
+          CongDist: '5',
           County: 'Hennepin',
           CountyID: '27',
-          CongDist: '5',
-          MNSenDist: '60',
-          MNLegDist: '60A',
-          CtyComDist: '2',
+          CtyComDist: '02',
           Hospital: 'no data',
           Judicial: '04',
           MCDCode: '135',
           MCDName: 'Minneapolis',
+          MNLegDist: '60A',
+          MNSenDist: '60',
           Park: '1',
-          PrecinctCode: '1400',
+          Precinct: 'Minneapolis W-01 P-04',
+          PrecinctCode: '1375',
+          PrecinctID: '270531375',
           SoilAndWater: 'no data',
           Ward: 'W-01',
-        },
-        mplsPollingPlace21: {
-          address: '2030 Monroe St NE',
-          building: 'Edison High School (Gym lobby)',
-          directions: '',
-          gmapsUrl:
-            'https://www.google.com/maps/search/?api=1&query=Edison+High+School+%28Gym+lobby%29+2030+Monroe+St+NE&query_place_id=ChIJx58zzJIts1IRDTGIN8Fm7tk',
         },
       });
       expect(response.statusCode).toBe(200);

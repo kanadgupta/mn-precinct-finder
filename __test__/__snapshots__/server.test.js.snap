@@ -200,24 +200,24 @@ exports[`fastify server tests GET /?example=go should return 200 with standard t
               <a href='https://www.google.com/maps/search/?api&#x3D;1&amp;query&#x3D;2506+Central+Ave+NE%2C+Minneapolis%2C+MN+55418' id='address' rel='noopener' target='_blank'>2506 Central Ave NE, Minneapolis, MN 55418</a>
               is...<br /><br />
               🗳️
-              <b><a href='https://www.google.com/maps/search/?api&#x3D;1&amp;query&#x3D;Edison+High+School+%28Gym+lobby%29+2030+Monroe+St+NE&amp;query_place_id&#x3D;ChIJx58zzJIts1IRDTGIN8Fm7tk' id='mplsPollingPlace21' rel='noopener' target='_blank'><span
+              <b><a href='https://www.google.com/maps/search/?api&#x3D;1&amp;query&#x3D;Audubon+Park+Recreation+Center+1320+29th+Ave+NE&amp;query_place_id&#x3D;ChIJMzNMT9sts1IRYwD7TCQu1p4' id='mplsPollingPlace21' rel='noopener' target='_blank'><span
                     id='mplsPollingPlace21-name'
-                  >Edison High School (Gym lobby)</span>
+                  >Audubon Park Recreation Center</span>
                   -
-                  <span id='mplsPollingPlace21-address'>2030 Monroe St NE</span></a></b>
+                  <span id='mplsPollingPlace21-address'>1320 29th Ave NE</span></a></b>
               🗳️
             </p>
             <p class='precinct-info'>
               Before you vote, it might be helpful to know your electoral districts:
             </p>
           <ul class='precinct-info'>
-            <li><b>Precinct:</b> <span id='Precinct'>Minneapolis W-1 P-9</span></li>
+            <li><b>Precinct:</b> <span id='Precinct'>Minneapolis W-01 P-04</span></li>
             <li><b>Park Board District:</b> <span id='Park'>1</span></li>
             <li class='extra hidden'><b>U.S. Congressional District:</b>
               <span id='CongDist'>5</span></li>
             <li class='extra hidden'><b>County:</b> <span id='County'>Hennepin</span></li>
             <li class='extra hidden'><b>County Commissioner District:</b>
-              <span id='CtyComDist'>2</span></li>
+              <span id='CtyComDist'>02</span></li>
             <li class='extra hidden'><b>State Senate District:</b>
               <span id='MNSenDist'>60</span></li>
             <li class='extra hidden'><b>State Legislative District:</b>
