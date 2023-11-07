@@ -113,18 +113,6 @@
     "directions": "",
     "gmapsPlaceId": "ChIJCUFgkDEts1IRYmmofOXe8Yw"
   },
-  "Minneapolis W-2 P-10": {
-    "address": "324 Harvard St SE",
-    "building": "Grace University Lutheran Church",
-    "directions": "",
-    "gmapsPlaceId": "ChIJefhEUz0ts1IRtbz6y4hcx9w"
-  },
-  "Minneapolis W-2 P-11": {
-    "address": "3017 E 31st St",
-    "building": "Longfellow High School",
-    "directions": "",
-    "gmapsPlaceId": "ChIJTQj98C8o9ocRTtTFXoCn0CU"
-  },
   "Minneapolis W-3 P-1": {
     "address": "601 13th Ave SE",
     "building": "University Lutheran Church of Hope",
@@ -196,12 +184,6 @@
     "building": "Minneapolis Central Library",
     "directions": "",
     "gmapsPlaceId": "ChIJ64ilwZoys1IR2LAO_Ylm7Hg"
-  },
-  "Minneapolis W-3 P-13": {
-    "address": "601 13th Ave SE",
-    "building": "University Lutheran Church of Hope",
-    "directions": "",
-    "gmapsPlaceId": "ChIJZ4A7bA4ts1IR2vujZrScK34"
   },
   "Minneapolis W-4 P-1": {
     "address": "5001 Humboldt Ave N",
@@ -575,18 +557,6 @@
     "directions": "",
     "gmapsPlaceId": "ChIJDSb7ErQys1IR_G-2p5c9KNM"
   },
-  "Minneapolis W-10 P-10": {
-    "address": "610 W 28th St",
-    "building": "Spring House Ministry Center",
-    "directions": "",
-    "gmapsPlaceId": "ChIJHUQNPYgn9ocRdnGTGaCsd_w"
-  },
-  "Minneapolis W-10 P-11": {
-    "address": "1200 W 26th St",
-    "building": "Jefferson Community School (Lower Gym)",
-    "directions": "",
-    "gmapsPlaceId": "ChIJzd15cNQys1IR_7YfFwxsf7g"
-  },
   "Minneapolis W-11 P-1": {
     "address": "4747 Lyndale Ave S",
     "building": "Knox Presbyterian Church",
@@ -718,12 +688,6 @@
     "building": "Roosevelt High School",
     "directions": "",
     "gmapsPlaceId": "ChIJ-cTFtUUo9ocRoVX_UFuymaw"
-  },
-  "Minneapolis W-12 P-13": {
-    "address": "5209 30th Ave S",
-    "building": "Keewaydin Campus - Lake Nokomis Community School (Gym)",
-    "directions": "",
-    "gmapsPlaceId": "ChIJa_LdEPAo9ocRzs0Ea7XWLfw"
   },
   "Minneapolis W-13 P-1": {
     "address": "3537 Zenith Ave S",
