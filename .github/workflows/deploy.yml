@@ -33,4 +33,4 @@ jobs:
       - name: Sync via rdme
         uses: readmeio/rdme@v8
         with:
-          rdme: openapi openapi.json --key ${{ secrets.README_SPEC_ID }} --id ${{ secrets.README_API_KEY }}
+          rdme: openapi openapi.json --key ${{ secrets.README_API_KEY }} --id ${{ secrets.README_SPEC_ID }}
