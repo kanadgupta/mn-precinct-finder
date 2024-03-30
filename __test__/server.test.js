@@ -68,7 +68,6 @@ describe('fastify server tests', () => {
           County: 'Hennepin',
           CountyID: '27',
           CtyComDist: '02',
-          Hospital: 'no data',
           Judicial: '04',
           MCDCode: '135',
           MCDName: 'Minneapolis',
@@ -78,7 +77,6 @@ describe('fastify server tests', () => {
           Precinct: 'Minneapolis W-01 P-04',
           PrecinctCode: '1375',
           PrecinctID: '270531375',
-          SoilAndWater: 'no data',
           Ward: 'W-01',
         },
       });

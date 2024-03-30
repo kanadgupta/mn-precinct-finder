@@ -12,13 +12,13 @@ describe('#findPrecinct', () => {
       MNSenDist: '59',
       MNLegDist: '59B',
       CtyComDist: '03',
-      Hospital: 'no data',
+      Hospital: undefined,
       Judicial: '04',
       MCDCode: '135',
       MCDName: 'Minneapolis',
       Park: '4',
       PrecinctCode: '1705',
-      SoilAndWater: 'no data',
+      SoilAndWater: undefined,
       Ward: 'W-07',
     });
   });
@@ -34,13 +34,13 @@ describe('#findPrecinct', () => {
       MNSenDist: '59',
       MNLegDist: '59B',
       CtyComDist: '03',
-      Hospital: 'no data',
+      Hospital: undefined,
       Judicial: '04',
       MCDCode: '135',
       MCDName: 'Minneapolis',
       Park: '4',
       PrecinctCode: '1705',
-      SoilAndWater: 'no data',
+      SoilAndWater: undefined,
       Ward: 'W-07',
     });
   });
