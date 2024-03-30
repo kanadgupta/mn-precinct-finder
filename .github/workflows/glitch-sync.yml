@@ -1,4 +1,4 @@
-name: Glitch Sync
+name: Sync App + Docs
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  sync:
+  glitch:
     runs-on: ubuntu-latest
     steps:
     - name: Sync to Glitch Project
@@ -14,3 +14,23 @@ jobs:
       with:
         project-id: '${{ secrets.projectId }}'
         auth-token: '${{ secrets.authToken }}'
+
+  api-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: 'package.json'
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Build OpenAPI document
+        run: npm run build:openapi
+
+      - name: Sync via rdme
+        uses: readmeio/rdme@v8
+        with:
+          rdme: openapi --key ${{ secrets.README_SPEC_ID }} --id ${{ secrets.README_API_KEY }}

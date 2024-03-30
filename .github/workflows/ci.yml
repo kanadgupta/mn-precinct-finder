@@ -15,6 +15,3 @@ jobs:
 
       - name: Install deps
         run: npm cit
-
-      - name: Sync OpenAPI file to ReadMe
-        run: npm run docs
