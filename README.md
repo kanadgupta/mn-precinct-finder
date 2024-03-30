@@ -1,6 +1,6 @@
 # MN Precinct Finder
 
-> (temporarily titled MPLS 2021 Poll Finder)
+> (temporarily titled MPLS Poll Finder)
 
 This project includes a Node.js server script and a web page that connects to it, along with several helper functions to retrieve the necessary precinct data. The server returns info to the page that allows it to update the display with the precinct information. 🗳️
 

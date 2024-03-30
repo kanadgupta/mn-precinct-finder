@@ -1,6 +1,6 @@
 {
   "glitch-help-instructions": "For a custom domain, change the 'url' parameter from 'glitch-default' to your domain _without_ a traling slash, like 'https://www.example.com'",
-  "title": "MPLS 2021 Poll Finder",
+  "title": "MPLS Poll Finder",
   "description": "An open-source, API-backed poll finder that (mostly) doesn't suck ❤️",
   "image": "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/285/ballot-box-with-ballot_1f5f3-fe0f.png",
   "url": "https://mpls.vote"

@@ -47,7 +47,7 @@ fastify.register(require('fastify-swagger'), {
   openapi: {
     info: {
       title: 'MPLS Poll Finder API',
-      description: 'An API for retrieving MN Precinct Data and Minneapolis 2021 Polling Places.',
+      description: 'An API for retrieving MN Precinct Data and Minneapolis Polling Places.',
       version: '1.0.0',
     },
     servers: [
