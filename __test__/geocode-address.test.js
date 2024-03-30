@@ -1,6 +1,7 @@
-const { forwardGeocode, reverseGeocode } = require('../lib/geocode-address');
 const nock = require('nock');
+
 const { GeocodingError } = require('../lib/errors');
+const { forwardGeocode, reverseGeocode } = require('../lib/geocode-address');
 
 describe('#forwardGeocode', () => {
   it('should return valid data for valid query', async () => {
@@ -52,7 +53,7 @@ describe('#forwardGeocode', () => {
     });
 
     await expect(forwardGeocode('zero results address')).rejects.toStrictEqual(
-      new GeocodingError([], 'zero results address')
+      new GeocodingError([], 'zero results address'),
     );
   });
 
@@ -63,7 +64,7 @@ describe('#forwardGeocode', () => {
     });
 
     await expect(forwardGeocode('unknown error address')).rejects.toStrictEqual(
-      new Error('Request failed with status code 400')
+      new Error('Request failed with status code 400'),
     );
   });
 
@@ -86,7 +87,7 @@ describe('#forwardGeocode', () => {
       });
 
     await expect(forwardGeocode('non-rooftop address')).rejects.toStrictEqual(
-      new GeocodingError([], 'non-rooftop address')
+      new GeocodingError([], 'non-rooftop address'),
     );
   });
 

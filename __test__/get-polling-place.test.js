@@ -1,6 +1,6 @@
-const getPollingPlace = require('../lib/get-polling-place');
-const pollingPlacesData = require('../lib/data/mpls-2021-polling-places.json');
 const precinctData = require('../lib/data/mn-precincts.json');
+const pollingPlacesData = require('../lib/data/mpls-2021-polling-places.json');
+const getPollingPlace = require('../lib/get-polling-place');
 
 describe('#getPollingPlace', () => {
   it('should retrieve polling place data for valid precinct name', () => {
@@ -36,8 +36,8 @@ describe('polling place data', () => {
       precinctData.features.some(
         feature =>
           feature.properties.Precinct === key ||
-          feature.properties.Precinct.replace(/W-0/g, 'W-').replace(/P-0/g, 'P-') === key
-      )
+          feature.properties.Precinct.replace(/W-0/g, 'W-').replace(/P-0/g, 'P-') === key,
+      ),
     ).toBe(true);
   });
 

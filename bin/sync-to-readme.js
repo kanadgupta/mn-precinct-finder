@@ -1,5 +1,6 @@
-const app = require('../server');
 const axios = require('axios').default;
+
+const app = require('../server');
 
 async function run() {
   await app.ready();

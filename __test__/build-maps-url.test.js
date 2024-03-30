@@ -3,7 +3,7 @@ const buildMapsUrl = require('../lib/build-maps-url');
 describe('#buildMapsUrl', () => {
   it('should return URL with place ID if it is passed', () => {
     expect(buildMapsUrl('123 Main St', 'test_id')).toBe(
-      'https://www.google.com/maps/search/?api=1&query=123+Main+St&query_place_id=test_id'
+      'https://www.google.com/maps/search/?api=1&query=123+Main+St&query_place_id=test_id',
     );
   });
 

@@ -4,14 +4,6 @@
  */
 
 const path = require('path');
-const MessagingResponse = require('twilio').twiml.MessagingResponse;
-
-const buildMapsUrl = require('./lib/build-maps-url');
-const findPrecinct = require('./lib/find-precinct');
-const { forwardGeocode, reverseGeocode } = require('./lib/geocode-address');
-const getPollingPlace = require('./lib/get-polling-place');
-
-const env = process.env.NODE_ENV;
 
 // Require the fastify framework and instantiate it
 const fastify = require('fastify')({
@@ -19,6 +11,16 @@ const fastify = require('fastify')({
   // Set this to true for detailed logging:
   logger: false,
 });
+const MessagingResponse = require('twilio').twiml.MessagingResponse;
+
+const buildMapsUrl = require('./lib/build-maps-url');
+const findPrecinct = require('./lib/find-precinct');
+const { forwardGeocode, reverseGeocode } = require('./lib/geocode-address');
+// ??? no idea why ESLint is flagging this
+// eslint-disable-next-line import/order
+const getPollingPlace = require('./lib/get-polling-place');
+
+const env = process.env.NODE_ENV;
 
 // Add support for application/x-www-form-urlencoded
 // Needed for Twilio payloads
