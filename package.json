@@ -39,6 +39,7 @@
     "express"
   ],
   "devDependencies": {
+    "@flydotio/dockerfile": "^0.5.4",
     "@readme/eslint-config": "^13.5.1",
     "eslint": "^8.57.0",
     "jest": "^27.2.4",
