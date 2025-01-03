@@ -1,3 +1,5 @@
+import { describe, it, expect } from 'vitest';
+
 const nock = require('nock');
 
 const { GeocodingError } = require('../lib/errors');

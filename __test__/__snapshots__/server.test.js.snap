@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`fastify server tests GET / should return 200 with standard template 1`] = `
+exports[`fastify server tests > GET / > should return 200 with standard template 1`] = `
 "<!DOCTYPE html>
 <html lang='en'>
   <head>
@@ -114,9 +114,9 @@ exports[`fastify server tests GET / should return 200 with standard template 1`]
             this data into their spreadsheets. You can grab the XPath selectors of certain fields on the page and then
             use formulas like these to import the data:</p>
           <ul>
-            <li><code>=IMPORTXML(\\"https://mpls.vote?address=\\"&ENCODEURL(\\"100 Main St\\"),\\"//*[@id='Precinct']\\")</code></li>
-            <li><code>=IMPORTXML(\\"https://mpls.vote?address=\\"&ENCODEURL(\\"100 Main St\\"),\\"//*[@id='address']\\")</code></li>
-            <li><code>=IMPORTXML(\\"https://mpls.vote?address=\\"&ENCODEURL(\\"100 Main St\\"),\\"//*[@id='mplsPollingPlace21']\\")</code></li>
+            <li><code>=IMPORTXML("https://mpls.vote?address="&ENCODEURL("100 Main St"),"//*[@id='Precinct']")</code></li>
+            <li><code>=IMPORTXML("https://mpls.vote?address="&ENCODEURL("100 Main St"),"//*[@id='address']")</code></li>
+            <li><code>=IMPORTXML("https://mpls.vote?address="&ENCODEURL("100 Main St"),"//*[@id='mplsPollingPlace21']")</code></li>
           </ul>
           <p>We also have API reference docs available —
             <a href='https://dev.mpls.vote' rel='noopener' target='_blank'>check 'em out here</a>! (Disclaimer: the docs
@@ -164,7 +164,7 @@ exports[`fastify server tests GET / should return 200 with standard template 1`]
 "
 `;
 
-exports[`fastify server tests GET /?example=go should return 200 with standard template 1`] = `
+exports[`fastify server tests > GET /?example=go > should return 200 with standard template 1`] = `
 "<!DOCTYPE html>
 <html lang='en'>
   <head>
@@ -302,9 +302,9 @@ exports[`fastify server tests GET /?example=go should return 200 with standard t
             this data into their spreadsheets. You can grab the XPath selectors of certain fields on the page and then
             use formulas like these to import the data:</p>
           <ul>
-            <li><code>=IMPORTXML(\\"https://mpls.vote?address=\\"&ENCODEURL(\\"100 Main St\\"),\\"//*[@id='Precinct']\\")</code></li>
-            <li><code>=IMPORTXML(\\"https://mpls.vote?address=\\"&ENCODEURL(\\"100 Main St\\"),\\"//*[@id='address']\\")</code></li>
-            <li><code>=IMPORTXML(\\"https://mpls.vote?address=\\"&ENCODEURL(\\"100 Main St\\"),\\"//*[@id='mplsPollingPlace21']\\")</code></li>
+            <li><code>=IMPORTXML("https://mpls.vote?address="&ENCODEURL("100 Main St"),"//*[@id='Precinct']")</code></li>
+            <li><code>=IMPORTXML("https://mpls.vote?address="&ENCODEURL("100 Main St"),"//*[@id='address']")</code></li>
+            <li><code>=IMPORTXML("https://mpls.vote?address="&ENCODEURL("100 Main St"),"//*[@id='mplsPollingPlace21']")</code></li>
           </ul>
           <p>We also have API reference docs available —
             <a href='https://dev.mpls.vote' rel='noopener' target='_blank'>check 'em out here</a>! (Disclaimer: the docs

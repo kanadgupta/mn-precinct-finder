@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "pretest": "npm run lint",
     "start": "node server.js",
-    "test": "jest --coverage"
+    "test": "vitest run"
   },
   "dependencies": {
     "@googlemaps/google-maps-services-js": "^3.2.5",
@@ -42,9 +42,9 @@
     "@flydotio/dockerfile": "^0.5.4",
     "@readme/eslint-config": "^13.5.1",
     "eslint": "^8.57.0",
-    "jest": "^27.2.4",
     "nock": "^13.1.4",
     "nodemon": "^2.0.13",
-    "prettier": "^3.2.5"
+    "prettier": "^3.2.5",
+    "vitest": "^2.1.8"
   }
 }

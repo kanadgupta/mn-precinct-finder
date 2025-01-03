@@ -1,3 +1,5 @@
+import { describe, it, expect } from 'vitest';
+
 const buildMapsUrl = require('../lib/build-maps-url');
 
 describe('#buildMapsUrl', () => {

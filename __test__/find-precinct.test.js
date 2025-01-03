@@ -1,3 +1,5 @@
+import { describe, it, expect } from 'vitest';
+
 const findPrecinct = require('../lib/find-precinct');
 
 describe('#findPrecinct', () => {

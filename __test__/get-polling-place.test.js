@@ -1,3 +1,5 @@
+import { describe, it, expect } from 'vitest';
+
 const precinctData = require('../lib/data/mn-precincts.json');
 const pollingPlacesData = require('../lib/data/mpls-2021-polling-places.json');
 const getPollingPlace = require('../lib/get-polling-place');

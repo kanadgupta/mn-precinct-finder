@@ -1,3 +1,5 @@
+import { describe, it, expect } from 'vitest';
+
 const app = require('../server');
 
 describe('fastify server tests', () => {
