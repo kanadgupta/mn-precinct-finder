@@ -65,8 +65,8 @@ describe('#forwardGeocode', () => {
       status: 'UNKNOWN_ERROR',
     });
 
-    await expect(forwardGeocode('unknown error address')).rejects.toStrictEqual(
-      new Error('Request failed with status code 400'),
+    await expect(forwardGeocode('unknown error address')).rejects.toMatchInlineSnapshot(
+      '[AxiosError: Request failed with status code 400]',
     );
   });
 
