@@ -4,7 +4,7 @@ const getPollingPlace = require('../lib/get-polling-place');
 
 describe('#getPollingPlace', () => {
   it('should retrieve polling place data for valid precinct name', () => {
-    expect(getPollingPlace('Minneapolis W-1 P-3')).toStrictEqual({
+    expect(getPollingPlace('Minneapolis W-01 P-03')).toStrictEqual({
       address: '2955 Hayes St NE',
       building: 'Northeast Middle School',
       directions: 'enter via side/rear off 29th Ave NE',
