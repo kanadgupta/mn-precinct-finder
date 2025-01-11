@@ -11,7 +11,6 @@ const fastify = require('fastify')({
   // Set this to true for detailed logging:
   logger: false,
 });
-const MessagingResponse = require('twilio').twiml.MessagingResponse;
 
 const buildMapsUrl = require('./lib/build-maps-url');
 const findPrecinct = require('./lib/find-precinct');
@@ -241,24 +240,6 @@ fastify.get('/', opts, async function (request, reply) {
     default:
       return reply.view('/src/pages/index.hbs', { ...params, seo });
   }
-});
-
-/**
- * Function for responding to Twilio SMS payloads
- */
-fastify.post('/twilio', { schema: { hide: true } }, async function (request, reply) {
-  if (!request.body.Body) return reply.code(400);
-
-  const twiml = new MessagingResponse();
-
-  try {
-    const params = await forwardGeocode(request.body.Body);
-    twiml.message(`Address: ${params.address}\n\nPrecinct: ${params.precinct.Precinct}\n\nPolling Place: TBD`);
-  } catch (e) {
-    twiml.message(e.message);
-  }
-
-  return reply.type('text/xml').send(twiml.toString());
 });
 
 if (!['ci', 'test'].includes(env)) {

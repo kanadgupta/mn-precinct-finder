@@ -22,8 +22,7 @@
     "fastify-static": "^4.2.3",
     "fastify-swagger": "^4.12.6",
     "handlebars": "^4.7.7",
-    "point-of-view": "^4.15.2",
-    "twilio": "^3.69.0"
+    "point-of-view": "^4.15.2"
   },
   "engines": {
     "node": "^20"
