@@ -6,14 +6,17 @@ on:
       - main
 
 jobs:
-  glitch:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Sync to Glitch Project
-        uses: kanadgupta/glitch-sync@main
-        with:
-          project-id: '${{ secrets.projectId }}'
-          auth-token: '${{ secrets.authToken }}'
+  ## Deploys to https://glitch.com/edit/#!/mpls-poll-finder
+  ## Disabling for now since Glitch doesn't support LTS versions of node
+  ## Further reading: https://help.glitch.com/hc/en-us/articles/16287495688845-What-version-of-Node-can-I-use-and-how-do-I-change-update-upgrade-it
+  # glitch:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Sync to Glitch Project
+  #       uses: kanadgupta/glitch-sync@main
+  #       with:
+  #         project-id: '${{ secrets.projectId }}'
+  #         auth-token: '${{ secrets.authToken }}'
 
   api-docs:
     runs-on: ubuntu-latest
