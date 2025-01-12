@@ -1,6 +1,6 @@
-const fs = require('fs');
+import fs from 'fs';
 
-const app = require('../src/server');
+import app from '../src/server';
 
 const outfile = 'openapi.json';
 

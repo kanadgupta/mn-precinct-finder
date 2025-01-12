@@ -1,5 +1,5 @@
-const buildMapsUrl = require('./build-maps-url');
-const data = require('./data/mpls-2021-polling-places.json');
+import buildMapsUrl from './build-maps-url.js';
+import data from './data/mpls-2021-polling-places.json' with { type: 'json' };
 
 /**
  * Retrieves polling place.
@@ -7,7 +7,7 @@ const data = require('./data/mpls-2021-polling-places.json');
  * @returns {Object} an object containing the polling place object
  * @link Place ID lookup site: https://developers.google.com/maps/documentation/places/web-service/place-id
  */
-module.exports = function getPollingPlace(precinct) {
+export default function getPollingPlace(precinct) {
   const alternativePrecinctSpelling = precinct.replace(/W-0/g, 'W-').replace(/P-0/g, 'P-');
   let pollingPlace = data[precinct] || data[alternativePrecinctSpelling] || {};
   if (Object.keys(pollingPlace).length) {
@@ -19,4 +19,4 @@ module.exports = function getPollingPlace(precinct) {
     pollingPlace = { address, building, directions, gmapsUrl };
   }
   return pollingPlace;
-};
+}

@@ -1,6 +1,21 @@
-const shortenAddress = require('./shorten-address');
+import shortenAddress from './shorten-address.js';
 
-module.exports.GeocodingError = class extends Error {
+const GeocodingError = class extends Error {
+  public addresses: { href: string; text: string }[];
+
+  public query: string;
+
+  public status: number;
+
+  public suggestion: string;
+
+  public toJSON: () => {
+    error: string;
+    message: string;
+    query: string;
+    suggestions: string[];
+  };
+
   constructor(results, query) {
     let message;
     let suggestion = '';
@@ -34,7 +49,7 @@ module.exports.GeocodingError = class extends Error {
   }
 };
 
-module.exports.GeocodingError.prototype.toJSON = function () {
+GeocodingError.prototype.toJSON = function toJSON() {
   return {
     error: this.name,
     message: this.message,
@@ -42,3 +57,5 @@ module.exports.GeocodingError.prototype.toJSON = function () {
     suggestions: this.addresses.map(address => address.text),
   };
 };
+
+export default GeocodingError;

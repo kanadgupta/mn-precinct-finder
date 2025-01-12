@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 
-const findPrecinct = require('../src/lib/find-precinct');
+import findPrecinct from '../src/lib/find-precinct';
 
 describe('#findPrecinct', () => {
   it('should return precinct data if passed as array', () => {

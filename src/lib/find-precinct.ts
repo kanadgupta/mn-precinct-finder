@@ -1,8 +1,10 @@
-const { booleanWithin } = require('@turf/boolean-within');
-const { point } = require('@turf/helpers');
+import type { FeatureCollection, Point } from 'geojson';
 
-const geojson = require('./data/mn-precincts.json');
-const precinctData = require('./data/precinct-table-processed.json');
+import { booleanWithin } from '@turf/boolean-within';
+import { point } from '@turf/helpers';
+
+import geojson from './data/mn-precincts.json' with { type: 'json' };
+import precinctData from './data/precinct-table-processed.json' with { type: 'json' };
 
 /**
  * Takes in a geographic coordinate and returns all the metadata
@@ -12,12 +14,13 @@ const precinctData = require('./data/precinct-table-processed.json');
  * @example findPrecinct([-93.265, 44.9778]);
  * @example findPrecinct({ type: 'Point', coordinates: [-93.265, 44.9778] });
  */
-module.exports = function findPrecinct(coordinates) {
+export default function findPrecinct(coordinates: Point | [number, number]): Record<string, string> {
   const processedPoint = Array.isArray(coordinates) ? point(coordinates) : coordinates;
 
-  const precinctMatches = geojson.features.filter(feat => {
+  const precinctMatches = (geojson as FeatureCollection).features.filter(feat => {
     try {
       return booleanWithin(processedPoint, feat);
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (e) {
       return false;
     }
@@ -41,4 +44,4 @@ module.exports = function findPrecinct(coordinates) {
   everything.Ward = additionalProperties.Ward;
 
   return everything;
-};
+}

@@ -1,15 +1,14 @@
-require('dotenv').config();
-const { Client } = require('@googlemaps/google-maps-services-js');
+import { Client, ReverseGeocodingLocationType } from '@googlemaps/google-maps-services-js';
 
-const buildMapsUrl = require('./build-maps-url');
-const { GeocodingError } = require('./errors');
-const findPrecinct = require('./find-precinct');
-const shortenAddress = require('./shorten-address');
+import buildMapsUrl from './build-maps-url.js';
+import GeocodingError from './errors.js';
+import findPrecinct from './find-precinct.js';
+import shortenAddress from './shorten-address.js';
 
 const googlemaps = new Client({});
 const key = process.env.GOOGLE_MAPS_API_KEY;
 
-module.exports.forwardGeocode = function forward(address) {
+export function forwardGeocode(address) {
   return googlemaps
     .geocode({
       params: {
@@ -36,6 +35,7 @@ module.exports.forwardGeocode = function forward(address) {
       let precinct;
       try {
         precinct = findPrecinct([location.lng, location.lat]);
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
       } catch (err) {
         throw new GeocodingError([], address);
       }
@@ -43,15 +43,15 @@ module.exports.forwardGeocode = function forward(address) {
 
       return { address: shortenAddress(formattedAddress), gmaps, precinct };
     });
-};
+}
 
-module.exports.reverseGeocode = function reverse(long, lat) {
+export function reverseGeocode(long, lat) {
   return googlemaps
     .reverseGeocode({
       params: {
         key,
         latlng: `${lat}, ${long}`,
-        location_type: 'ROOFTOP',
+        location_type: [ReverseGeocodingLocationType.ROOFTOP],
       },
     })
     .then(({ data }) => {
@@ -62,4 +62,4 @@ module.exports.reverseGeocode = function reverse(long, lat) {
 
       return { address: shortenAddress(formattedAddress), gmaps };
     });
-};
+}

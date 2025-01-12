@@ -1,9 +1,8 @@
+import nock from 'nock';
 import { describe, it, expect } from 'vitest';
 
-const nock = require('nock');
-
-const { GeocodingError } = require('../src/lib/errors');
-const { forwardGeocode, reverseGeocode } = require('../src/lib/geocode-address');
+import GeocodingError from '../src/lib/errors';
+import { forwardGeocode, reverseGeocode } from '../src/lib/geocode-address';
 
 describe('#forwardGeocode', () => {
   it('should return valid data for valid query', async () => {
