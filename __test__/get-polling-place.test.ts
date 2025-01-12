@@ -26,7 +26,7 @@ describe('#getPollingPlace', () => {
   });
 
   it('should return fallback for invalid precinct name', () => {
-    expect(getPollingPlace('Minneapolis W-1000')).toStrictEqual({});
+    expect(getPollingPlace('Minneapolis W-1000')).toBeNull();
   });
 });
 

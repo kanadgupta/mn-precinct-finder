@@ -17,7 +17,7 @@ export type PollingPlace = {
 export default function getPollingPlace(precinct: string): PollingPlace {
   const alternativePrecinctSpelling = precinct.replace(/W-0/g, 'W-').replace(/P-0/g, 'P-') as keyof typeof data;
   const pollingPlace = data[precinct as keyof typeof data] || data[alternativePrecinctSpelling];
-  if (Object.keys(pollingPlace).length) {
+  if (pollingPlace && Object.keys(pollingPlace).length) {
     const { address, building, directions, gmapsPlaceId } = pollingPlace;
     const gmapsUrl = buildMapsUrl(`${building} ${address}`, gmapsPlaceId);
     // The reason we recreate the object is because deleting properties

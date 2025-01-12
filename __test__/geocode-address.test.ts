@@ -44,6 +44,7 @@ describe('#forwardGeocode', () => {
         SoilAndWater: 'no data',
         Ward: 'W-07',
       },
+      type: 'success',
     });
   });
 
