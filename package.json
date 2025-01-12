@@ -7,7 +7,7 @@
     "build:openapi": "node bin/build-openapi.js",
     "deno": "deno run -q -A --unstable lib/postprocess.js lib/data/precinct-table.xlsx",
     "dev": "nodemon server.js -e css,hbs,js,json",
-    "lint": "eslint .",
+    "lint": "eslint . && prettier -c .",
     "pretest": "npm run lint",
     "start": "node server.js",
     "test": "vitest run"

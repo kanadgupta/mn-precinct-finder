@@ -9,11 +9,11 @@ jobs:
   glitch:
     runs-on: ubuntu-latest
     steps:
-    - name: Sync to Glitch Project
-      uses: kanadgupta/glitch-sync@main
-      with:
-        project-id: '${{ secrets.projectId }}'
-        auth-token: '${{ secrets.authToken }}'
+      - name: Sync to Glitch Project
+        uses: kanadgupta/glitch-sync@main
+        with:
+          project-id: '${{ secrets.projectId }}'
+          auth-token: '${{ secrets.authToken }}'
 
   api-docs:
     runs-on: ubuntu-latest
