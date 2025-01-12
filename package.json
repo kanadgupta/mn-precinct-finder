@@ -5,11 +5,11 @@
   "main": "server.js",
   "scripts": {
     "build:openapi": "node bin/build-openapi.js",
-    "deno": "deno run -q -A --unstable lib/postprocess.js lib/data/precinct-table.xlsx",
-    "dev": "nodemon server.js -e css,hbs,js,json",
+    "deno": "deno run -q -A --unstable bin/postprocess.mjs src/lib/data/precinct-table.xlsx",
+    "dev": "nodemon src/server.js -e css,hbs,js,json",
     "lint": "eslint . && prettier -c .",
     "pretest": "npm run lint",
-    "start": "node server.js",
+    "start": "node src/server.js",
     "test": "vitest run"
   },
   "dependencies": {

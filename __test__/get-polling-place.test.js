@@ -1,8 +1,8 @@
 import { describe, it, expect } from 'vitest';
 
-const precinctData = require('../lib/data/mn-precincts.json');
-const pollingPlacesData = require('../lib/data/mpls-2021-polling-places.json');
-const getPollingPlace = require('../lib/get-polling-place');
+const precinctData = require('../src/lib/data/mn-precincts.json');
+const pollingPlacesData = require('../src/lib/data/mpls-2021-polling-places.json');
+const getPollingPlace = require('../src/lib/get-polling-place');
 
 describe('#getPollingPlace', () => {
   it('should retrieve polling place data for valid precinct name', () => {
