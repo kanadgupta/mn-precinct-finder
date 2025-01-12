@@ -2,13 +2,15 @@ import { Client, ReverseGeocodingLocationType } from '@googlemaps/google-maps-se
 
 import buildMapsUrl from './build-maps-url.js';
 import GeocodingError from './errors.js';
-import findPrecinct from './find-precinct.js';
+import findPrecinct, { type ExtendedPrecinctProps } from './find-precinct.js';
 import shortenAddress from './shorten-address.js';
 
 const googlemaps = new Client({});
-const key = process.env.GOOGLE_MAPS_API_KEY;
+const key = process.env.GOOGLE_MAPS_API_KEY as string;
 
-export function forwardGeocode(address) {
+export function forwardGeocode(
+  address: string,
+): Promise<{ address: string; gmaps: string; precinct: ExtendedPrecinctProps; type: 'success' }> {
   return googlemaps
     .geocode({
       params: {
@@ -41,11 +43,11 @@ export function forwardGeocode(address) {
       }
       const gmaps = buildMapsUrl(formattedAddress, placeId);
 
-      return { address: shortenAddress(formattedAddress), gmaps, precinct };
+      return { address: shortenAddress(formattedAddress), gmaps, precinct, type: 'success' };
     });
 }
 
-export function reverseGeocode(long, lat) {
+export function reverseGeocode(long: string, lat: string) {
   return googlemaps
     .reverseGeocode({
       params: {

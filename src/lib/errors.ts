@@ -1,3 +1,5 @@
+import type { GeocodeResult } from '@googlemaps/google-maps-services-js';
+
 import shortenAddress from './shorten-address.js';
 
 const GeocodingError = class extends Error {
@@ -9,14 +11,14 @@ const GeocodingError = class extends Error {
 
   public suggestion: string;
 
-  public toJSON: () => {
+  public toJSON!: () => {
     error: string;
     message: string;
     query: string;
     suggestions: string[];
   };
 
-  constructor(results, query) {
+  constructor(results: GeocodeResult[], query: string) {
     let message;
     let suggestion = '';
     let status = 404;
