@@ -1,13 +1,14 @@
 name: flat
 
 on:
-  push:
-    branches:
-      - main
+  ## temporarily disabled due to rate limiting
+  # push:
+  #   branches:
+  #     - main
+  # schedule:
+  #   # Every sixth hour
+  #   - cron: '0 */6 * * *'
   workflow_dispatch:
-  schedule:
-    # Every sixth hour
-    - cron: '0 */6 * * *'
 
 jobs:
   scheduled:
