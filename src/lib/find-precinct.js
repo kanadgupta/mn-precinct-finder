@@ -1,4 +1,5 @@
-const { default: contains } = require('@turf/boolean-point-in-polygon');
+const { booleanWithin } = require('@turf/boolean-within');
+const { point } = require('@turf/helpers');
 
 const geojson = require('./data/mn-precincts.json');
 const precinctData = require('./data/precinct-table-processed.json');
@@ -12,7 +13,15 @@ const precinctData = require('./data/precinct-table-processed.json');
  * @example findPrecinct({ type: 'Point', coordinates: [-93.265, 44.9778] });
  */
 module.exports = function findPrecinct(coordinates) {
-  const precinctMatches = geojson.features.filter(feature => contains(coordinates, feature));
+  const processedPoint = Array.isArray(coordinates) ? point(coordinates) : coordinates;
+
+  const precinctMatches = geojson.features.filter(feat => {
+    try {
+      return booleanWithin(processedPoint, feat);
+    } catch (e) {
+      return false;
+    }
+  });
 
   if (precinctMatches.length !== 1) throw new Error('Unable to find a precinct match');
 

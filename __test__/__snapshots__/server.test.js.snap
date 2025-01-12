@@ -211,7 +211,7 @@ exports[`fastify server tests > GET /?example=go > should return 200 with standa
               Before you vote, it might be helpful to know your electoral districts:
             </p>
           <ul class='precinct-info'>
-            <li><b>Precinct:</b> <span id='Precinct'>Minneapolis W-01 P-04</span></li>
+            <li><b>Precinct:</b> <span id='Precinct'>Minneapolis W-1 P-4</span></li>
             <li><b>Park Board District:</b> <span id='Park'>1</span></li>
             <li class='extra hidden'><b>U.S. Congressional District:</b>
               <span id='CongDist'>5</span></li>

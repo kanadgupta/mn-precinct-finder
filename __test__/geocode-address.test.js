@@ -28,7 +28,7 @@ describe('#forwardGeocode', () => {
       address: 'some formatted address',
       gmaps: 'https://www.google.com/maps/search/?api=1&query=some+formatted+address&query_place_id=test',
       precinct: {
-        Precinct: 'Minneapolis W-07 P-11',
+        Precinct: 'Minneapolis W-7 P-11',
         PrecinctID: '270531705',
         County: 'Hennepin',
         CountyID: '27',

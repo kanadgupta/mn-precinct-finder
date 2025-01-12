@@ -1,335 +1,335 @@
 {
-  "Minneapolis W-01 P-01": {
+  "Minneapolis W-1 P-1": {
     "address": "2919 Randolph St NE",
     "building": "River Village",
     "directions": "",
     "gmapsPlaceId": "ChIJfd_BgAYys1IRyvajgENcTOI"
   },
-  "Minneapolis W-01 P-02": {
+  "Minneapolis W-1 P-2": {
     "address": "1810 34th Ave NE",
     "building": "Waite Park Recreation Center",
     "directions": "",
     "gmapsPlaceId": "ChIJYfrqengus1IRP7NzIhkZJiI"
   },
-  "Minneapolis W-01 P-03": {
+  "Minneapolis W-1 P-3": {
     "address": "2955 Hayes St NE",
     "building": "Northeast Middle School",
     "directions": "enter via side/rear off 29th Ave NE",
     "gmapsPlaceId": "ChIJf6uXUNAts1IRx9gO5VPsm0M"
   },
-  "Minneapolis W-01 P-04": {
+  "Minneapolis W-1 P-4": {
     "address": "1320 29th Ave NE",
     "building": "Audubon Park Recreation Center",
     "directions": "",
     "gmapsPlaceId": "ChIJMzNMT9sts1IRYwD7TCQu1p4"
   },
-  "Minneapolis W-01 P-05": {
+  "Minneapolis W-1 P-5": {
     "address": "2251 Hayes St NE",
     "building": "Windom Park NE Recreation Center",
     "directions": "",
     "gmapsPlaceId": "ChIJwaOvDsgts1IRu_6qh27eMfM"
   },
-  "Minneapolis W-01 P-06": {
+  "Minneapolis W-1 P-6": {
     "address": "1815 Central Ave NE",
     "building": "Parker Skyview Highrise",
     "directions": "",
     "gmapsPlaceId": "ChIJ_Y-YT5Qts1IRnVm6ffAMPJM"
   },
-  "Minneapolis W-01 P-07": {
+  "Minneapolis W-1 P-7": {
     "address": "901 15th Ave SE",
     "building": "Van Cleve Park Recreation Center (Gym)",
     "directions": "",
     "gmapsPlaceId": "ChIJmWBajQUts1IREC7dPGfhI_o"
   },
-  "Minneapolis W-01 P-08": {
+  "Minneapolis W-1 P-8": {
     "address": "1717 Washington St NE",
     "building": "Holland Highrise",
     "directions": "",
     "gmapsPlaceId": "ChIJU6VEMowts1IR5g7gZe1kx1w"
   },
-  "Minneapolis W-01 P-09": {
+  "Minneapolis W-1 P-9": {
     "address": "2030 Monroe St NE",
     "building": "Edison High School (Gym lobby)",
     "directions": "",
     "gmapsPlaceId": "ChIJx58zzJIts1IRDTGIN8Fm7tk"
   },
-  "Minneapolis W-01 P-10": {
+  "Minneapolis W-1 P-10": {
     "address": "3300 Central Ave NE",
     "building": "Columbia Manor / Golf Club",
     "directions": "",
     "gmapsPlaceId": "ChIJ5czD0Akus1IRQYXa0oN7QyU"
   },
-  "Minneapolis W-02 P-01": {
+  "Minneapolis W-2 P-1": {
     "address": "2730 31st St E",
     "building": "Holy Trinity Lutheran Church",
     "directions": "",
     "gmapsPlaceId": "ChIJR0LSiiQo9ocRbM_cXMtHQAg"
   },
-  "Minneapolis W-02 P-02": {
+  "Minneapolis W-2 P-2": {
     "address": "3100 28th St E",
     "building": "Sullivan Community School",
     "directions": "",
     "gmapsPlaceId": "ChIJVVVVWigo9ocR9NvR-UkAa_s"
   },
-  "Minneapolis W-02 P-03": {
+  "Minneapolis W-2 P-3": {
     "address": "901 15th Ave SE",
     "building": "Van Cleve Park Recreation Center (Multipurpose)",
     "directions": "",
     "gmapsPlaceId": "ChIJmWBajQUts1IREC7dPGfhI_o"
   },
-  "Minneapolis W-02 P-04": {
+  "Minneapolis W-2 P-4": {
     "address": "84 Church St SE",
     "building": "Northrop Auditorium",
     "directions": "",
     "gmapsPlaceId": "ChIJSY1V3RYts1IRANpL0_Se-rI"
   },
-  "Minneapolis W-02 P-05": {
+  "Minneapolis W-2 P-5": {
     "address": "66 Malcolm Ave SE",
     "building": "Pratt Community School",
     "directions": "",
     "gmapsPlaceId": "ChIJQY2T-Nsss1IRt43201vXC4I"
   },
-  "Minneapolis W-02 P-06": {
+  "Minneapolis W-2 P-6": {
     "address": "1500 Franklin Ave SE",
     "building": "St. Frances Cabrini Church",
     "directions": "",
     "gmapsPlaceId": "ChIJDYv6Itgss1IR43K0DnEsDYg"
   },
-  "Minneapolis W-02 P-07": {
+  "Minneapolis W-2 P-7": {
     "address": "720 22nd Ave S",
     "building": "Augsburg University Christensen Center",
     "directions": "",
     "gmapsPlaceId": "ChIJCYZ9qEcts1IRk7qL_G4HAZo"
   },
-  "Minneapolis W-02 P-08": {
+  "Minneapolis W-2 P-8": {
     "address": "2728 39th Ave S",
     "building": "Brackett Recreation Center",
     "directions": "",
     "gmapsPlaceId": "ChIJ65fOIdUp9ocRISghCRvuSwM"
   },
-  "Minneapolis W-02 P-09": {
+  "Minneapolis W-2 P-9": {
     "address": "2313 28th Ave S",
     "building": "Matthews Park Recreation Center",
     "directions": "",
     "gmapsPlaceId": "ChIJCUFgkDEts1IRYmmofOXe8Yw"
   },
-  "Minneapolis W-03 P-01": {
+  "Minneapolis W-3 P-1": {
     "address": "601 13th Ave SE",
     "building": "University Lutheran Church of Hope",
     "directions": "",
     "gmapsPlaceId": "ChIJZ4A7bA4ts1IR2vujZrScK34"
   },
-  "Minneapolis W-03 P-02": {
+  "Minneapolis W-3 P-2": {
     "address": "500 8th Ave SE",
     "building": "First Congregational Church of MN",
     "directions": "",
     "gmapsPlaceId": "ChIJ9eVDI3Mts1IRyY6cKTKs5Y8"
   },
-  "Minneapolis W-03 P-03": {
+  "Minneapolis W-3 P-3": {
     "address": "415 4th Ave SE",
     "building": "Marcy Open School",
     "directions": "",
     "gmapsPlaceId": "ChIJNfb903Ats1IRcWNd-VU7Fg0"
   },
-  "Minneapolis W-03 P-04": {
+  "Minneapolis W-3 P-4": {
     "address": "828 Spring St NE",
     "building": "Spring Manor Highrise",
     "directions": "",
     "gmapsPlaceId": "ChIJtT7NZ5wts1IRa7KI8m3H2Vo"
   },
-  "Minneapolis W-03 P-05": {
+  "Minneapolis W-3 P-5": {
     "address": "425 5th St NE",
     "building": "Webster Elementary School",
     "directions": "",
     "gmapsPlaceId": "ChIJM_teo4Mts1IRmJ6YTyVhlTk"
   },
-  "Minneapolis W-03 P-06": {
+  "Minneapolis W-3 P-6": {
     "address": "1700 2nd St NE",
     "building": "East Side Neighborhood Services",
     "directions": "",
     "gmapsPlaceId": "ChIJbSi3N3Qys1IRlGdV0PP2A44"
   },
-  "Minneapolis W-03 P-07": {
+  "Minneapolis W-3 P-7": {
     "address": "277 12th Ave N",
     "building": "Twin Cities International School",
     "directions": "",
     "gmapsPlaceId": "ChIJGSQGVfUys1IRGi_76X3a8Uw"
   },
-  "Minneapolis W-03 P-08": {
+  "Minneapolis W-3 P-8": {
     "address": "15 1st St S",
     "building": "River Towers Condominiums",
     "directions": "",
     "gmapsPlaceId": "ChIJS4b1b4Mys1IRGQ5DDWVt7_E"
   },
-  "Minneapolis W-03 P-09": {
+  "Minneapolis W-3 P-9": {
     "address": "1011 Washington Ave S",
     "building": "Open Book",
     "directions": "",
     "gmapsPlaceId": "ChIJ0-3sj0Ets1IRJyJkNI65ELA"
   },
-  "Minneapolis W-03 P-10": {
+  "Minneapolis W-3 P-10": {
     "address": "1025 Broadway St NE",
     "building": "National Guard Armory",
     "directions": "",
     "gmapsPlaceId": "ChIJf_tIXZgts1IRo0klMEHZRHo"
   },
-  "Minneapolis W-03 P-11": {
+  "Minneapolis W-3 P-11": {
     "address": "514 3rd St N",
     "building": "Neu Neu Event Center",
     "directions": " Suite 101",
     "gmapsPlaceId": "ChIJCXgYS4kys1IRKB__dG30hMk"
   },
-  "Minneapolis W-03 P-12": {
+  "Minneapolis W-3 P-12": {
     "address": "300 Nicollet Mall",
     "building": "Minneapolis Central Library",
     "directions": "",
     "gmapsPlaceId": "ChIJ64ilwZoys1IR2LAO_Ylm7Hg"
   },
-  "Minneapolis W-04 P-01": {
+  "Minneapolis W-4 P-1": {
     "address": "5001 Humboldt Ave N",
     "building": "Creekview Park Recreation Center",
     "directions": "",
     "gmapsPlaceId": "ChIJi8tJAJgxs1IRvIswKZ28POU"
   },
-  "Minneapolis W-04 P-02": {
+  "Minneapolis W-4 P-2": {
     "address": "5025 Bryant Ave N",
     "building": "Jenny Lind Elementary School",
     "directions": "park/enter on Dupont Ave N side",
     "gmapsPlaceId": "ChIJjb5OI74xs1IRc4PsdB8J_Hs"
   },
-  "Minneapolis W-04 P-03": {
+  "Minneapolis W-4 P-3": {
     "address": "3350 4th St N",
     "building": "Cityview Community School",
     "directions": "",
     "gmapsPlaceId": "ChIJ-_XhpBcys1IRQCcxBr2yLBc"
   },
-  "Minneapolis W-04 P-04": {
+  "Minneapolis W-4 P-4": {
     "address": "2600 44th Ave N",
     "building": "Loring Community School",
     "directions": "",
     "gmapsPlaceId": "ChIJgQwqEHoxs1IRIaRA815Ko-Q"
   },
-  "Minneapolis W-04 P-05": {
+  "Minneapolis W-4 P-5": {
     "address": "1615 Dowling Ave N",
     "building": "Folwell Park Recreation Center",
     "directions": "",
     "gmapsPlaceId": "ChIJzUDxyy4ys1IRrigShMn5pME"
   },
-  "Minneapolis W-04 P-06": {
+  "Minneapolis W-4 P-6": {
     "address": "1314 44th Ave N",
     "building": "Hamilton Manor Highrise",
     "directions": "",
     "gmapsPlaceId": "ChIJh6Ckw48xs1IRL4v5aUU6BoA"
   },
-  "Minneapolis W-04 P-07": {
+  "Minneapolis W-4 P-7": {
     "address": "4021 Thomas Ave N",
     "building": "Minneapolis School of New Music",
     "directions": "",
     "gmapsPlaceId": "ChIJK3w2kvkxs1IRF8dAYIJf3jw"
   },
-  "Minneapolis W-04 P-08": {
+  "Minneapolis W-4 P-8": {
     "address": "3333 Penn Ave N",
     "building": "Lucy Craft Laney School",
     "directions": "",
     "gmapsPlaceId": "ChIJw3ASCc0zs1IR4HGxVQFB_aI"
   },
-  "Minneapolis W-05 P-01": {
+  "Minneapolis W-5 P-1": {
     "address": "2001 Plymouth Ave N",
     "building": "Urban Research & Outreach Center (UROC)",
     "directions": "",
     "gmapsPlaceId": "ChIJH5JvQ6ozs1IRQM7rqzP40Ng"
   },
-  "Minneapolis W-05 P-02": {
+  "Minneapolis W-5 P-2": {
     "address": "1315 Lowry Ave N",
     "building": "North Regional Library",
     "directions": "",
     "gmapsPlaceId": "ChIJoVWlTzcys1IR31ZL5TrTl-M"
   },
-  "Minneapolis W-05 P-03": {
+  "Minneapolis W-5 P-3": {
     "address": "1801 James Ave",
     "building": "North Commons Park Recreation Center",
     "directions": "",
     "gmapsPlaceId": "ChIJB1gxkVIys1IRDfWsmqkuUcA"
   },
-  "Minneapolis W-05 P-04": {
+  "Minneapolis W-5 P-4": {
     "address": "1500 James Ave N",
     "building": "North High School (Gym)",
     "directions": "",
     "gmapsPlaceId": "ChIJyyWdflQys1IRRbZED_sExZ8"
   },
-  "Minneapolis W-05 P-05": {
+  "Minneapolis W-5 P-5": {
     "address": "1501 Aldrich Ave N",
     "building": "Franklin Middle School",
     "directions": "",
     "gmapsPlaceId": "ChIJf6WAcFkys1IR2dYtUqhJ144"
   },
-  "Minneapolis W-05 P-07": {
+  "Minneapolis W-5 P-7": {
     "address": "1301 10th  Ave N",
     "building": "Phyllis Wheatley Community Center",
     "directions": "",
     "gmapsPlaceId": "ChIJO-WZ-vgys1IRwh2o8-iS4fY"
   },
-  "Minneapolis W-05 P-08": {
+  "Minneapolis W-5 P-8": {
     "address": "621 29th Ave N",
     "building": "Farview Park Recreation Center",
     "directions": "",
     "gmapsPlaceId": "ChIJseJ-gT8ys1IRWRQ4Q4HR0_w"
   },
-  "Minneapolis W-05 P-09": {
+  "Minneapolis W-5 P-9": {
     "address": "503 Irving Ave N",
     "building": "Harrison Park Recreation Center",
     "directions": "",
     "gmapsPlaceId": "ChIJ-zfk_fwys1IREDlqV04paxA"
   },
-  "Minneapolis W-06 P-01": {
+  "Minneapolis W-6 P-1": {
     "address": "2121 Minnehaha Ave",
     "building": "Heltzer Manor Highrise",
     "directions": "",
     "gmapsPlaceId": "ChIJF9603Ugts1IRJAy8ktzJ4ec"
   },
-  "Minneapolis W-06 P-02": {
+  "Minneapolis W-6 P-2": {
     "address": "2910 Franklin Ave E",
     "building": "Seward Tower East",
     "directions": "",
     "gmapsPlaceId": "ChIJ1Q3_BDAts1IRAUdpYQWYw-Y"
   },
-  "Minneapolis W-06 P-03": {
+  "Minneapolis W-6 P-3": {
     "address": "420 15th Ave S",
     "building": "Brian Coyle Community Center",
     "directions": "",
     "gmapsPlaceId": "ChIJ68xsxUIts1IRSKkIVwKHKKI"
   },
-  "Minneapolis W-06 P-04": {
+  "Minneapolis W-6 P-4": {
     "address": "1000 E 14th St",
     "building": "Elliot Recreation Center",
     "directions": "",
     "gmapsPlaceId": "ChIJ3clQe18ts1IRdn0h1GTjotI"
   },
-  "Minneapolis W-06 P-05": {
+  "Minneapolis W-6 P-5": {
     "address": "2323 11th Ave S",
     "building": "Phillips Community Center",
     "directions": "",
     "gmapsPlaceId": "ChIJrw0kaFYts1IRTNQY6RMlNaE"
   },
-  "Minneapolis W-06 P-06": {
+  "Minneapolis W-6 P-6": {
     "address": "924 E 21st St",
     "building": "Mindekirken (Norwegian Lutheran Memorial Church)",
     "directions": "",
     "gmapsPlaceId": "ChIJ7VTxFqgys1IRzdJMV_oIKw0"
   },
-  "Minneapolis W-06 P-07": {
+  "Minneapolis W-6 P-7": {
     "address": "2540 Park Ave",
     "building": "St. Mary’s University Center",
     "directions": "",
     "gmapsPlaceId": "ChIJaWDzU6wys1IRKJzAY6xB6Sg"
   },
-  "Minneapolis W-06 P-08": {
+  "Minneapolis W-6 P-8": {
     "address": "2540 Park Ave",
     "building": "St. Mary’s University Center",
     "directions": "",
     "gmapsPlaceId": "ChIJaWDzU6wys1IRKJzAY6xB6Sg"
   },
-  "Minneapolis W-06 P-09": {
+  "Minneapolis W-6 P-9": {
     "address": "1900 Nicollet Ave",
     "building": "Plymouth Congregational Church",
     "directions": "",
@@ -365,145 +365,145 @@
     "directions": "",
     "gmapsPlaceId": "ChIJfTPuvcMys1IRLA0Eg7Nf8yU"
   },
-  "Minneapolis W-07 P-06": {
+  "Minneapolis W-7 P-6": {
     "address": "1200 Marquette Ave",
     "building": "Westminster Presbyterian Church",
     "directions": "",
     "gmapsPlaceId": "ChIJAeZu_L0ys1IRZPM-jy_6qnM"
   },
-  "Minneapolis W-07 P-07": {
+  "Minneapolis W-7 P-7": {
     "address": "252 Upton Ave. S",
     "building": "Bryn Mawr Community School",
     "directions": "",
     "gmapsPlaceId": "ChIJk1mzJBQzs1IRs10r49pHnXY"
   },
-  "Minneapolis W-07 P-08": {
+  "Minneapolis W-7 P-8": {
     "address": "1421 Spruce Place",
     "building": "Emerson Spanish Immersion School",
     "directions": "",
     "gmapsPlaceId": "ChIJoeQ3mMAys1IR34vz2p5yCME"
   },
-  "Minneapolis W-07 P-09": {
+  "Minneapolis W-7 P-9": {
     "address": "2324 Emerson Ave S",
     "building": "Temple Israel",
     "directions": "",
     "gmapsPlaceId": "ChIJb89w29Yys1IROPyHLAEAuFA"
   },
-  "Minneapolis W-07 P-10": {
+  "Minneapolis W-7 P-10": {
     "address": "1900 Nicollet Ave",
     "building": "Plymouth Congregational Church",
     "directions": "",
     "gmapsPlaceId": "ChIJd9ngQbgys1IR--RVyZHn93Q"
   },
-  "Minneapolis W-08 P-01": {
+  "Minneapolis W-8 P-1": {
     "address": "3121 Pillsbury Ave",
     "building": "Horn Towers Highrise",
     "directions": "",
     "gmapsPlaceId": "ChIJm4urA40n9ocRzMqChJC2kxA"
   },
-  "Minneapolis W-08 P-02": {
+  "Minneapolis W-8 P-2": {
     "address": "312 34th St W",
     "building": "Lyndale Community School",
     "directions": "",
     "gmapsPlaceId": "ChIJZ37kx7tVs1IRu2Be_JA12Sk"
   },
-  "Minneapolis W-08 P-03": {
+  "Minneapolis W-8 P-3": {
     "address": "310 38th St E",
     "building": "Sabathani Community Center",
     "directions": "",
     "gmapsPlaceId": "ChIJw9K9wekn9ocR__BD5tm2s_g"
   },
-  "Minneapolis W-08 P-04": {
+  "Minneapolis W-8 P-4": {
     "address": "4537 3rd Ave S",
     "building": "St. Joan of Arc Church",
     "directions": "",
     "gmapsPlaceId": "ChIJW-1Fn84n9ocRwuEf2lRbuRE"
   },
-  "Minneapolis W-08 P-05": {
+  "Minneapolis W-8 P-5": {
     "address": "4537 3rd Ave S",
     "building": "St. Joan of Arc Church",
     "directions": "",
     "gmapsPlaceId": "ChIJW-1Fn84n9ocRwuEf2lRbuRE"
   },
-  "Minneapolis W-08 P-06": {
+  "Minneapolis W-8 P-6": {
     "address": "4055 Nicollet Ave",
     "building": "Martin Luther King Park Recreation Center (Multipurpose)",
     "directions": "",
     "gmapsPlaceId": "ChIJyxZ1G8cn9ocRzSc2Fmksijs"
   },
-  "Minneapolis W-08 P-07": {
+  "Minneapolis W-8 P-7": {
     "address": "4055 Nicollet Ave",
     "building": "Martin Luther King Park Recreation Center (Gym)",
     "directions": "",
     "gmapsPlaceId": "ChIJyxZ1G8cn9ocRzSc2Fmksijs"
   },
-  "Minneapolis W-08 P-08": {
+  "Minneapolis W-8 P-8": {
     "address": "4120 17th Ave S",
     "building": "Bethel Evangelical Lutheran Church",
     "directions": "",
     "gmapsPlaceId": "ChIJzW0nU3Ao9ocRBvEnix5ABFc"
   },
-  "Minneapolis W-09 P-01": {
+  "Minneapolis W-9 P-1": {
     "address": "3450 4th Ave S",
     "building": "Central Gym Park Recreation Center",
     "directions": "4th Ave S entrance",
     "gmapsPlaceId": "ChIJ74wN5u4n9ocRaASvFKaRWCE"
   },
-  "Minneapolis W-09 P-02": {
+  "Minneapolis W-9 P-2": {
     "address": "3400 15th Ave S",
     "building": "Powderhorn Park Recreation Center (Gym)",
     "directions": "",
     "gmapsPlaceId": "ChIJF68VMQko9ocRcrNrr40jyNk"
   },
-  "Minneapolis W-09 P-03": {
+  "Minneapolis W-9 P-3": {
     "address": "1098 Andersen Lane",
     "building": "Andersen Elementary School",
     "directions": "use door no. 15 off 12th Ave at 27th St",
     "gmapsPlaceId": "ChIJEQDQ-_8n9ocR39KdAGDwKoc"
   },
-  "Minneapolis W-09 P-04": {
+  "Minneapolis W-9 P-4": {
     "address": "2307 17th Ave S",
     "building": "East Phillips Park Recreation Center",
     "directions": "",
     "gmapsPlaceId": "ChIJ0QAQ3VEts1IRv1UBqyLAHJE"
   },
-  "Minneapolis W-09 P-05": {
+  "Minneapolis W-9 P-5": {
     "address": "3104 16th Ave S",
     "building": "Walker Community Church",
     "directions": "",
     "gmapsPlaceId": "ChIJw7O_sQUo9ocR6u6UL-ifEYU"
   },
-  "Minneapolis W-09 P-06": {
+  "Minneapolis W-9 P-6": {
     "address": "3332 20th Ave S",
     "building": "Corcoran Park Recreation Center",
     "directions": "",
     "gmapsPlaceId": "ChIJYeG9JBEo9ocRI1F3KC5khHc"
   },
-  "Minneapolis W-09 P-07": {
+  "Minneapolis W-9 P-7": {
     "address": "3400 15th Ave S",
     "building": "Powderhorn Park Recreation Center (Multipurpose)",
     "directions": "",
     "gmapsPlaceId": "ChIJF68VMQko9ocRcrNrr40jyNk"
   },
-  "Minneapolis W-09 P-08": {
+  "Minneapolis W-9 P-8": {
     "address": "2730 31st St E",
     "building": "Holy Trinity Lutheran Church",
     "directions": "",
     "gmapsPlaceId": "ChIJR0LSiiQo9ocRbM_cXMtHQAg"
   },
-  "Minneapolis W-09 P-09": {
+  "Minneapolis W-9 P-9": {
     "address": "3045 Park Avenue",
     "building": "Church of Gichitwaa Kateri",
     "directions": "",
     "gmapsPlaceId": "ChIJKYpWovsn9ocRIKas7llTcXQ"
   },
-  "Minneapolis W-10 P-01": {
+  "Minneapolis W-10 P-1": {
     "address": "1200 W 26th St",
     "building": "Jefferson Community School (Auditorium)",
     "directions": "",
     "gmapsPlaceId": "ChIJzd15cNQys1IR_7YfFwxsf7g"
   },
-  "Minneapolis W-10 P-02": {
+  "Minneapolis W-10 P-2": {
     "address": "1200 W 26th St",
     "building": "Jefferson Community School (Lower Gym)",
     "directions": "",
@@ -533,73 +533,73 @@
     "directions": "",
     "gmapsPlaceId": "ChIJA8FQf5sn9ocRD6PMBhVYG4U"
   },
-  "Minneapolis W-10 P-07": {
+  "Minneapolis W-10 P-7": {
     "address": "425 26th St W",
     "building": "Whittier Park Recreation Center",
     "directions": "",
     "gmapsPlaceId": "ChIJLSNOiMwys1IRmiSXvX73viE"
   },
-  "Minneapolis W-10 P-08": {
+  "Minneapolis W-10 P-8": {
     "address": "315 26th St W",
     "building": "Whittier International School",
     "directions": "",
     "gmapsPlaceId": "ChIJzc00EqUqs1IRJ27p2nSdRfs"
   },
-  "Minneapolis W-10 P-09": {
+  "Minneapolis W-10 P-9": {
     "address": "2501 Stevens Ave",
     "building": "Minneapolis College of Art and Design (MCAD)",
     "directions": "",
     "gmapsPlaceId": "ChIJDSb7ErQys1IR_G-2p5c9KNM"
   },
-  "Minneapolis W-11 P-01": {
+  "Minneapolis W-11 P-1": {
     "address": "4747 Lyndale Ave S",
     "building": "Knox Presbyterian Church",
     "directions": "",
     "gmapsPlaceId": "ChIJcUFUpLIn9ocRKXP3Q0bTtaU"
   },
-  "Minneapolis W-11 P-02": {
+  "Minneapolis W-11 P-2": {
     "address": "106 Diamond Lake Road E",
     "building": "Mayflower Church",
     "directions": "",
     "gmapsPlaceId": "ChIJ-ypV_zgm9ocRK1sUdZIPL9c"
   },
-  "Minneapolis W-11 P-03": {
+  "Minneapolis W-11 P-3": {
     "address": "5843 Wentworth Ave S",
     "building": "Windom South Park Recreation Center",
     "directions": "",
     "gmapsPlaceId": "ChIJKa7tj2om9ocRNExd0RGlI3I"
   },
-  "Minneapolis W-11 P-04": {
+  "Minneapolis W-11 P-4": {
     "address": "906 47th St E",
     "building": "McRae Recreation Center",
     "directions": "",
     "gmapsPlaceId": "ChIJ14LF_tQn9ocRzLFvDQy_dcw"
   },
-  "Minneapolis W-11 P-05": {
+  "Minneapolis W-11 P-5": {
     "address": "414 Diamond Lk Rd E",
     "building": "Pearl Park Recreation Center",
     "directions": "",
     "gmapsPlaceId": "ChIJd7Mi1jom9ocRz5ZlRttStKM"
   },
-  "Minneapolis W-11 P-06": {
+  "Minneapolis W-11 P-6": {
     "address": "5426 12th Ave S",
     "building": "Our Lady of Peace Church",
     "directions": "",
     "gmapsPlaceId": "ChIJS65Veicm9ocRufeyH0Hh4q0"
   },
-  "Minneapolis W-11 P-07": {
+  "Minneapolis W-11 P-7": {
     "address": "5501 Chicago Ave",
     "building": "Urban Refuge Church",
     "directions": "",
     "gmapsPlaceId": "ChIJ8QSRviYm9ocR16-Ctz30G_8"
   },
-  "Minneapolis W-11 P-08": {
+  "Minneapolis W-11 P-8": {
     "address": "5625 23rd Ave S",
     "building": "Wenonah Campus - Lake Nokomis Community School",
     "directions": "",
     "gmapsPlaceId": "ChIJsdGoK-so9ocR03ejOr4KSko"
   },
-  "Minneapolis W-11 P-09": {
+  "Minneapolis W-11 P-9": {
     "address": "3030 53rd St. E",
     "building": "Keewaydin Recreation Center",
     "directions": "",
@@ -611,55 +611,55 @@
     "directions": "",
     "gmapsPlaceId": "ChIJpSBrrSIm9ocRlpLpsDx8X_k"
   },
-  "Minneapolis W-12 P-01": {
+  "Minneapolis W-12 P-1": {
     "address": "3435 36th Ave S",
     "building": "Longfellow Park Recreation Center",
     "directions": "",
     "gmapsPlaceId": "ChIJKwxEkDQo9ocRzUchKKHiD3Q"
   },
-  "Minneapolis W-12 P-02": {
+  "Minneapolis W-12 P-2": {
     "address": "3733 43rd Ave S",
     "building": "Howe Elementary School",
     "directions": "",
     "gmapsPlaceId": "ChIJ_W4RTLYp9ocRjnmhnc4cWkU"
   },
-  "Minneapolis W-12 P-03": {
+  "Minneapolis W-12 P-3": {
     "address": "4600 42nd St E",
     "building": "St Peder's Evangelical Lutheran Church",
     "directions": "",
     "gmapsPlaceId": "ChIJ46R2s7op9ocRzucrovI-fCU"
   },
-  "Minneapolis W-12 P-04": {
+  "Minneapolis W-12 P-4": {
     "address": "4305 42nd St E",
     "building": "Hiawatha School Park Recreation Center",
     "directions": "",
     "gmapsPlaceId": "ChIJySQENK4p9ocRgaTW-WG7V6g"
   },
-  "Minneapolis W-12 P-05": {
+  "Minneapolis W-12 P-5": {
     "address": "2401 Minnehaha Pkwy E",
     "building": "Nokomis Community Center",
     "directions": "",
     "gmapsPlaceId": "ChIJffiZaIgo9ocRIQyLUHoyafo"
   },
-  "Minneapolis W-12 P-06": {
+  "Minneapolis W-12 P-6": {
     "address": "3701 50th St E",
     "building": "Minnehaha United Methodist Church",
     "directions": "",
     "gmapsPlaceId": "ChIJv1yd-v0o9ocRBIhvvG6gAR4"
   },
-  "Minneapolis W-12 P-07": {
+  "Minneapolis W-12 P-7": {
     "address": "5101 Minnehaha Ave",
     "building": "Minnesota Veterans Home (Bldg No. 21)",
     "directions": "",
     "gmapsPlaceId": "ChIJsYHRBxQp9ocRotKU-3sab_0"
   },
-  "Minneapolis W-12 P-08": {
+  "Minneapolis W-12 P-8": {
     "address": "1900 40th St E",
     "building": "Sibley Park Recreation Center",
     "directions": "",
     "gmapsPlaceId": "ChIJzYA2H2wo9ocRW7T4Z3H7aCk"
   },
-  "Minneapolis W-12 P-09": {
+  "Minneapolis W-12 P-9": {
     "address": "3201 43rd St E",
     "building": "St. Helena Catholic Church",
     "directions": "parking lot entrance",
@@ -683,55 +683,55 @@
     "directions": "",
     "gmapsPlaceId": "ChIJ-cTFtUUo9ocRoVX_UFuymaw"
   },
-  "Minneapolis W-13 P-01": {
+  "Minneapolis W-13 P-1": {
     "address": "3537 Zenith Ave S",
     "building": "Bakken Museum",
     "directions": "",
     "gmapsPlaceId": "ChIJrYas0UMn9ocRqCjAkQa6HTo"
   },
-  "Minneapolis W-13 P-02": {
+  "Minneapolis W-13 P-2": {
     "address": "4201 Sheridan Ave S",
     "building": "St. John's Episcopal Church",
     "directions": "",
     "gmapsPlaceId": "ChIJlfQQPBEn9ocRP5Fs8VR-SS8"
   },
-  "Minneapolis W-13 P-03": {
+  "Minneapolis W-13 P-3": {
     "address": "3100 43rd St W",
     "building": "Linden Hills Recreation Center",
     "directions": "",
     "gmapsPlaceId": "ChIJeW09bz0n9ocR9qIbYDD_R2k"
   },
-  "Minneapolis W-13 P-04": {
+  "Minneapolis W-13 P-4": {
     "address": "2914 W 44th St",
     "building": "St Thomas the Apostle (Gym)",
     "directions": "",
     "gmapsPlaceId": "ChIJzdNkKRgn9ocR60ypdNzxORk"
   },
-  "Minneapolis W-13 P-05": {
+  "Minneapolis W-13 P-5": {
     "address": "3523 48th St W",
     "building": "Pershing Recreation Center",
     "directions": "",
     "gmapsPlaceId": "ChIJ7RD9TCcn9ocRWveDyZWGa2I"
   },
-  "Minneapolis W-13 P-06": {
+  "Minneapolis W-13 P-6": {
     "address": "1345 Minnehaha Pkwy",
     "building": "Lynnhurst Park Recreation Center",
     "directions": "use Parkway entrance",
     "gmapsPlaceId": "ChIJK7nN9FUm9ocRCr0y0MRO-uQ"
   },
-  "Minneapolis W-13 P-07": {
+  "Minneapolis W-13 P-7": {
     "address": "5720 Emerson Ave S",
     "building": "Kenny Community School",
     "directions": "",
     "gmapsPlaceId": "ChIJ_VAUWF4m9ocRoMvbzI8FsiY"
   },
-  "Minneapolis W-13 P-08": {
+  "Minneapolis W-13 P-8": {
     "address": "2500 57th St W",
     "building": "Armatage Park Recreation Center",
     "directions": "",
     "gmapsPlaceId": "ChIJU-Gn6u0m9ocRhEA_Cf2-fAA"
   },
-  "Minneapolis W-13 P-09": {
+  "Minneapolis W-13 P-9": {
     "address": "5757 Irving Ave S",
     "building": "Anthony Middle School",
     "directions": "",

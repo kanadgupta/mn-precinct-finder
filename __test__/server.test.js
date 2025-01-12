@@ -76,7 +76,7 @@ describe('fastify server tests', () => {
           MNLegDist: '60A',
           MNSenDist: '60',
           Park: '1',
-          Precinct: 'Minneapolis W-01 P-04',
+          Precinct: 'Minneapolis W-1 P-4',
           PrecinctCode: '1375',
           PrecinctID: '270531375',
           Ward: 'W-01',

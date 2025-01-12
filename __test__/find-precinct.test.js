@@ -6,7 +6,7 @@ describe('#findPrecinct', () => {
   it('should return precinct data if passed as array', () => {
     const precinct = findPrecinct([-93.265, 44.9778]);
     expect(precinct).toStrictEqual({
-      Precinct: 'Minneapolis W-07 P-11',
+      Precinct: 'Minneapolis W-7 P-11',
       PrecinctID: '270531705',
       County: 'Hennepin',
       CountyID: '27',
@@ -28,7 +28,7 @@ describe('#findPrecinct', () => {
   it('should return precinct data if passed as geojson coordinate', () => {
     const precinct = findPrecinct({ type: 'Point', coordinates: [-93.265, 44.9778] });
     expect(precinct).toStrictEqual({
-      Precinct: 'Minneapolis W-07 P-11',
+      Precinct: 'Minneapolis W-7 P-11',
       PrecinctID: '270531705',
       County: 'Hennepin',
       CountyID: '27',
@@ -52,6 +52,6 @@ describe('#findPrecinct', () => {
   });
 
   it('should throw error if total garbage is passed', () => {
-    expect(() => findPrecinct(['yo'])).toThrow('coord must be GeoJSON Point or an Array of numbers');
+    expect(() => findPrecinct(['yo'])).toThrow('coordinates must be at least 2 numbers long');
   });
 });

@@ -14,7 +14,8 @@
   },
   "dependencies": {
     "@googlemaps/google-maps-services-js": "^3.2.5",
-    "@turf/boolean-point-in-polygon": "^6.5.0",
+    "@turf/boolean-within": "^7.2.0",
+    "@turf/helpers": "^7.2.0",
     "dotenv": "^10.0.0",
     "fastify": "^3.22.0",
     "fastify-accepts": "^2.1.0",
