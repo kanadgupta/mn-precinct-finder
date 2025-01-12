@@ -31,6 +31,6 @@ jobs:
         run: npm run build:openapi
 
       - name: Sync via rdme
-        uses: readmeio/rdme@v8
+        uses: readmeio/rdme@v9
         with:
           rdme: openapi openapi.json --key ${{ secrets.README_API_KEY }} --id ${{ secrets.README_SPEC_ID }}
