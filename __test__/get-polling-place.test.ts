@@ -1,8 +1,8 @@
 import { describe, it, expect } from 'vitest';
 
-const precinctData = require('../src/lib/data/mn-precincts.json');
-const pollingPlacesData = require('../src/lib/data/mpls-2021-polling-places.json');
-const getPollingPlace = require('../src/lib/get-polling-place');
+import precinctData from '../src/lib/data/mn-precincts.json';
+import pollingPlacesData from '../src/lib/data/mpls-2021-polling-places.json';
+import getPollingPlace from '../src/lib/get-polling-place';
 
 describe('#getPollingPlace', () => {
   it('should retrieve polling place data for valid precinct name', () => {
@@ -26,7 +26,7 @@ describe('#getPollingPlace', () => {
   });
 
   it('should return fallback for invalid precinct name', () => {
-    expect(getPollingPlace('Minneapolis W-1000')).toStrictEqual({});
+    expect(getPollingPlace('Minneapolis W-1000')).toBeNull();
   });
 });
 

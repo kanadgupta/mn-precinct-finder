@@ -1,7 +1,7 @@
 {
-  "extends": ["@readme/eslint-config"],
+  "extends": ["@readme/eslint-config", "@readme/eslint-config/typescript"],
   "root": true,
-  "ignorePatterns": ["coverage/", "bin/postprocess.mjs"],
+  "ignorePatterns": ["coverage/", "dist/", "bin/postprocess.js"],
   "parserOptions": {
     "ecmaVersion": 2020,
   },

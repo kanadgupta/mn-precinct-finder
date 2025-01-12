@@ -3,46 +3,61 @@
  * Check out the two endpoints this back-end API provides in fastify.get and fastify.post below
  */
 
-const path = require('path');
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-// Require the fastify framework and instantiate it
-const fastify = require('fastify')({
+import { fastify } from 'fastify';
+import fastifyAccepts from 'fastify-accepts';
+import fastifyFormbody from 'fastify-formbody';
+import fastifyStatic from 'fastify-static';
+import fastifySwagger from 'fastify-swagger';
+import handlebars from 'handlebars';
+import pointOfView from 'point-of-view';
+
+import buildMapsUrl from './lib/build-maps-url.js';
+import findPrecinct from './lib/find-precinct.js';
+import { forwardGeocode, reverseGeocode } from './lib/geocode-address.js';
+import getPollingPlace from './lib/get-polling-place.js';
+import seo from './seo.json' assert { type: 'json' };
+
+// eslint-disable-next-line no-underscore-dangle
+const __filename = fileURLToPath(import.meta.url);
+// eslint-disable-next-line no-underscore-dangle
+const __dirname = path.dirname(__filename);
+
+// Instantiate fastify
+const app = fastify({
   ignoreTrailingSlash: true,
-  // Set this to true for detailed logging:
   logger: false,
 });
-
-const buildMapsUrl = require('./lib/build-maps-url');
-const findPrecinct = require('./lib/find-precinct');
-const { forwardGeocode, reverseGeocode } = require('./lib/geocode-address');
-// ??? no idea why ESLint is flagging this
-// eslint-disable-next-line import/order
-const getPollingPlace = require('./lib/get-polling-place');
 
 const env = process.env.NODE_ENV;
 
 // Add support for application/x-www-form-urlencoded
-// Needed for Twilio payloads
-fastify.register(require('fastify-formbody'));
+// @ts-expect-error bad plugin type, going to remove this when we migrate to Hono
+app.register(fastifyFormbody);
 
 // Setup our static files
-fastify.register(require('fastify-static'), {
+// @ts-expect-error bad plugin type, going to remove this when we migrate to Hono
+app.register(fastifyStatic, {
   root: path.join(__dirname, '..', 'public'),
   prefix: '/', // optional: default '/'
 });
 
 // point-of-view is a templating manager for fastify
-fastify.register(require('point-of-view'), {
+// @ts-expect-error bad plugin type, going to remove this when we migrate to Hono
+app.register(pointOfView, {
   engine: {
-    // eslint-disable-next-line global-require
-    handlebars: require('handlebars'),
+    handlebars,
   },
 });
 
 // fastify-accepts parses the Accept header
-fastify.register(require('fastify-accepts'));
+// @ts-expect-error bad plugin type, going to remove this when we migrate to Hono
+app.register(fastifyAccepts);
 
-fastify.register(require('fastify-swagger'), {
+// @ts-expect-error bad plugin type, going to remove this when we migrate to Hono
+app.register(fastifySwagger, {
   openapi: {
     info: {
       title: 'MPLS Poll Finder API',
@@ -57,9 +72,6 @@ fastify.register(require('fastify-swagger'), {
   },
 });
 
-// Load and parse SEO data
-const seo = require('./seo.json');
-
 /**
  * Creates default object for usage across various endpoints
  * @param {Object} request The Fastify `request` object
@@ -67,7 +79,6 @@ const seo = require('./seo.json');
  * @returns An object containing the default return data
  */
 async function createDefaultParams(request, reply) {
-  // params is an object we'll pass to our handlebars template
   let params = {};
 
   if (request.query.lat && request.query.long) {
@@ -97,17 +108,16 @@ async function createDefaultParams(request, reply) {
     }
   }
 
-  // If someone clicked the option for a random address it'll be passed in the querystring
   if (request.query.example) {
-    // This is for Fair State? Idk
     const address = '2506 Central Ave NE, Minneapolis, MN 55418';
     const precinct = findPrecinct([-93.2497537, 45.013565]);
     const gmaps = buildMapsUrl(address);
     params = { address, gmaps, precinct };
   }
 
-  // Add Minneapolis polling place
+  // @ts-expect-error will revisit this when we migrate to Hono
   if (params?.precinct?.Precinct) {
+    // @ts-expect-error will revisit this when we migrate to Hono
     params.mplsPollingPlace21 = getPollingPlace(params.precinct.Precinct);
   }
 
@@ -224,15 +234,15 @@ const opts = {
  *
  * Returns src/pages/index.hbs with data built into it
  */
-fastify.get('/', opts, async function (request, reply) {
+app.get('/', opts, async function GET(request, reply) {
   const accept = request.accepts(); // Accepts object via fastify-accepts
 
   const params = await createDefaultParams(request, reply);
 
+  // @ts-expect-error will revisit this when we migrate to Hono
   if (request.query.format === 'json') return replyWithJsonParams(params, reply);
 
   switch (accept.type(['html', 'json'])) {
-    // The Handlebars code will be able to access the parameter values and build them into the page
     case 'html':
       return reply.view('/src/pages/index.hbs', { ...params, seo });
     case 'json':
@@ -244,15 +254,15 @@ fastify.get('/', opts, async function (request, reply) {
 
 if (!['ci', 'test'].includes(env)) {
   // Run the server and report out to the logs
-  fastify.listen(process.env.PORT || 3000, '0.0.0.0', function (err, address) {
+  app.listen(process.env.PORT || 3000, '0.0.0.0', function start(err, address) {
     if (err) {
-      fastify.log.error(err);
+      app.log.error(err);
       process.exit(1);
     }
     // eslint-disable-next-line no-console
     console.log(`Your app is listening on ${address}`);
-    fastify.log.info(`server listening on ${address}`);
+    app.log.info(`server listening on ${address}`);
   });
 }
 
-module.exports = fastify;
+export default app;

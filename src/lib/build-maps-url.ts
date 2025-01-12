@@ -6,10 +6,10 @@
  * @returns {String} A formatted Google Maps URL.
  * @link https://developers.google.com/maps/documentation/urls/get-started
  */
-module.exports = function buildMapsUrls(query, placeId = '') {
+export default function buildMapsUrls(query: string, placeId = '') {
   const searchParams = new URLSearchParams({ api: '1', query });
   if (placeId) searchParams.set('query_place_id', placeId);
   const gmaps = new URL('https://www.google.com/maps/search/');
   gmaps.search = searchParams.toString();
   return gmaps.toString();
-};
+}
