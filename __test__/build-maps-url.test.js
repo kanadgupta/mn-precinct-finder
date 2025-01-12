@@ -1,4 +1,6 @@
-const buildMapsUrl = require('../lib/build-maps-url');
+import { describe, it, expect } from 'vitest';
+
+const buildMapsUrl = require('../src/lib/build-maps-url');
 
 describe('#buildMapsUrl', () => {
   it('should return URL with place ID if it is passed', () => {

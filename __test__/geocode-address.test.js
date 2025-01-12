@@ -1,7 +1,9 @@
+import { describe, it, expect } from 'vitest';
+
 const nock = require('nock');
 
-const { GeocodingError } = require('../lib/errors');
-const { forwardGeocode, reverseGeocode } = require('../lib/geocode-address');
+const { GeocodingError } = require('../src/lib/errors');
+const { forwardGeocode, reverseGeocode } = require('../src/lib/geocode-address');
 
 describe('#forwardGeocode', () => {
   it('should return valid data for valid query', async () => {
@@ -63,8 +65,8 @@ describe('#forwardGeocode', () => {
       status: 'UNKNOWN_ERROR',
     });
 
-    await expect(forwardGeocode('unknown error address')).rejects.toStrictEqual(
-      new Error('Request failed with status code 400'),
+    await expect(forwardGeocode('unknown error address')).rejects.toMatchInlineSnapshot(
+      '[AxiosError: Request failed with status code 400]',
     );
   });
 

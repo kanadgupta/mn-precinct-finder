@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const app = require('../server');
+const app = require('../src/server');
 
 const outfile = 'openapi.json';
 

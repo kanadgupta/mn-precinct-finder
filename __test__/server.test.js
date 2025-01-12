@@ -1,4 +1,6 @@
-const app = require('../server');
+import { describe, it, expect } from 'vitest';
+
+const app = require('../src/server');
 
 describe('fastify server tests', () => {
   describe('GET /', () => {

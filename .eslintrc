@@ -1,0 +1,8 @@
+{
+  "extends": ["@readme/eslint-config"],
+  "root": true,
+  "ignorePatterns": ["coverage/", "bin/postprocess.mjs"],
+  "parserOptions": {
+    "ecmaVersion": 2020,
+  },
+}

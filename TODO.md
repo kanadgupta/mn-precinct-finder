@@ -20,4 +20,5 @@
 - [ ] Enhance error handling for `findPrecinct`
 
 ## Nice To have
+
 - [ ] Address autocomplete via Google Maps Places API

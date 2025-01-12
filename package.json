@@ -5,12 +5,12 @@
   "main": "server.js",
   "scripts": {
     "build:openapi": "node bin/build-openapi.js",
-    "deno": "deno run -q -A --unstable lib/postprocess.js lib/data/precinct-table.xlsx",
-    "dev": "nodemon server.js -e css,hbs,js,json",
-    "lint": "eslint .",
+    "deno": "deno run -q -A --unstable bin/postprocess.mjs src/lib/data/precinct-table.xlsx",
+    "dev": "nodemon src/server.js -e css,hbs,js,json",
+    "lint": "eslint . && prettier -c .",
     "pretest": "npm run lint",
-    "start": "node server.js",
-    "test": "jest --coverage"
+    "start": "node src/server.js",
+    "test": "vitest run"
   },
   "dependencies": {
     "@googlemaps/google-maps-services-js": "^3.2.5",
@@ -22,11 +22,10 @@
     "fastify-static": "^4.2.3",
     "fastify-swagger": "^4.12.6",
     "handlebars": "^4.7.7",
-    "point-of-view": "^4.15.2",
-    "twilio": "^3.69.0"
+    "point-of-view": "^4.15.2"
   },
   "engines": {
-    "node": "^16"
+    "node": "^20"
   },
   "repository": {
     "url": "https://glitch.com/edit/#!/glitch-hello-node"
@@ -42,9 +41,9 @@
     "@flydotio/dockerfile": "^0.5.4",
     "@readme/eslint-config": "^13.5.1",
     "eslint": "^8.57.0",
-    "jest": "^27.2.4",
     "nock": "^13.1.4",
     "nodemon": "^2.0.13",
-    "prettier": "^3.2.5"
+    "prettier": "^3.2.5",
+    "vitest": "^2.1.8"
   }
 }
