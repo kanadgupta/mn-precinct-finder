@@ -5,6 +5,7 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
+    "build": "tsc",
     "build:openapi": "node bin/build-openapi.js",
     "deno": "deno run -q -A --unstable bin/postprocess.js src/lib/data/precinct-table.xlsx",
     "dev": "tsx watch --env-file=.env src/server.ts",

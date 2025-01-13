@@ -3,8 +3,8 @@
  * Check out the two endpoints this back-end API provides in fastify.get and fastify.post below
  */
 
-import path from 'path';
-import { fileURLToPath } from 'url';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 import { fastify } from 'fastify';
 import fastifyAccepts from 'fastify-accepts';

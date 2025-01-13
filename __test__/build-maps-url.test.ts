@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 
-import buildMapsUrl from '../src/lib/build-maps-url';
+import buildMapsUrl from '../src/lib/build-maps-url.js';
 
 describe('#buildMapsUrl', () => {
   it('should return URL with place ID if it is passed', () => {

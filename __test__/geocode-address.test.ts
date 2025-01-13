@@ -1,8 +1,8 @@
 import nock from 'nock';
 import { describe, it, expect } from 'vitest';
 
-import GeocodingError from '../src/lib/errors';
-import { forwardGeocode, reverseGeocode } from '../src/lib/geocode-address';
+import GeocodingError from '../src/lib/errors.js';
+import { forwardGeocode, reverseGeocode } from '../src/lib/geocode-address.js';
 
 describe('#forwardGeocode', () => {
   it('should return valid data for valid query', async () => {

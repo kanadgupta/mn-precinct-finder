@@ -1,6 +1,7 @@
-import fs from 'fs';
+import fs from 'node:fs';
 
-import app from '../src/server';
+// eslint-disable-next-line import/extensions
+import app from '../dist/server.js';
 
 const outfile = 'openapi.json';
 

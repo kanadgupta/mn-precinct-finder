@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 
-import app from '../src/server';
+import app from '../src/server.js';
 
 describe('fastify server tests', () => {
   describe('GET /', () => {

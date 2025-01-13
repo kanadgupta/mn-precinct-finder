@@ -27,8 +27,8 @@ jobs:
         with:
           node-version-file: 'package.json'
 
-      - name: Install deps
-        run: npm ci
+      - run: npm ci
+      - run: npm run build
 
       - name: Build OpenAPI document
         run: npm run build:openapi
