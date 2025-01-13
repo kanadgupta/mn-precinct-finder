@@ -47,7 +47,7 @@ export function forwardGeocode(
     });
 }
 
-export function reverseGeocode(long: string, lat: string) {
+export function reverseGeocode(long: number | string, lat: number | string) {
   return googlemaps
     .reverseGeocode({
       params: {
