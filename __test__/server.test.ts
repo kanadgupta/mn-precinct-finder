@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+import * as prettier from 'prettier';
 
 import app from '../src/server.js';
 
@@ -10,7 +11,8 @@ describe('fastify server tests', () => {
         url: '/',
       });
 
-      expect(response.body).toMatchSnapshot();
+      const formatted = await prettier.format(response.body, { parser: 'html' });
+      expect(formatted).toMatchSnapshot();
       expect(response.statusCode).toBe(200);
     });
 
@@ -44,7 +46,8 @@ describe('fastify server tests', () => {
         url: '/?example=go',
       });
 
-      expect(response.body).toMatchSnapshot();
+      const formatted = await prettier.format(response.body, { parser: 'html' });
+      expect(formatted).toMatchSnapshot();
       expect(response.statusCode).toBe(200);
     });
 
