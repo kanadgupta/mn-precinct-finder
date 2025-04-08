@@ -1,5 +1,7 @@
 # syntax = docker/dockerfile:1
 
+# generated via https://github.com/fly-apps/dockerfile-node
+
 # Adjust NODE_VERSION as desired
 ARG NODE_VERSION=20.19.0
 FROM node:${NODE_VERSION}-slim AS base
