@@ -3,62 +3,60 @@ import { describe, it, expect } from 'vitest';
 
 import app from '../src/server.js';
 
-describe('fastify server tests', () => {
+const browserUserAgent =
+  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36';
+
+describe('server tests', () => {
   describe('GET /', () => {
     it('should return 200 with standard template', async () => {
-      const response = await app.inject({
+      const response = await app.request('/', {
         method: 'GET',
-        url: '/',
+        headers: { 'user-agent': browserUserAgent },
       });
 
-      const formatted = await prettier.format(response.body, { parser: 'html' });
+      const formatted = await prettier.format(await response.text(), { parser: 'html' });
       expect(formatted).toMatchSnapshot();
-      expect(response.statusCode).toBe(200);
+      expect(response.status).toBe(200);
     });
 
-    it('should return 200 when requesting JSON via Accept header', async () => {
-      const response = await app.inject({
+    it('should return 200 when requesting JSON via query param (browser user agent)', async () => {
+      const response = await app.request('/?format=json', {
         method: 'GET',
-        url: '/',
-        headers: { Accept: 'application/json' },
+        headers: { 'user-agent': browserUserAgent },
       });
 
-      expect(response.body).toBe('{}');
-      expect(response.statusCode).toBe(200);
+      await expect(response.text()).resolves.toBe('{}');
+      expect(response.status).toBe(200);
     });
 
-    it('should return 200 when requesting JSON via query param', async () => {
-      const response = await app.inject({
+    it('should return 200 when requesting JSON via query param (no user agent)', async () => {
+      const response = await app.request('/?format=json', {
         method: 'GET',
-        url: '/?format=json',
-        headers: { Accept: 'application/json' },
       });
 
-      expect(response.body).toBe('{}');
-      expect(response.statusCode).toBe(200);
+      await expect(response.text()).resolves.toBe('{}');
+      expect(response.status).toBe(200);
     });
   });
 
   describe('GET /?example=go', () => {
     it('should return 200 with standard template', async () => {
-      const response = await app.inject({
+      const response = await app.request('/?example=go', {
         method: 'GET',
-        url: '/?example=go',
+        headers: { 'user-agent': browserUserAgent },
       });
 
-      const formatted = await prettier.format(response.body, { parser: 'html' });
+      const formatted = await prettier.format(await response.text(), { parser: 'html' });
       expect(formatted).toMatchSnapshot();
-      expect(response.statusCode).toBe(200);
+      expect(response.status).toBe(200);
     });
 
     it('should return 200 when requesting JSON', async () => {
-      const response = await app.inject({
+      const response = await app.request('/?example=go', {
         method: 'GET',
-        url: '/?example=go',
-        headers: { Accept: 'application/json' },
       });
 
-      expect(JSON.parse(response.body)).toStrictEqual({
+      await expect(response.json()).resolves.toStrictEqual({
         address: '2506 Central Ave NE, Minneapolis, MN 55418',
         gmaps: 'https://www.google.com/maps/search/?api=1&query=2506+Central+Ave+NE%2C+Minneapolis%2C+MN+55418',
         mplsPollingPlace21: {
@@ -86,8 +84,11 @@ describe('fastify server tests', () => {
           SoilAndWater: 'no data',
           Ward: 'W-01',
         },
+        type: 'success',
       });
-      expect(response.statusCode).toBe(200);
+      expect(response.status).toBe(200);
     });
   });
+
+  describe.todo('GET actual precinct data');
 });

@@ -11,6 +11,7 @@ const key = process.env.GOOGLE_MAPS_API_KEY as string;
 export function forwardGeocode(
   address: string,
 ): Promise<{ address: string; gmaps: string; precinct: ExtendedPrecinctProps; type: 'success' }> {
+  // @ts-expect-error TS doesn't like the `.catch`
   return googlemaps
     .geocode({
       params: {
@@ -37,13 +38,16 @@ export function forwardGeocode(
       let precinct;
       try {
         precinct = findPrecinct([location.lng, location.lat]);
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
       } catch (err) {
         throw new GeocodingError([], address);
       }
       const gmaps = buildMapsUrl(formattedAddress, placeId);
 
       return { address: shortenAddress(formattedAddress), gmaps, precinct, type: 'success' };
+    })
+    .catch(err => {
+      if (err instanceof GeocodingError) throw err;
+      throw new GeocodingError([], address, `Our geocoder ran into an unexpected issue (${err.message})`);
     });
 }
 

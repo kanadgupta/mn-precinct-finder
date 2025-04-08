@@ -1,54 +1,38 @@
 {
-  "name": "hello-node",
-  "version": "0.0.1",
-  "description": "A simple Node app built on fastify, instantly up and running.",
-  "main": "server.js",
   "type": "module",
-  "scripts": {
-    "build": "tsc",
-    "build:openapi": "node bin/build-openapi.js",
-    "deno": "deno run -q -A --unstable bin/postprocess.js src/lib/data/precinct-table.xlsx",
-    "dev": "tsx watch --env-file=.env src/server.ts",
-    "lint": "eslint . --ext js,ts && prettier -c . && tsc --noEmit",
-    "pretest": "npm run lint",
-    "start": "node dist/server.js",
-    "test": "vitest run"
-  },
-  "dependencies": {
-    "@googlemaps/google-maps-services-js": "^3.2.5",
-    "@turf/boolean-within": "^7.2.0",
-    "@turf/helpers": "^7.2.0",
-    "fastify": "^3.22.0",
-    "fastify-accepts": "^2.1.0",
-    "fastify-formbody": "^5.1.0",
-    "fastify-static": "^4.2.3",
-    "fastify-swagger": "^4.12.6",
-    "handlebars": "^4.7.7",
-    "point-of-view": "^4.15.2"
-  },
+  "private": true,
   "engines": {
     "node": "^20"
   },
-  "repository": {
-    "url": "https://glitch.com/edit/#!/glitch-hello-node"
+  "scripts": {
+    "build": "tsc",
+    "deno": "deno run -q -A --unstable bin/postprocess.js src/lib/data/precinct-table.xlsx",
+    "dev": "tsx watch --env-file=.env src/node-server.ts",
+    "lint": "eslint . --ext js,ts,tsx && prettier -c . && tsc --noEmit && knip",
+    "prebuild": "rm -rf dist",
+    "pretest": "npm run lint",
+    "start": "node dist/node-server.js",
+    "test": "vitest"
   },
-  "prettier": "@readme/eslint-config/prettier",
-  "license": "MIT",
-  "keywords": [
-    "node",
-    "glitch",
-    "express"
-  ],
+  "dependencies": {
+    "@googlemaps/google-maps-services-js": "^3.2.5",
+    "@hono/node-server": "^1.13.7",
+    "@turf/boolean-within": "^7.2.0",
+    "@turf/helpers": "^7.2.0",
+    "hono": "^4.6.16",
+    "ua-parser-js": "^2.0.0"
+  },
   "devDependencies": {
-    "@flydotio/dockerfile": "^0.5.4",
-    "@readme/eslint-config": "^14.1.2",
+    "@readme/eslint-config": "^14.6.0",
     "@types/geojson": "^7946.0.15",
     "@types/node": "^22.10.5",
-    "eslint": "^8.57.0",
-    "nock": "^13.1.4",
-    "prettier": "^3.2.5",
+    "eslint": "^8.57.1",
+    "knip": "^5.47.0",
+    "nock": "^14.0.3",
+    "prettier": "^3.5.3",
     "tsx": "^4.19.2",
     "typescript": "^5.7.3",
-    "vitest": "^2.1.8"
-  }
+    "vitest": "^3.1.1"
+  },
+  "prettier": "@readme/eslint-config/prettier"
 }
