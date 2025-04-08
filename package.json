@@ -10,7 +10,7 @@
     "prebuild": "rm -rf dist",
     "pretest": "npm run lint",
     "start": "node dist/node-server.js",
-    "test": "vitest run"
+    "test": "vitest"
   },
   "dependencies": {
     "@googlemaps/google-maps-services-js": "^3.2.5",
