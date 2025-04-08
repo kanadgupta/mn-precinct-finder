@@ -323,7 +323,7 @@ const Page: FC<Props> = ({ seo, ...props }) => {
           <footer class="footer">
             <span>
               made with &hearts; by{' '}
-              <a href="https://twitter.com/kanadgupta" rel="noopener" target="_blank">
+              <a href="https://github.com/kanadgupta.com" rel="noopener" target="_blank">
                 kanad
               </a>
             </span>

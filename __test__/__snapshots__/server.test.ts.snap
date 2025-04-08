@@ -219,7 +219,7 @@ exports[`server tests > GET / > should return 200 with standard template 1`] = `
         <span
           >made with ♥ by
           <a
-            href="https://twitter.com/kanadgupta"
+            href="https://github.com/kanadgupta.com"
             rel="noopener"
             target="_blank"
             >kanad</a
@@ -518,7 +518,7 @@ exports[`server tests > GET /?example=go > should return 200 with standard templ
         <span
           >made with ♥ by
           <a
-            href="https://twitter.com/kanadgupta"
+            href="https://github.com/kanadgupta.com"
             rel="noopener"
             target="_blank"
             >kanad</a
