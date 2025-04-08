@@ -21,7 +21,7 @@
 
 ## Post-Hono Migration
 
-- [ ] Bring back the OpenAPI generation workflow (removed in 58950b26c62fdea5e90d0d6068ad3454c86baa46)
+- [ ] Bring back the OpenAPI generation workflow (removed in [this commit](https://github.com/kanadgupta/mn-precinct-finder/commit/58950b26c62fdea5e90d0d6068ad3454c86baa46))
 
 ## Nice To have
 
