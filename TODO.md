@@ -19,6 +19,10 @@
 - [ ] JSON Schema Validation for processed data file(s)
 - [ ] Enhance error handling for `findPrecinct`
 
+## Post-Hono Migration
+
+- [ ] Bring back the OpenAPI generation workflow (removed in 58950b26c62fdea5e90d0d6068ad3454c86baa46)
+
 ## Nice To have
 
 - [ ] Address autocomplete via Google Maps Places API
