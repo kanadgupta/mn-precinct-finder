@@ -11,14 +11,7 @@ const GeocodingError = class extends Error {
 
   public suggestion: string;
 
-  public toJSON!: () => {
-    error: string;
-    message: string;
-    query: string;
-    suggestions: string[];
-  };
-
-  constructor(results: GeocodeResult[], query: string) {
+  constructor(results: GeocodeResult[], query: string, customMessage?: string) {
     let message;
     let suggestion = '';
     let status = 404;
@@ -41,23 +34,24 @@ const GeocodingError = class extends Error {
       return { href, text };
     });
 
-    super(message);
+    super(customMessage ?? message);
 
     this.name = 'GeocodingError';
     this.addresses = addresses;
     this.query = query;
     this.status = status;
     this.suggestion = suggestion;
+    Object.setPrototypeOf(this, GeocodingError.prototype);
   }
-};
 
-GeocodingError.prototype.toJSON = function toJSON() {
-  return {
-    error: this.name,
-    message: this.message,
-    query: this.query,
-    suggestions: this.addresses.map(address => address.text),
-  };
+  toJSON() {
+    return {
+      error: this.name,
+      message: this.message,
+      query: this.query,
+      suggestions: this.addresses.map(address => address.text),
+    };
+  }
 };
 
 export default GeocodingError;

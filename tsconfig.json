@@ -1,14 +1,16 @@
 {
   "compilerOptions": {
     "checkJs": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "hono/jsx",
     "module": "NodeNext",
     "outDir": "./dist",
     "resolveJsonModule": true,
     "rootDir": "./src",
     "skipLibCheck": true,
-    // "strict": true,
+    "strict": true,
     "useUnknownInCatchVariables": false,
     "verbatimModuleSyntax": true
   },
-  "include": ["src/**/*.ts"]
+  "include": ["src/**/*.ts", "src/**/*.tsx"]
 }

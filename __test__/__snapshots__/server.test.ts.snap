@@ -1,20 +1,17 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`fastify server tests > GET / > should return 200 with standard template 1`] = `
+exports[`server tests > GET / > should return 200 with standard template 1`] = `
 "<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="https://fav.farm/🗳️" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
     <title>MPLS Poll Finder</title>
-
-    <!-- Meta tags for SEO and social sharing -->
     <link rel="canonical" href="https://mpls.vote" />
     <meta
       name="description"
-      content="An open-source, API-backed poll finder that (mostly) doesn&#x27;t suck ❤️"
+      content="An open-source, API-backed poll finder that (mostly) doesn&#39;t suck ❤️"
     />
     <meta property="og:title" content="MPLS Poll Finder" />
     <meta
@@ -25,52 +22,39 @@ exports[`fastify server tests > GET / > should return 200 with standard template
     <meta property="og:url" content="https://mpls.vote" />
     <meta
       property="og:description"
-      content="An open-source, API-backed poll finder that (mostly) doesn&#x27;t suck ❤️"
+      content="An open-source, API-backed poll finder that (mostly) doesn&#39;t suck ❤️"
     />
     <meta name="twitter:card" content="summary" />
-
-    <!-- Import the webpage's stylesheet -->
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
     <div class="wrapper">
       <div class="content" role="main">
-        <!-- This is the start of content for our page -->
         <h1 class="title"><a class="title" href="/">MPLS Poll Finder</a></h1>
-
-        <!-- Add text indicating that we've found the precinct OR had an error -->
-
         <p class="intro subtitle">
-          An open-source, API-backed poll finder that (mostly) doesn't suck ❤️
+          An open-source, API-backed poll finder that (mostly) doesn&#39;t suck
+          ❤️
         </p>
         <p class="intro">
-          ⚠️
-          <a href="#faq">Check out the FAQ</a>
-          before diving in!
+          ⚠️ <a href="#faq">Check out the FAQ</a> before diving in!
         </p>
         <p class="intro">
           👀 Need an example? <a href="?example=go">Click here!</a>
         </p>
-
         <div class="form-wrapper">
-          <!-- Our default paragraph/message -->
           <form class="address-form" method="get">
-            <label for="address-input">
-              <span class="subtitle">What's your home address? 🏡</span><br />
-              <input
+            <label for="address-input"
+              ><span class="subtitle">What&#39;s your home address? 🏡</span
+              ><br /><input
                 id="address-input"
                 name="address"
-                required="required"
+                required=""
                 placeholder="123 Main St, 55411"
                 type="text"
-                value=""
-              />
-            </label>
-            <button type="submit">Search</button>
+                value="" /></label
+            ><button type="submit">Search</button>
           </form>
         </div>
-
-        <!-- FAQ -->
         <div class="faq-wrapper">
           <h2 id="faq">Frequently Asked Questions (F.A.Q.)</h2>
           <h3>What is this?</h3>
@@ -83,19 +67,19 @@ exports[`fastify server tests > GET / > should return 200 with standard template
           <p>Yes. lol.</p>
           <p>
             First off, this relies on Google Maps for geocoding the data. Like
-            most APIs, if you send garbage data to it, you'll likely receive
-            garbage in return. In other words, you'll see the best results if
-            you send complete street addresses (that actually exist!), with
+            most APIs, if you send garbage data to it, you&#39;ll likely receive
+            garbage in return. In other words, you&#39;ll see the best results
+            if you send complete street addresses (that actually exist!), with
             brownie points if you include a ZIP code.
           </p>
           <p>
             With any geocoder, the data tends to be less accurate in less
             populous areas. While it should work just fine for most parts of the
             state (provided you send it complete and valid addresses), take it
-            with a grain of salt if you're outside of the Twin Cities Metro
+            with a grain of salt if you&#39;re outside of the Twin Cities Metro
             Area!
             <b
-              >If you're ever unsure of the results you're getting,
+              >If you&#39;re ever unsure of the results you&#39;re getting,
               <a
                 href="https://pollfinder.sos.state.mn.us/"
                 rel="noopener"
@@ -115,17 +99,16 @@ exports[`fastify server tests > GET / > should return 200 with standard template
             >. Why are you?
           </h3>
           <p>
-            It's true—the Secretary of State (SOS) has done excellent work on
-            these fronts and it serves us very well! However, the current system
-            requires
-            <b>a lot</b>
-            of clicks to access all of that valuable information—not just access
-            to your precinct and its corresponding polling place, but all of
-            your electoral boundaries (Ward, County, Congressional Districts,
-            etc.) and everything on your ballot.
+            It&#39;s true—the Secretary of State (SOS) has done excellent work
+            on these fronts and it serves us very well! However, the current
+            system requires <b>a lot</b> of clicks to access all of that
+            valuable information—not just access to your precinct and its
+            corresponding polling place, but all of your electoral boundaries
+            (Ward, County, Congressional Districts, etc.) and everything on your
+            ballot.
           </p>
           <p>
-            And the bummer for developers like myself is that there's no
+            And the bummer for developers like myself is that there&#39;s no
             discernable pattern to these URLs, meaning that all of this
             information is difficult to access at scale unless you cobble it
             together yourself. This makes it harder for grassroots campaigns
@@ -133,21 +116,19 @@ exports[`fastify server tests > GET / > should return 200 with standard template
             negative impact on electoral turnout.
           </p>
           <p>
-            This tool isn't intended to replace the SOS's system—it was built by
-            a single person with a literal $0 budget, I honestly couldn't do
-            that if I tried! This is more intended to be a exploration of what a
-            modern electoral information API could like. 🌱
+            This tool isn&#39;t intended to replace the SOS&#39;s system—it was
+            built by a single person with a literal $0 budget, I honestly
+            couldn&#39;t do that if I tried! This is more intended to be a
+            exploration of what a modern electoral information API could like.
+            🌱
           </p>
           <h3>You mentioned that this is an API! How does that work?</h3>
           <p>
             You can retrieve a JSON representation of the data provided on the
-            website by passing an
-            <code>Accept</code>
-            header in your request that specifies
-            <code>application/json</code>. You can alternatively pass a
-            <code>format=json</code>
-            query parameter (<a
-              href="/?example=go&format=json"
+            website by passing an <code>Accept</code> header in your request
+            that specifies <code>application/json</code>. You can alternatively
+            pass a <code>format=json</code> query parameter (<a
+              href="/?example=go&amp;format=json"
               rel="noopener"
               target="_blank"
               >like this!</a
@@ -162,27 +143,28 @@ exports[`fastify server tests > GET / > should return 200 with standard template
           <ul>
             <li>
               <code
-                >=IMPORTXML("https://mpls.vote?address="&ENCODEURL("100 Main
-                St"),"//*[@id='Precinct']")</code
+                >=IMPORTXML(&quot;https://mpls.vote?address=&quot;&amp;ENCODEURL(&quot;100
+                Main St&quot;),&quot;//*[@id=&#39;Precinct&#39;]&quot;)</code
               >
             </li>
             <li>
               <code
-                >=IMPORTXML("https://mpls.vote?address="&ENCODEURL("100 Main
-                St"),"//*[@id='address']")</code
+                >=IMPORTXML(&quot;https://mpls.vote?address=&quot;&amp;ENCODEURL(&quot;100
+                Main St&quot;),&quot;//*[@id=&#39;address&#39;]&quot;)</code
               >
             </li>
             <li>
               <code
-                >=IMPORTXML("https://mpls.vote?address="&ENCODEURL("100 Main
-                St"),"//*[@id='mplsPollingPlace21']")</code
+                >=IMPORTXML(&quot;https://mpls.vote?address=&quot;&amp;ENCODEURL(&quot;100
+                Main
+                St&quot;),&quot;//*[@id=&#39;mplsPollingPlace21&#39;]&quot;)</code
               >
             </li>
           </ul>
           <p>
             We also have API reference docs available —
             <a href="https://dev.mpls.vote" rel="noopener" target="_blank"
-              >check 'em out here</a
+              >check &#39;em out here</a
             >! (Disclaimer: the docs are hosted via
             <a href="https://readme.com" rel="noopener" target="_blank"
               >ReadMe</a
@@ -190,22 +172,22 @@ exports[`fastify server tests > GET / > should return 200 with standard template
           </p>
           <h3>Do you have a privacy policy?</h3>
           <p>
-            This is a humble proof-of-concept so it doesn't have any official
-            privacy policy legalese, but this website does not include with any
-            client-side analytics/tracking scripts whatsoever, nor we store any
-            of the information you send anywhere. The code is
+            This is a humble proof-of-concept so it doesn&#39;t have any
+            official privacy policy legalese, but this website does not include
+            with any client-side analytics/tracking scripts whatsoever, nor we
+            store any of the information you send anywhere. The code is
             <a
               href="https://github.com/kanadgupta/mn-precinct-finder"
               rel="noopener"
               target="_blank"
               >fully open-source</a
             >
-            if you'd like to verify this for yourself!
+            if you&#39;d like to verify this for yourself!
           </p>
           <p>
             The information you submit to the site via the query parameters
-            (address information, geographic coordinates via the 'Current
-            Location' button, etc.) is anonymously sent to the
+            (address information, geographic coordinates via the &#39;Current
+            Location&#39; button, etc.) is anonymously sent to the
             <a
               href="https://developers.google.com/maps/documentation/geocoding"
               rel="noopener"
@@ -225,9 +207,9 @@ exports[`fastify server tests > GET / > should return 200 with standard template
               rel="noopener"
               target="_blank"
               >their terms of use</a
-            >. So don't, like, send your social security number through the
-            form? It's totally invisible to us, but it's technically being sent
-            to Google.
+            >. So don&#39;t, like, send your social security number through the
+            form? It&#39;s totally invisible to us, but it&#39;s technically
+            being sent to Google.
           </p>
           <h3>Will elections save us?</h3>
           <p>lol... you must be new here</p>
@@ -235,7 +217,7 @@ exports[`fastify server tests > GET / > should return 200 with standard template
       </div>
       <footer class="footer">
         <span
-          >made with &hearts; by
+          >made with ♥ by
           <a
             href="https://twitter.com/kanadgupta"
             rel="noopener"
@@ -267,21 +249,18 @@ exports[`fastify server tests > GET / > should return 200 with standard template
 "
 `;
 
-exports[`fastify server tests > GET /?example=go > should return 200 with standard template 1`] = `
+exports[`server tests > GET /?example=go > should return 200 with standard template 1`] = `
 "<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="https://fav.farm/🗳️" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
     <title>MPLS Poll Finder</title>
-
-    <!-- Meta tags for SEO and social sharing -->
     <link rel="canonical" href="https://mpls.vote" />
     <meta
       name="description"
-      content="An open-source, API-backed poll finder that (mostly) doesn&#x27;t suck ❤️"
+      content="An open-source, API-backed poll finder that (mostly) doesn&#39;t suck ❤️"
     />
     <meta property="og:title" content="MPLS Poll Finder" />
     <meta
@@ -292,42 +271,35 @@ exports[`fastify server tests > GET /?example=go > should return 200 with standa
     <meta property="og:url" content="https://mpls.vote" />
     <meta
       property="og:description"
-      content="An open-source, API-backed poll finder that (mostly) doesn&#x27;t suck ❤️"
+      content="An open-source, API-backed poll finder that (mostly) doesn&#39;t suck ❤️"
     />
     <meta name="twitter:card" content="summary" />
-
-    <!-- Import the webpage's stylesheet -->
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
     <div class="wrapper">
       <div class="content" role="main">
-        <!-- This is the start of content for our page -->
         <h1 class="title"><a class="title" href="/">MPLS Poll Finder</a></h1>
-
-        <!-- Add text indicating that we've found the precinct OR had an error -->
         <p class="precinct-info">
           The polling place for
           <a
-            href="https://www.google.com/maps/search/?api&#x3D;1&amp;query&#x3D;2506+Central+Ave+NE%2C+Minneapolis%2C+MN+55418"
+            href="https://www.google.com/maps/search/?api=1&amp;query=2506+Central+Ave+NE%2C+Minneapolis%2C+MN+55418"
             id="address"
             rel="noopener"
             target="_blank"
             >2506 Central Ave NE, Minneapolis, MN 55418</a
           >
-          is...<br /><br />
-          🗳️
+          is...<br /><br />🗳️
           <b
             ><a
-              href="https://www.google.com/maps/search/?api&#x3D;1&amp;query&#x3D;Audubon+Park+Recreation+Center+1320+29th+Ave+NE&amp;query_place_id&#x3D;ChIJMzNMT9sts1IRYwD7TCQu1p4"
+              href="https://www.google.com/maps/search/?api=1&amp;query=Audubon+Park+Recreation+Center+1320+29th+Ave+NE&amp;query_place_id=ChIJMzNMT9sts1IRYwD7TCQu1p4"
               id="mplsPollingPlace21"
               rel="noopener"
               target="_blank"
               ><span id="mplsPollingPlace21-name"
                 >Audubon Park Recreation Center</span
               >
-              -
-              <span id="mplsPollingPlace21-address">1320 29th Ave NE</span></a
+              - <span id="mplsPollingPlace21-address">1320 29th Ave NE</span></a
             ></b
           >
           🗳️
@@ -368,26 +340,20 @@ exports[`fastify server tests > GET /?example=go > should return 200 with standa
             >
           </li>
         </ul>
-
         <div class="form-wrapper">
-          <!-- Our default paragraph/message -->
           <form class="address-form" method="get">
-            <label for="address-input">
-              <span class="subtitle">Let's try another address! 🏡</span><br />
-              <input
+            <label for="address-input"
+              ><span class="subtitle">Let&#39;s try another address! 🏡</span
+              ><br /><input
                 id="address-input"
                 name="address"
-                required="required"
+                required=""
                 placeholder="123 Main St, 55411"
                 type="text"
-                value=""
-              />
-            </label>
-            <button type="submit">Search</button>
+                value="" /></label
+            ><button type="submit">Search</button>
           </form>
         </div>
-
-        <!-- FAQ -->
         <div class="faq-wrapper">
           <h2 id="faq">Frequently Asked Questions (F.A.Q.)</h2>
           <h3>What is this?</h3>
@@ -400,19 +366,19 @@ exports[`fastify server tests > GET /?example=go > should return 200 with standa
           <p>Yes. lol.</p>
           <p>
             First off, this relies on Google Maps for geocoding the data. Like
-            most APIs, if you send garbage data to it, you'll likely receive
-            garbage in return. In other words, you'll see the best results if
-            you send complete street addresses (that actually exist!), with
+            most APIs, if you send garbage data to it, you&#39;ll likely receive
+            garbage in return. In other words, you&#39;ll see the best results
+            if you send complete street addresses (that actually exist!), with
             brownie points if you include a ZIP code.
           </p>
           <p>
             With any geocoder, the data tends to be less accurate in less
             populous areas. While it should work just fine for most parts of the
             state (provided you send it complete and valid addresses), take it
-            with a grain of salt if you're outside of the Twin Cities Metro
+            with a grain of salt if you&#39;re outside of the Twin Cities Metro
             Area!
             <b
-              >If you're ever unsure of the results you're getting,
+              >If you&#39;re ever unsure of the results you&#39;re getting,
               <a
                 href="https://pollfinder.sos.state.mn.us/"
                 rel="noopener"
@@ -432,17 +398,16 @@ exports[`fastify server tests > GET /?example=go > should return 200 with standa
             >. Why are you?
           </h3>
           <p>
-            It's true—the Secretary of State (SOS) has done excellent work on
-            these fronts and it serves us very well! However, the current system
-            requires
-            <b>a lot</b>
-            of clicks to access all of that valuable information—not just access
-            to your precinct and its corresponding polling place, but all of
-            your electoral boundaries (Ward, County, Congressional Districts,
-            etc.) and everything on your ballot.
+            It&#39;s true—the Secretary of State (SOS) has done excellent work
+            on these fronts and it serves us very well! However, the current
+            system requires <b>a lot</b> of clicks to access all of that
+            valuable information—not just access to your precinct and its
+            corresponding polling place, but all of your electoral boundaries
+            (Ward, County, Congressional Districts, etc.) and everything on your
+            ballot.
           </p>
           <p>
-            And the bummer for developers like myself is that there's no
+            And the bummer for developers like myself is that there&#39;s no
             discernable pattern to these URLs, meaning that all of this
             information is difficult to access at scale unless you cobble it
             together yourself. This makes it harder for grassroots campaigns
@@ -450,21 +415,19 @@ exports[`fastify server tests > GET /?example=go > should return 200 with standa
             negative impact on electoral turnout.
           </p>
           <p>
-            This tool isn't intended to replace the SOS's system—it was built by
-            a single person with a literal $0 budget, I honestly couldn't do
-            that if I tried! This is more intended to be a exploration of what a
-            modern electoral information API could like. 🌱
+            This tool isn&#39;t intended to replace the SOS&#39;s system—it was
+            built by a single person with a literal $0 budget, I honestly
+            couldn&#39;t do that if I tried! This is more intended to be a
+            exploration of what a modern electoral information API could like.
+            🌱
           </p>
           <h3>You mentioned that this is an API! How does that work?</h3>
           <p>
             You can retrieve a JSON representation of the data provided on the
-            website by passing an
-            <code>Accept</code>
-            header in your request that specifies
-            <code>application/json</code>. You can alternatively pass a
-            <code>format=json</code>
-            query parameter (<a
-              href="/?example=go&format=json"
+            website by passing an <code>Accept</code> header in your request
+            that specifies <code>application/json</code>. You can alternatively
+            pass a <code>format=json</code> query parameter (<a
+              href="/?example=go&amp;format=json"
               rel="noopener"
               target="_blank"
               >like this!</a
@@ -479,27 +442,28 @@ exports[`fastify server tests > GET /?example=go > should return 200 with standa
           <ul>
             <li>
               <code
-                >=IMPORTXML("https://mpls.vote?address="&ENCODEURL("100 Main
-                St"),"//*[@id='Precinct']")</code
+                >=IMPORTXML(&quot;https://mpls.vote?address=&quot;&amp;ENCODEURL(&quot;100
+                Main St&quot;),&quot;//*[@id=&#39;Precinct&#39;]&quot;)</code
               >
             </li>
             <li>
               <code
-                >=IMPORTXML("https://mpls.vote?address="&ENCODEURL("100 Main
-                St"),"//*[@id='address']")</code
+                >=IMPORTXML(&quot;https://mpls.vote?address=&quot;&amp;ENCODEURL(&quot;100
+                Main St&quot;),&quot;//*[@id=&#39;address&#39;]&quot;)</code
               >
             </li>
             <li>
               <code
-                >=IMPORTXML("https://mpls.vote?address="&ENCODEURL("100 Main
-                St"),"//*[@id='mplsPollingPlace21']")</code
+                >=IMPORTXML(&quot;https://mpls.vote?address=&quot;&amp;ENCODEURL(&quot;100
+                Main
+                St&quot;),&quot;//*[@id=&#39;mplsPollingPlace21&#39;]&quot;)</code
               >
             </li>
           </ul>
           <p>
             We also have API reference docs available —
             <a href="https://dev.mpls.vote" rel="noopener" target="_blank"
-              >check 'em out here</a
+              >check &#39;em out here</a
             >! (Disclaimer: the docs are hosted via
             <a href="https://readme.com" rel="noopener" target="_blank"
               >ReadMe</a
@@ -507,22 +471,22 @@ exports[`fastify server tests > GET /?example=go > should return 200 with standa
           </p>
           <h3>Do you have a privacy policy?</h3>
           <p>
-            This is a humble proof-of-concept so it doesn't have any official
-            privacy policy legalese, but this website does not include with any
-            client-side analytics/tracking scripts whatsoever, nor we store any
-            of the information you send anywhere. The code is
+            This is a humble proof-of-concept so it doesn&#39;t have any
+            official privacy policy legalese, but this website does not include
+            with any client-side analytics/tracking scripts whatsoever, nor we
+            store any of the information you send anywhere. The code is
             <a
               href="https://github.com/kanadgupta/mn-precinct-finder"
               rel="noopener"
               target="_blank"
               >fully open-source</a
             >
-            if you'd like to verify this for yourself!
+            if you&#39;d like to verify this for yourself!
           </p>
           <p>
             The information you submit to the site via the query parameters
-            (address information, geographic coordinates via the 'Current
-            Location' button, etc.) is anonymously sent to the
+            (address information, geographic coordinates via the &#39;Current
+            Location&#39; button, etc.) is anonymously sent to the
             <a
               href="https://developers.google.com/maps/documentation/geocoding"
               rel="noopener"
@@ -542,9 +506,9 @@ exports[`fastify server tests > GET /?example=go > should return 200 with standa
               rel="noopener"
               target="_blank"
               >their terms of use</a
-            >. So don't, like, send your social security number through the
-            form? It's totally invisible to us, but it's technically being sent
-            to Google.
+            >. So don&#39;t, like, send your social security number through the
+            form? It&#39;s totally invisible to us, but it&#39;s technically
+            being sent to Google.
           </p>
           <h3>Will elections save us?</h3>
           <p>lol... you must be new here</p>
@@ -552,7 +516,7 @@ exports[`fastify server tests > GET /?example=go > should return 200 with standa
       </div>
       <footer class="footer">
         <span
-          >made with &hearts; by
+          >made with ♥ by
           <a
             href="https://twitter.com/kanadgupta"
             rel="noopener"

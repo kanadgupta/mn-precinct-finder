@@ -1,7 +1,6 @@
 import nock from 'nock';
 import { describe, it, expect } from 'vitest';
 
-import GeocodingError from '../src/lib/errors.js';
 import { forwardGeocode, reverseGeocode } from '../src/lib/geocode-address.js';
 
 describe('#forwardGeocode', () => {
@@ -54,8 +53,8 @@ describe('#forwardGeocode', () => {
       status: 'ZERO_RESULTS',
     });
 
-    await expect(forwardGeocode('zero results address')).rejects.toStrictEqual(
-      new GeocodingError([], 'zero results address'),
+    await expect(forwardGeocode('zero results address')).rejects.toMatchInlineSnapshot(
+      "[GeocodingError: We weren't able to find any addresses in Minnesota for 'zero results address'.]",
     );
   });
 
@@ -66,7 +65,7 @@ describe('#forwardGeocode', () => {
     });
 
     await expect(forwardGeocode('unknown error address')).rejects.toMatchInlineSnapshot(
-      '[AxiosError: Request failed with status code 400]',
+      '[GeocodingError: Our geocoder ran into an unexpected issue (Request failed with status code 400)]',
     );
   });
 
@@ -88,8 +87,8 @@ describe('#forwardGeocode', () => {
         status: 'OK',
       });
 
-    await expect(forwardGeocode('non-rooftop address')).rejects.toStrictEqual(
-      new GeocodingError([], 'non-rooftop address'),
+    await expect(forwardGeocode('non-rooftop address')).rejects.toMatchInlineSnapshot(
+      "[GeocodingError: We weren't able to find any addresses in Minnesota for 'non-rooftop address'.]",
     );
   });
 
@@ -111,7 +110,9 @@ describe('#forwardGeocode', () => {
         status: 'OK',
       });
 
-    await expect(forwardGeocode('non-MN address')).rejects.toStrictEqual(new GeocodingError([], 'non-MN address'));
+    await expect(forwardGeocode('non-MN address')).rejects.toMatchInlineSnapshot(
+      "[GeocodingError: We weren't able to find any addresses in Minnesota for 'non-MN address'.]",
+    );
   });
 
   it('should throw if multiple valid results', async () => {
@@ -139,7 +140,9 @@ describe('#forwardGeocode', () => {
       status: 'OK',
     });
 
-    await expect(forwardGeocode('non-MN address')).rejects.toStrictEqual(new GeocodingError(results, 'non-MN address'));
+    await expect(forwardGeocode('non-MN address')).rejects.toMatchInlineSnapshot(
+      "[GeocodingError: We found multiple matches for 'non-MN address'.]",
+    );
   });
 });
 
