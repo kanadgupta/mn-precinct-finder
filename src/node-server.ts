@@ -3,7 +3,8 @@ import { serveStatic } from '@hono/node-server/serve-static';
 
 import app from './server.js';
 
-app.use('/style.css', serveStatic({ path: './public/style.css' }));
+// serve static files from the `public` directory
+app.use('*', serveStatic({ root: 'public' }));
 
 // port 3000 is what we specify for fly.io (see Dockerfile and fly.toml)
 serve({ fetch: app.fetch, port: Number(process.env.PORT) || 3000 }, info => {
