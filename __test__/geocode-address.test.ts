@@ -22,7 +22,7 @@ describe('#forwardGeocode', () => {
         status: 'OK',
       });
 
-    await expect(forwardGeocode('unformatted address')).resolves.toStrictEqual({
+    await expect(forwardGeocode('', 'unformatted address')).resolves.toStrictEqual({
       address: 'some formatted address',
       gmaps: 'https://www.google.com/maps/search/?api=1&query=some+formatted+address&query_place_id=test',
       precinct: {
@@ -53,7 +53,7 @@ describe('#forwardGeocode', () => {
       status: 'ZERO_RESULTS',
     });
 
-    await expect(forwardGeocode('zero results address')).rejects.toMatchInlineSnapshot(
+    await expect(forwardGeocode('', 'zero results address')).rejects.toMatchInlineSnapshot(
       "[GeocodingError: We weren't able to find any addresses in Minnesota for 'zero results address'.]",
     );
   });
@@ -64,7 +64,7 @@ describe('#forwardGeocode', () => {
       status: 'UNKNOWN_ERROR',
     });
 
-    await expect(forwardGeocode('unknown error address')).rejects.toMatchInlineSnapshot(
+    await expect(forwardGeocode('', 'unknown error address')).rejects.toMatchInlineSnapshot(
       '[GeocodingError: Our geocoder ran into an unexpected issue (Request failed with status code 400)]',
     );
   });
@@ -87,7 +87,7 @@ describe('#forwardGeocode', () => {
         status: 'OK',
       });
 
-    await expect(forwardGeocode('non-rooftop address')).rejects.toMatchInlineSnapshot(
+    await expect(forwardGeocode('', 'non-rooftop address')).rejects.toMatchInlineSnapshot(
       "[GeocodingError: We weren't able to find any addresses in Minnesota for 'non-rooftop address'.]",
     );
   });
@@ -110,7 +110,7 @@ describe('#forwardGeocode', () => {
         status: 'OK',
       });
 
-    await expect(forwardGeocode('non-MN address')).rejects.toMatchInlineSnapshot(
+    await expect(forwardGeocode('', 'non-MN address')).rejects.toMatchInlineSnapshot(
       "[GeocodingError: We weren't able to find any addresses in Minnesota for 'non-MN address'.]",
     );
   });
@@ -140,7 +140,7 @@ describe('#forwardGeocode', () => {
       status: 'OK',
     });
 
-    await expect(forwardGeocode('non-MN address')).rejects.toMatchInlineSnapshot(
+    await expect(forwardGeocode('', 'non-MN address')).rejects.toMatchInlineSnapshot(
       "[GeocodingError: We found multiple matches for 'non-MN address'.]",
     );
   });
@@ -165,7 +165,7 @@ describe('#reverseGeocode', () => {
         status: 'OK',
       });
 
-    await expect(reverseGeocode(0, 0)).resolves.toStrictEqual({
+    await expect(reverseGeocode('', 0, 0)).resolves.toStrictEqual({
       address: 'a reverse geocoded address',
       gmaps: 'https://www.google.com/maps/search/?api=1&query=a+reverse+geocoded+address&query_place_id=test',
     });

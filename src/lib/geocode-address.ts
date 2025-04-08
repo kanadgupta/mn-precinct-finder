@@ -6,9 +6,12 @@ import findPrecinct, { type ExtendedPrecinctProps } from './find-precinct.js';
 import shortenAddress from './shorten-address.js';
 
 const googlemaps = new Client({});
-const key = process.env.GOOGLE_MAPS_API_KEY as string;
 
-export function forwardGeocode(
+export async function forwardGeocode(
+  /**
+   * The Google Maps API key.
+   */
+  key: string,
   address: string,
 ): Promise<{ address: string; gmaps: string; precinct: ExtendedPrecinctProps; type: 'success' }> {
   // @ts-expect-error TS doesn't like the `.catch`
@@ -51,7 +54,14 @@ export function forwardGeocode(
     });
 }
 
-export function reverseGeocode(long: number | string, lat: number | string) {
+export async function reverseGeocode(
+  /**
+   * The Google Maps API key.
+   */
+  key: string,
+  long: number | string,
+  lat: number | string,
+) {
   return googlemaps
     .reverseGeocode({
       params: {

@@ -2,6 +2,7 @@ import type GeocodingError from './lib/errors.js';
 import type { ContentfulStatusCode } from 'hono/utils/http-status';
 
 import { Hono, type Context } from 'hono';
+import { env } from 'hono/adapter';
 import { UAParser } from 'ua-parser-js';
 
 import Page from './components/index.js';
@@ -53,6 +54,8 @@ app.get('/', async c => {
   const latQuery = req.query('lat');
   const longQuery = req.query('long');
 
+  const { GOOGLE_MAPS_API_KEY } = env<{ GOOGLE_MAPS_API_KEY: string }>(c);
+
   const { browser } = UAParser(req.header('User-Agent'));
 
   if (req.query('example')) {
@@ -63,7 +66,7 @@ app.get('/', async c => {
   } else if (latQuery && longQuery) {
     try {
       const precinct = findPrecinct([Number(longQuery), Number(latQuery)]);
-      const { address, gmaps } = await reverseGeocode(longQuery, latQuery);
+      const { address, gmaps } = await reverseGeocode(GOOGLE_MAPS_API_KEY, longQuery, latQuery);
       params = {
         address,
         gmaps,
@@ -79,7 +82,7 @@ app.get('/', async c => {
     }
   } else if (addressQuery) {
     try {
-      params = await forwardGeocode(addressQuery);
+      params = await forwardGeocode(GOOGLE_MAPS_API_KEY, addressQuery);
     } catch (error) {
       c.status(error.status);
       params = { error, type: 'error' };
