@@ -1,6 +1,9 @@
 {
   "type": "module",
   "private": true,
+  "engines": {
+    "node": "^20"
+  },
   "scripts": {
     "build": "tsc",
     "deno": "deno run -q -A --unstable bin/postprocess.js src/lib/data/precinct-table.xlsx",
@@ -19,10 +22,6 @@
     "hono": "^4.6.16",
     "ua-parser-js": "^2.0.0"
   },
-  "engines": {
-    "node": "^20"
-  },
-  "prettier": "@readme/eslint-config/prettier",
   "devDependencies": {
     "@readme/eslint-config": "^14.6.0",
     "@types/geojson": "^7946.0.15",
@@ -34,5 +33,6 @@
     "tsx": "^4.19.2",
     "typescript": "^5.7.3",
     "vitest": "^3.1.1"
-  }
+  },
+  "prettier": "@readme/eslint-config/prettier"
 }
