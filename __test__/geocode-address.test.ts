@@ -1,9 +1,17 @@
 import nock from 'nock';
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, beforeAll, afterAll } from 'vitest';
 
 import { forwardGeocode, reverseGeocode } from '../src/lib/geocode-address.js';
 
 describe('#forwardGeocode', () => {
+  beforeAll(() => {
+    nock.disableNetConnect();
+  });
+
+  afterAll(() => {
+    nock.enableNetConnect();
+  });
+
   it('should return valid data for valid query', async () => {
     nock('https://maps.googleapis.com:443')
       .get('/maps/api/geocode/json')

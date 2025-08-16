@@ -579,3 +579,582 @@ exports[`server tests > GET /?example=go > should return 200 with standard templ
 </html>
 "
 `;
+
+exports[`server tests > GET actual precinct data > should return 200 for valid mpls precinct with no polling place 1`] = `
+"<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="https://fav.farm/🗳️" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MPLS Poll Finder</title>
+    <link rel="canonical" href="https://mpls.vote" />
+    <meta
+      name="description"
+      content="An open-source, API-backed poll finder that (mostly) doesn&#39;t suck ❤️"
+    />
+    <meta property="og:title" content="MPLS Poll Finder" />
+    <meta
+      property="og:image"
+      content="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/285/ballot-box-with-ballot_1f5f3-fe0f.png"
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://mpls.vote" />
+    <meta
+      property="og:description"
+      content="An open-source, API-backed poll finder that (mostly) doesn&#39;t suck ❤️"
+    />
+    <meta name="twitter:card" content="summary" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="content" role="main">
+        <h1 class="title"><a class="title" href="/">MPLS Poll Finder</a></h1>
+        <p class="precinct-info">
+          Hmm...<b
+            ><a href="{{gmaps}}" rel="noopener" target="_blank"
+              >some formatted address</a
+            ></b
+          >doesn&#39;t appear to be in Minneapolis!<br /><br />In any case,
+          here&#39;s some info about your electoral boundaries!
+        </p>
+        <ul class="precinct-info">
+          <li>
+            <b>Precinct:</b> <span id="Precinct">Minneapolis W-7 P-11</span>
+          </li>
+          <li><b>Park Board District:</b> <span id="Park">4</span></li>
+          <li class="extra hidden">
+            <b>U.S. Congressional District:</b> <span id="CongDist">5</span>
+          </li>
+          <li class="extra hidden">
+            <b>County:</b> <span id="County">Hennepin</span>
+          </li>
+          <li class="extra hidden">
+            <b>County Commissioner District:</b> <span id="CtyComDist">03</span>
+          </li>
+          <li class="extra hidden">
+            <b>State Senate District:</b> <span id="MNSenDist">59</span>
+          </li>
+          <li class="extra hidden">
+            <b>State Legislative District:</b> <span id="MNLegDist">59B</span>
+          </li>
+          <li class="extra hidden">
+            <b>State Judicial District:</b> <span id="Judicial">04</span>
+          </li>
+          <li class="extra hidden">
+            <b>Minor Civil Division (MCD):</b>
+            <span id="MCDName">Minneapolis</span>
+          </li>
+          <li>
+            <a aria-expanded="false" onclick="toggleInfo(event)" href=""
+              >Show irrelevant info...</a
+            >
+          </li>
+        </ul>
+        <div class="form-wrapper">
+          <form class="address-form" method="get">
+            <label for="address-input"
+              ><span class="subtitle">Let&#39;s try another address! 🏡</span
+              ><br /><input
+                id="address-input"
+                name="address"
+                required=""
+                placeholder="123 Main St, 55411"
+                type="text"
+                value="" /></label
+            ><button type="submit">Search</button>
+          </form>
+        </div>
+        <div class="faq-wrapper">
+          <h2 id="faq">Frequently Asked Questions (F.A.Q.)</h2>
+          <h3>What is this?</h3>
+          <p>
+            This is a tool that (mostly) helps you with one thing: finding your
+            polling place (if you live in Minneapolis) and your voting precinct
+            (if you live in Minnesota)!
+          </p>
+          <h3>Are there any limitations with this tool?</h3>
+          <p>Yes. lol.</p>
+          <p>
+            First off, this relies on Google Maps for geocoding the data. Like
+            most APIs, if you send garbage data to it, you&#39;ll likely receive
+            garbage in return. In other words, you&#39;ll see the best results
+            if you send complete street addresses (that actually exist!), with
+            brownie points if you include a ZIP code.
+          </p>
+          <p>
+            With any geocoder, the data tends to be less accurate in less
+            populous areas. While it should work just fine for most parts of the
+            state (provided you send it complete and valid addresses), take it
+            with a grain of salt if you&#39;re outside of the Twin Cities Metro
+            Area!
+            <b
+              >If you&#39;re ever unsure of the results you&#39;re getting,
+              <a
+                href="https://pollfinder.sos.state.mn.us/"
+                rel="noopener"
+                target="_blank"
+                >the official poll finder</a
+              >
+              is your best bet.</b
+            >
+          </p>
+          <h3>
+            So this is cool and all but... the Minnesota Secretary of State
+            <a
+              href="https://pollfinder.sos.state.mn.us/"
+              rel="noopener"
+              target="_blank"
+              >already does this</a
+            >. Why are you?
+          </h3>
+          <p>
+            It&#39;s true—the Secretary of State (SOS) has done excellent work
+            on these fronts and it serves us very well! However, the current
+            system requires <b>a lot</b> of clicks to access all of that
+            valuable information—not just access to your precinct and its
+            corresponding polling place, but all of your electoral boundaries
+            (Ward, County, Congressional Districts, etc.) and everything on your
+            ballot.
+          </p>
+          <p>
+            And the bummer for developers like myself is that there&#39;s no
+            discernable pattern to these URLs, meaning that all of this
+            information is difficult to access at scale unless you cobble it
+            together yourself. This makes it harder for grassroots campaigns
+            with an essential part of their jobs, which has a downstream
+            negative impact on electoral turnout.
+          </p>
+          <p>
+            This tool isn&#39;t intended to replace the SOS&#39;s system—it was
+            built by a single person with a literal $0 budget, I honestly
+            couldn&#39;t do that if I tried! This is more intended to be a
+            exploration of what a modern electoral information API could like.
+            🌱
+          </p>
+          <h3>You mentioned that this is an API! How does that work?</h3>
+          <p>
+            You can retrieve a JSON representation of the data provided on the
+            website by passing an <code>Accept</code> header in your request
+            that specifies <code>application/json</code>. You can alternatively
+            pass a <code>format=json</code> query parameter (<a
+              href="/?example=go&amp;format=json"
+              rel="noopener"
+              target="_blank"
+              >like this!</a
+            >).
+          </p>
+          <p>
+            The markup on this webpage also includes a few hidden tricks for
+            Google Sheets users to easily integrate this data into their
+            spreadsheets. You can grab the XPath selectors of certain fields on
+            the page and then use formulas like these to import the data:
+          </p>
+          <ul>
+            <li>
+              <code
+                >=IMPORTXML(&quot;https://mpls.vote?address=&quot;&amp;ENCODEURL(&quot;100
+                Main St&quot;),&quot;//*[@id=&#39;Precinct&#39;]&quot;)</code
+              >
+            </li>
+            <li>
+              <code
+                >=IMPORTXML(&quot;https://mpls.vote?address=&quot;&amp;ENCODEURL(&quot;100
+                Main St&quot;),&quot;//*[@id=&#39;address&#39;]&quot;)</code
+              >
+            </li>
+            <li>
+              <code
+                >=IMPORTXML(&quot;https://mpls.vote?address=&quot;&amp;ENCODEURL(&quot;100
+                Main
+                St&quot;),&quot;//*[@id=&#39;mplsPollingPlace21&#39;]&quot;)</code
+              >
+            </li>
+          </ul>
+          <p>
+            We also have API reference docs available —
+            <a href="https://dev.mpls.vote" rel="noopener" target="_blank"
+              >check &#39;em out here</a
+            >! (Disclaimer: the docs are hosted via
+            <a href="https://readme.com" rel="noopener" target="_blank"
+              >ReadMe</a
+            >, which is my employer 🦉)
+          </p>
+          <h3>Do you have a privacy policy?</h3>
+          <p>
+            This is a humble proof-of-concept so it doesn&#39;t have any
+            official privacy policy legalese, but this website does not include
+            with any client-side analytics/tracking scripts whatsoever, nor we
+            store any of the information you send anywhere. The code is
+            <a
+              href="https://github.com/kanadgupta/mn-precinct-finder"
+              rel="noopener"
+              target="_blank"
+              >fully open-source</a
+            >
+            if you&#39;d like to verify this for yourself!
+          </p>
+          <p>
+            The information you submit to the site via the query parameters
+            (address information, geographic coordinates via the &#39;Current
+            Location&#39; button, etc.) is anonymously sent to the
+            <a
+              href="https://developers.google.com/maps/documentation/geocoding"
+              rel="noopener"
+              target="_blank"
+              >Google Maps Geocoding API</a
+            >
+            so that information is subject to
+            <a
+              href="https://policies.google.com/privacy"
+              rel="noopener"
+              target="_blank"
+              >their privacy policy</a
+            >
+            and
+            <a
+              href="https://policies.google.com/terms"
+              rel="noopener"
+              target="_blank"
+              >their terms of use</a
+            >. So don&#39;t, like, send your social security number through the
+            form? It&#39;s totally invisible to us, but it&#39;s technically
+            being sent to Google.
+          </p>
+          <h3>Will elections save us?</h3>
+          <p>lol... you must be new here</p>
+        </div>
+      </div>
+      <footer class="footer">
+        <span
+          >made with ♥ by
+          <a
+            href="https://github.com/kanadgupta.com"
+            rel="noopener"
+            target="_blank"
+            >kanad</a
+          ></span
+        >
+      </footer>
+    </div>
+    <script>
+      function toggleInfo(e) {
+        e.preventDefault();
+        // Toggle display of every hidden item
+        document.querySelectorAll("li.extra").forEach((item) => {
+          item.classList.toggle("hidden");
+        });
+        // Update attributes on toggle element
+        const isHidden = document
+          .querySelector("li.extra")
+          .classList.contains("hidden");
+        e.target.innerText = isHidden
+          ? "Show irrelevant info..."
+          : "Hide irrelevant info...";
+        e.target.setAttribute("aria-expanded", !isHidden);
+      }
+    </script>
+  </body>
+</html>
+"
+`;
+
+exports[`server tests > GET actual precinct data > should return 200 for valid mpls precinct with polling place 1`] = `
+"<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="https://fav.farm/🗳️" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MPLS Poll Finder</title>
+    <link rel="canonical" href="https://mpls.vote" />
+    <meta
+      name="description"
+      content="An open-source, API-backed poll finder that (mostly) doesn&#39;t suck ❤️"
+    />
+    <meta property="og:title" content="MPLS Poll Finder" />
+    <meta
+      property="og:image"
+      content="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/285/ballot-box-with-ballot_1f5f3-fe0f.png"
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://mpls.vote" />
+    <meta
+      property="og:description"
+      content="An open-source, API-backed poll finder that (mostly) doesn&#39;t suck ❤️"
+    />
+    <meta name="twitter:card" content="summary" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="content" role="main">
+        <h1 class="title"><a class="title" href="/">MPLS Poll Finder</a></h1>
+        <p class="precinct-info">
+          The polling place for
+          <a
+            href="https://www.google.com/maps/search/?api=1&amp;query=some+formatted+address&amp;query_place_id=test"
+            id="address"
+            rel="noopener"
+            target="_blank"
+            >some formatted address</a
+          >
+          is...<br /><br />🗳️
+          <b
+            ><a
+              href="https://www.google.com/maps/search/?api=1&amp;query=St.+Mark%27s+Episcopal+Cathedral+519+Oak+Grove+St&amp;query_place_id=ChIJfTPuvcMys1IRLA0Eg7Nf8yU"
+              id="mplsPollingPlace21"
+              rel="noopener"
+              target="_blank"
+              ><span id="mplsPollingPlace21-name"
+                >St. Mark&#39;s Episcopal Cathedral</span
+              >
+              - <span id="mplsPollingPlace21-address">519 Oak Grove St</span></a
+            ></b
+          >
+          🗳️
+        </p>
+        <p class="precinct-info">
+          Before you vote, it might be helpful to know your electoral districts:
+        </p>
+        <ul class="precinct-info">
+          <li>
+            <b>Precinct:</b> <span id="Precinct">Minneapolis W-7 P-5</span>
+          </li>
+          <li><b>Park Board District:</b> <span id="Park">4</span></li>
+          <li class="extra hidden">
+            <b>U.S. Congressional District:</b> <span id="CongDist">5</span>
+          </li>
+          <li class="extra hidden">
+            <b>County:</b> <span id="County">Hennepin</span>
+          </li>
+          <li class="extra hidden">
+            <b>County Commissioner District:</b> <span id="CtyComDist">03</span>
+          </li>
+          <li class="extra hidden">
+            <b>State Senate District:</b> <span id="MNSenDist">61</span>
+          </li>
+          <li class="extra hidden">
+            <b>State Legislative District:</b> <span id="MNLegDist">61A</span>
+          </li>
+          <li class="extra hidden">
+            <b>State Judicial District:</b> <span id="Judicial">04</span>
+          </li>
+          <li class="extra hidden">
+            <b>Minor Civil Division (MCD):</b>
+            <span id="MCDName">Minneapolis</span>
+          </li>
+          <li>
+            <a aria-expanded="false" onclick="toggleInfo(event)" href=""
+              >Show irrelevant info...</a
+            >
+          </li>
+        </ul>
+        <div class="form-wrapper">
+          <form class="address-form" method="get">
+            <label for="address-input"
+              ><span class="subtitle">Let&#39;s try another address! 🏡</span
+              ><br /><input
+                id="address-input"
+                name="address"
+                required=""
+                placeholder="123 Main St, 55411"
+                type="text"
+                value="" /></label
+            ><button type="submit">Search</button>
+          </form>
+        </div>
+        <div class="faq-wrapper">
+          <h2 id="faq">Frequently Asked Questions (F.A.Q.)</h2>
+          <h3>What is this?</h3>
+          <p>
+            This is a tool that (mostly) helps you with one thing: finding your
+            polling place (if you live in Minneapolis) and your voting precinct
+            (if you live in Minnesota)!
+          </p>
+          <h3>Are there any limitations with this tool?</h3>
+          <p>Yes. lol.</p>
+          <p>
+            First off, this relies on Google Maps for geocoding the data. Like
+            most APIs, if you send garbage data to it, you&#39;ll likely receive
+            garbage in return. In other words, you&#39;ll see the best results
+            if you send complete street addresses (that actually exist!), with
+            brownie points if you include a ZIP code.
+          </p>
+          <p>
+            With any geocoder, the data tends to be less accurate in less
+            populous areas. While it should work just fine for most parts of the
+            state (provided you send it complete and valid addresses), take it
+            with a grain of salt if you&#39;re outside of the Twin Cities Metro
+            Area!
+            <b
+              >If you&#39;re ever unsure of the results you&#39;re getting,
+              <a
+                href="https://pollfinder.sos.state.mn.us/"
+                rel="noopener"
+                target="_blank"
+                >the official poll finder</a
+              >
+              is your best bet.</b
+            >
+          </p>
+          <h3>
+            So this is cool and all but... the Minnesota Secretary of State
+            <a
+              href="https://pollfinder.sos.state.mn.us/"
+              rel="noopener"
+              target="_blank"
+              >already does this</a
+            >. Why are you?
+          </h3>
+          <p>
+            It&#39;s true—the Secretary of State (SOS) has done excellent work
+            on these fronts and it serves us very well! However, the current
+            system requires <b>a lot</b> of clicks to access all of that
+            valuable information—not just access to your precinct and its
+            corresponding polling place, but all of your electoral boundaries
+            (Ward, County, Congressional Districts, etc.) and everything on your
+            ballot.
+          </p>
+          <p>
+            And the bummer for developers like myself is that there&#39;s no
+            discernable pattern to these URLs, meaning that all of this
+            information is difficult to access at scale unless you cobble it
+            together yourself. This makes it harder for grassroots campaigns
+            with an essential part of their jobs, which has a downstream
+            negative impact on electoral turnout.
+          </p>
+          <p>
+            This tool isn&#39;t intended to replace the SOS&#39;s system—it was
+            built by a single person with a literal $0 budget, I honestly
+            couldn&#39;t do that if I tried! This is more intended to be a
+            exploration of what a modern electoral information API could like.
+            🌱
+          </p>
+          <h3>You mentioned that this is an API! How does that work?</h3>
+          <p>
+            You can retrieve a JSON representation of the data provided on the
+            website by passing an <code>Accept</code> header in your request
+            that specifies <code>application/json</code>. You can alternatively
+            pass a <code>format=json</code> query parameter (<a
+              href="/?example=go&amp;format=json"
+              rel="noopener"
+              target="_blank"
+              >like this!</a
+            >).
+          </p>
+          <p>
+            The markup on this webpage also includes a few hidden tricks for
+            Google Sheets users to easily integrate this data into their
+            spreadsheets. You can grab the XPath selectors of certain fields on
+            the page and then use formulas like these to import the data:
+          </p>
+          <ul>
+            <li>
+              <code
+                >=IMPORTXML(&quot;https://mpls.vote?address=&quot;&amp;ENCODEURL(&quot;100
+                Main St&quot;),&quot;//*[@id=&#39;Precinct&#39;]&quot;)</code
+              >
+            </li>
+            <li>
+              <code
+                >=IMPORTXML(&quot;https://mpls.vote?address=&quot;&amp;ENCODEURL(&quot;100
+                Main St&quot;),&quot;//*[@id=&#39;address&#39;]&quot;)</code
+              >
+            </li>
+            <li>
+              <code
+                >=IMPORTXML(&quot;https://mpls.vote?address=&quot;&amp;ENCODEURL(&quot;100
+                Main
+                St&quot;),&quot;//*[@id=&#39;mplsPollingPlace21&#39;]&quot;)</code
+              >
+            </li>
+          </ul>
+          <p>
+            We also have API reference docs available —
+            <a href="https://dev.mpls.vote" rel="noopener" target="_blank"
+              >check &#39;em out here</a
+            >! (Disclaimer: the docs are hosted via
+            <a href="https://readme.com" rel="noopener" target="_blank"
+              >ReadMe</a
+            >, which is my employer 🦉)
+          </p>
+          <h3>Do you have a privacy policy?</h3>
+          <p>
+            This is a humble proof-of-concept so it doesn&#39;t have any
+            official privacy policy legalese, but this website does not include
+            with any client-side analytics/tracking scripts whatsoever, nor we
+            store any of the information you send anywhere. The code is
+            <a
+              href="https://github.com/kanadgupta/mn-precinct-finder"
+              rel="noopener"
+              target="_blank"
+              >fully open-source</a
+            >
+            if you&#39;d like to verify this for yourself!
+          </p>
+          <p>
+            The information you submit to the site via the query parameters
+            (address information, geographic coordinates via the &#39;Current
+            Location&#39; button, etc.) is anonymously sent to the
+            <a
+              href="https://developers.google.com/maps/documentation/geocoding"
+              rel="noopener"
+              target="_blank"
+              >Google Maps Geocoding API</a
+            >
+            so that information is subject to
+            <a
+              href="https://policies.google.com/privacy"
+              rel="noopener"
+              target="_blank"
+              >their privacy policy</a
+            >
+            and
+            <a
+              href="https://policies.google.com/terms"
+              rel="noopener"
+              target="_blank"
+              >their terms of use</a
+            >. So don&#39;t, like, send your social security number through the
+            form? It&#39;s totally invisible to us, but it&#39;s technically
+            being sent to Google.
+          </p>
+          <h3>Will elections save us?</h3>
+          <p>lol... you must be new here</p>
+        </div>
+      </div>
+      <footer class="footer">
+        <span
+          >made with ♥ by
+          <a
+            href="https://github.com/kanadgupta.com"
+            rel="noopener"
+            target="_blank"
+            >kanad</a
+          ></span
+        >
+      </footer>
+    </div>
+    <script>
+      function toggleInfo(e) {
+        e.preventDefault();
+        // Toggle display of every hidden item
+        document.querySelectorAll("li.extra").forEach((item) => {
+          item.classList.toggle("hidden");
+        });
+        // Update attributes on toggle element
+        const isHidden = document
+          .querySelector("li.extra")
+          .classList.contains("hidden");
+        e.target.innerText = isHidden
+          ? "Show irrelevant info..."
+          : "Hide irrelevant info...";
+        e.target.setAttribute("aria-expanded", !isHidden);
+      }
+    </script>
+  </body>
+</html>
+"
+`;

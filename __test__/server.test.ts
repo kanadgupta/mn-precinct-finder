@@ -1,5 +1,6 @@
+import nock from 'nock';
 import { format } from 'prettier';
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, beforeAll, afterAll } from 'vitest';
 
 import app from '../src/server.js';
 
@@ -7,6 +8,14 @@ const browserUserAgent =
   'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36';
 
 describe('server tests', () => {
+  beforeAll(() => {
+    nock.disableNetConnect();
+  });
+
+  afterAll(() => {
+    nock.enableNetConnect();
+  });
+
   describe('GET /', () => {
     it('should return 200 with standard template', async () => {
       const response = await app.request('/', {
@@ -61,5 +70,70 @@ describe('server tests', () => {
     });
   });
 
-  describe.todo('GET actual precinct data');
+  describe('GET actual precinct data', () => {
+    it('should return 200 for valid mpls precinct with no polling place', async () => {
+      const mock = nock('https://maps.googleapis.com:443')
+        .get('/maps/api/geocode/json')
+        .query(true)
+        .reply(200, {
+          results: [
+            {
+              formatted_address: 'some formatted address',
+              geometry: {
+                // precinct 7-11, which doesn't have a polling place since it wasn't a thing back in 2021
+                location: { lat: 44.9778, lng: -93.265 },
+                location_type: 'ROOFTOP',
+              },
+              place_id: 'test',
+            },
+          ],
+          status: 'OK',
+        });
+
+      const response = await app.request('/?address=unformatted+address', {
+        method: 'GET',
+        headers: { 'user-agent': browserUserAgent },
+      });
+
+      mock.done();
+
+      const formatted = await format(await response.text(), { parser: 'html' });
+      expect(formatted).toMatchSnapshot();
+      expect(response.status).toBe(200);
+    });
+
+    it('should return 200 for valid mpls precinct with polling place', async () => {
+      const mock = nock('https://maps.googleapis.com:443')
+        .get('/maps/api/geocode/json')
+        .query(true)
+        .reply(200, {
+          results: [
+            {
+              formatted_address: 'some formatted address',
+              geometry: {
+                location: { lat: 44.967, lng: -93.28 },
+                location_type: 'ROOFTOP',
+              },
+              place_id: 'test',
+            },
+          ],
+          status: 'OK',
+        });
+
+      const response = await app.request('/?address=unformatted+address', {
+        method: 'GET',
+        headers: { 'user-agent': browserUserAgent },
+      });
+
+      mock.done();
+
+      const formatted = await format(await response.text(), { parser: 'html' });
+      expect(formatted).toMatchSnapshot();
+      expect(response.status).toBe(200);
+    });
+
+    it.todo('should return 404 for invalid mpls precinct');
+
+    it.todo('should handle 403 errors gracefully');
+  });
 });
