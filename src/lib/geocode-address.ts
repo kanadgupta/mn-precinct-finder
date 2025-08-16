@@ -50,7 +50,10 @@ export async function forwardGeocode(
     })
     .catch(err => {
       if (err instanceof GeocodingError) throw err;
-      throw new GeocodingError([], address, `Our geocoder ran into an unexpected issue (${err.message})`);
+      throw new GeocodingError([], address, {
+        message: `Our geocoder ran into an unexpected issue (${err.message})`,
+        status: 500,
+      });
     });
 }
 

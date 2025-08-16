@@ -11,10 +11,10 @@ const GeocodingError = class extends Error {
 
   public suggestion: string;
 
-  constructor(results: GeocodeResult[], query: string, customMessage?: string) {
+  constructor(results: GeocodeResult[], query: string, opts: { message?: string; status?: number } = {}) {
     let message;
     let suggestion = '';
-    let status = 404;
+    let status = opts.status ?? 404;
 
     if (results.length < 1) {
       message = `We weren't able to find any addresses in Minnesota for '${query}'.`;
@@ -34,7 +34,7 @@ const GeocodingError = class extends Error {
       return { href, text };
     });
 
-    super(customMessage ?? message);
+    super(opts.message ?? message);
 
     this.name = 'GeocodingError';
     this.addresses = addresses;
