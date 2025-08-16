@@ -1,4 +1,2 @@
 src/lib/data
-*.hbs
-
 dist/
