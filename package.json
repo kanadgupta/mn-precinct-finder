@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc",
     "deno": "deno run -q -A --unstable bin/postprocess.js src/lib/data/precinct-table.xlsx",
-    "dev": "tsx watch --env-file=.env src/node-server.ts",
+    "dev": "tsx watch --inspect --env-file=.env src/node-server.ts",
     "lint": "eslint . --ext js,ts,tsx && prettier -c . && tsc --noEmit && knip",
     "prebuild": "rm -rf dist",
     "pretest": "npm run lint",
