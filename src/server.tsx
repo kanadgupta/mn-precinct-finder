@@ -3,6 +3,7 @@ import type { ContentfulStatusCode } from 'hono/utils/http-status';
 
 import { Hono, type Context } from 'hono';
 import { env } from 'hono/adapter';
+import { logger } from 'hono/logger';
 import { UAParser } from 'ua-parser-js';
 
 import Page from './components/index.js';
@@ -13,6 +14,10 @@ import getPollingPlace, { type PollingPlace } from './lib/get-polling-place.js';
 import seo from './seo.json' with { type: 'json' };
 
 const app = new Hono();
+
+if (process.env.NODE_ENV !== 'test') {
+  app.use(logger());
+}
 
 type Params =
   | {
