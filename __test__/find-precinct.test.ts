@@ -18,6 +18,7 @@ describe('#findPrecinct', () => {
   });
 
   it('should throw error if total garbage is passed', () => {
+    // @ts-expect-error deliberately passing invalid data
     expect(() => findPrecinct(['yo'])).toThrow('coordinates must be at least 2 numbers long');
   });
 });
