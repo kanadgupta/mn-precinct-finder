@@ -1,17 +1,18 @@
 import type { GeocodeResult } from '@googlemaps/google-maps-services-js';
+import type { StatusCode } from 'hono/utils/http-status';
 
 import shortenAddress from './shorten-address.js';
 
-const GeocodingError = class extends Error {
+export default class GeocodingError extends Error {
   public addresses: { href: string; text: string }[];
 
   public query: string;
 
-  public status: number;
+  public status: StatusCode;
 
   public suggestion: string;
 
-  constructor(results: GeocodeResult[], query: string, opts: { message?: string; status?: number } = {}) {
+  constructor(results: GeocodeResult[], query: string, opts: { message?: string; status?: StatusCode } = {}) {
     let message;
     let suggestion = '';
     let status = opts.status ?? 404;
@@ -52,6 +53,4 @@ const GeocodingError = class extends Error {
       suggestions: this.addresses.map(address => address.text),
     };
   }
-};
-
-export default GeocodingError;
+}

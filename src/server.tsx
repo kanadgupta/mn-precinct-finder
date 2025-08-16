@@ -1,4 +1,3 @@
-import type GeocodingError from './lib/errors.js';
 import type { ContentfulStatusCode } from 'hono/utils/http-status';
 
 import { Hono, type Context } from 'hono';
@@ -8,6 +7,7 @@ import { UAParser } from 'ua-parser-js';
 
 import Page from './components/index.js';
 import buildMapsUrl from './lib/build-maps-url.js';
+import GeocodingError from './lib/errors.js';
 import findPrecinct, { type ExtendedPrecinctProps } from './lib/find-precinct.js';
 import { forwardGeocode, reverseGeocode } from './lib/geocode-address.js';
 import getPollingPlace, { type PollingPlace } from './lib/get-polling-place.js';
@@ -89,8 +89,10 @@ app.get('/', async c => {
     try {
       params = await forwardGeocode(GOOGLE_MAPS_API_KEY, addressQuery);
     } catch (error) {
-      c.status(error.status);
-      params = { error, type: 'error' };
+      if (error instanceof GeocodingError) {
+        c.status(error.status);
+        params = { error, type: 'error' };
+      }
     }
   }
 
