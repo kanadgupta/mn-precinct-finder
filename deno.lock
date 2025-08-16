@@ -1,5 +1,5 @@
 {
-  "version": "3",
+  "version": "4",
   "redirects": {
     "https://deno.land/x/url_join/mod.ts": "https://deno.land/x/url_join@1.0.0/mod.ts"
   },
@@ -54,24 +54,22 @@
   "workspace": {
     "packageJson": {
       "dependencies": [
-        "npm:@flydotio/dockerfile@^0.5.4",
         "npm:@googlemaps/google-maps-services-js@^3.2.5",
-        "npm:@readme/eslint-config@^13.5.1",
+        "npm:@hono/node-server@^1.13.7",
+        "npm:@readme/eslint-config@^14.6.0",
         "npm:@turf/boolean-within@^7.2.0",
         "npm:@turf/helpers@^7.2.0",
-        "npm:dotenv@^10.0.0",
-        "npm:eslint@^8.57.0",
-        "npm:fastify-accepts@^2.1.0",
-        "npm:fastify-formbody@^5.1.0",
-        "npm:fastify-static@^4.2.3",
-        "npm:fastify-swagger@^4.12.6",
-        "npm:fastify@^3.22.0",
-        "npm:handlebars@^4.7.7",
-        "npm:nock@^13.1.4",
-        "npm:nodemon@^2.0.13",
-        "npm:point-of-view@^4.15.2",
-        "npm:prettier@^3.2.5",
-        "npm:vitest@^2.1.8"
+        "npm:@types/geojson@^7946.0.15",
+        "npm:@types/node@^22.10.5",
+        "npm:eslint@^8.57.1",
+        "npm:hono@^4.6.16",
+        "npm:knip@^5.47.0",
+        "npm:nock@^14.0.3",
+        "npm:prettier@^3.5.3",
+        "npm:tsx@^4.19.2",
+        "npm:typescript@^5.7.3",
+        "npm:ua-parser-js@2",
+        "npm:vitest@^3.1.1"
       ]
     }
   }
