@@ -1,4 +1,4 @@
-import * as prettier from 'prettier';
+import { format } from 'prettier';
 import { describe, it, expect } from 'vitest';
 
 import app from '../src/server.js';
@@ -14,7 +14,7 @@ describe('server tests', () => {
         headers: { 'user-agent': browserUserAgent },
       });
 
-      const formatted = await prettier.format(await response.text(), { parser: 'html' });
+      const formatted = await format(await response.text(), { parser: 'html' });
       expect(formatted).toMatchSnapshot();
       expect(response.status).toBe(200);
     });
@@ -46,7 +46,7 @@ describe('server tests', () => {
         headers: { 'user-agent': browserUserAgent },
       });
 
-      const formatted = await prettier.format(await response.text(), { parser: 'html' });
+      const formatted = await format(await response.text(), { parser: 'html' });
       expect(formatted).toMatchSnapshot();
       expect(response.status).toBe(200);
     });
