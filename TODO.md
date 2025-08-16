@@ -1,7 +1,7 @@
 # TODO 🚧
 
 - [x] Implement GeoJSON precinct finder via [`@turf`](https://www.npmjs.com/package/@turf/boolean-point-in-polygon)
-- [x] Add workflow for syncing changes to Glitch
+- [x] ~~Add workflow for syncing changes to Glitch~~ (**edit**: rip)
 - [x] Geocoding functionality via Mapbox(?) API
 - [x] Add endpoint for Twilio
 - [x] (sigh) Migrate to Google Maps Geocoder so we can link out to Google Maps... links:
