@@ -22,29 +22,7 @@ describe('#forwardGeocode', () => {
         status: 'OK',
       });
 
-    await expect(forwardGeocode('', 'unformatted address')).resolves.toStrictEqual({
-      address: 'some formatted address',
-      gmaps: 'https://www.google.com/maps/search/?api=1&query=some+formatted+address&query_place_id=test',
-      precinct: {
-        Precinct: 'Minneapolis W-7 P-11',
-        PrecinctID: '270531705',
-        County: 'Hennepin',
-        CountyID: '27',
-        CongDist: '5',
-        MNSenDist: '59',
-        MNLegDist: '59B',
-        CtyComDist: '03',
-        Hospital: 'No data',
-        Judicial: '04',
-        MCDCode: '135',
-        MCDName: 'Minneapolis',
-        Park: '4',
-        PrecinctCode: '1705',
-        SoilAndWater: 'No data',
-        Ward: 'W-07',
-      },
-      type: 'success',
-    });
+    await expect(forwardGeocode('', 'unformatted address')).resolves.toMatchSnapshot();
   });
 
   it('should throw if response returns empty results', async () => {
@@ -165,9 +143,6 @@ describe('#reverseGeocode', () => {
         status: 'OK',
       });
 
-    await expect(reverseGeocode('', 0, 0)).resolves.toStrictEqual({
-      address: 'a reverse geocoded address',
-      gmaps: 'https://www.google.com/maps/search/?api=1&query=a+reverse+geocoded+address&query_place_id=test',
-    });
+    await expect(reverseGeocode('', 0, 0)).resolves.toMatchSnapshot();
   });
 });

@@ -6,23 +6,11 @@ import getPollingPlace from '../src/lib/get-polling-place.js';
 
 describe('#getPollingPlace', () => {
   it('should retrieve polling place data for valid precinct name', () => {
-    expect(getPollingPlace('Minneapolis W-1 P-3')).toStrictEqual({
-      address: '2955 Hayes St NE',
-      building: 'Northeast Middle School',
-      directions: 'enter via side/rear off 29th Ave NE',
-      gmapsUrl:
-        'https://www.google.com/maps/search/?api=1&query=Northeast+Middle+School+2955+Hayes+St+NE&query_place_id=ChIJf6uXUNAts1IRx9gO5VPsm0M',
-    });
+    expect(getPollingPlace('Minneapolis W-1 P-3')).toMatchSnapshot();
   });
 
   it('should retrieve polling place data for valid precinct name with zeros', () => {
-    expect(getPollingPlace('Minneapolis W-1 P-3')).toStrictEqual({
-      address: '2955 Hayes St NE',
-      building: 'Northeast Middle School',
-      directions: 'enter via side/rear off 29th Ave NE',
-      gmapsUrl:
-        'https://www.google.com/maps/search/?api=1&query=Northeast+Middle+School+2955+Hayes+St+NE&query_place_id=ChIJf6uXUNAts1IRx9gO5VPsm0M',
-    });
+    expect(getPollingPlace('Minneapolis W-1 P-3')).toMatchSnapshot();
   });
 
   it('should return fallback for invalid precinct name', () => {

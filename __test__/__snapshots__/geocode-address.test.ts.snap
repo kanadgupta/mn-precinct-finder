@@ -1,0 +1,34 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`#forwardGeocode > should return valid data for valid query 1`] = `
+{
+  "address": "some formatted address",
+  "gmaps": "https://www.google.com/maps/search/?api=1&query=some+formatted+address&query_place_id=test",
+  "precinct": {
+    "CongDist": "5",
+    "County": "Hennepin",
+    "CountyID": "27",
+    "CtyComDist": "03",
+    "Hospital": "No data",
+    "Judicial": "04",
+    "MCDCode": "135",
+    "MCDName": "Minneapolis",
+    "MNLegDist": "59B",
+    "MNSenDist": "59",
+    "Park": "4",
+    "Precinct": "Minneapolis W-7 P-11",
+    "PrecinctCode": "1705",
+    "PrecinctID": "270531705",
+    "SoilAndWater": "No data",
+    "Ward": "W-07",
+  },
+  "type": "success",
+}
+`;
+
+exports[`#reverseGeocode > should properly reverse geocode result 1`] = `
+{
+  "address": "a reverse geocoded address",
+  "gmaps": "https://www.google.com/maps/search/?api=1&query=a+reverse+geocoded+address&query_place_id=test",
+}
+`;

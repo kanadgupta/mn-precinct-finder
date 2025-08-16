@@ -1,0 +1,19 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`#getPollingPlace > should retrieve polling place data for valid precinct name 1`] = `
+{
+  "address": "2955 Hayes St NE",
+  "building": "Northeast Middle School",
+  "directions": "enter via side/rear off 29th Ave NE",
+  "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Northeast+Middle+School+2955+Hayes+St+NE&query_place_id=ChIJf6uXUNAts1IRx9gO5VPsm0M",
+}
+`;
+
+exports[`#getPollingPlace > should retrieve polling place data for valid precinct name with zeros 1`] = `
+{
+  "address": "2955 Hayes St NE",
+  "building": "Northeast Middle School",
+  "directions": "enter via side/rear off 29th Ave NE",
+  "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Northeast+Middle+School+2955+Hayes+St+NE&query_place_id=ChIJf6uXUNAts1IRx9gO5VPsm0M",
+}
+`;

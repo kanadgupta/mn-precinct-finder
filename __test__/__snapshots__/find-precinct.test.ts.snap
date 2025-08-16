@@ -1,0 +1,43 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`#findPrecinct > should return precinct data if passed as array 1`] = `
+{
+  "CongDist": "5",
+  "County": "Hennepin",
+  "CountyID": "27",
+  "CtyComDist": "03",
+  "Hospital": "No data",
+  "Judicial": "04",
+  "MCDCode": "135",
+  "MCDName": "Minneapolis",
+  "MNLegDist": "59B",
+  "MNSenDist": "59",
+  "Park": "4",
+  "Precinct": "Minneapolis W-7 P-11",
+  "PrecinctCode": "1705",
+  "PrecinctID": "270531705",
+  "SoilAndWater": "No data",
+  "Ward": "W-07",
+}
+`;
+
+exports[`#findPrecinct > should return precinct data if passed as geojson coordinate 1`] = `
+{
+  "CongDist": "5",
+  "County": "Hennepin",
+  "CountyID": "27",
+  "CtyComDist": "03",
+  "Hospital": "No data",
+  "Judicial": "04",
+  "MCDCode": "135",
+  "MCDName": "Minneapolis",
+  "MNLegDist": "59B",
+  "MNSenDist": "59",
+  "Park": "4",
+  "Precinct": "Minneapolis W-7 P-11",
+  "PrecinctCode": "1705",
+  "PrecinctID": "270531705",
+  "SoilAndWater": "No data",
+  "Ward": "W-07",
+}
+`;
