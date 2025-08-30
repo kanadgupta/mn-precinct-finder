@@ -83,12 +83,12 @@ const Page: FC<Props> = ({ seo, ...props }) => {
                   </>
                 ) : (
                   <p class="precinct-info">
-                    Hmm...
+                    Hmm...{' '}
                     <b>
                       <a href="{{gmaps}}" rel="noopener" target="_blank">
                         {props.address}
                       </a>
-                    </b>
+                    </b>{' '}
                     doesn't appear to be in Minneapolis!
                     <br />
                     <br />

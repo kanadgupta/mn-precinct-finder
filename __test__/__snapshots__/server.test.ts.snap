@@ -612,11 +612,13 @@ exports[`server tests > GET actual precinct data > should return 200 for valid m
       <div class="content" role="main">
         <h1 class="title"><a class="title" href="/">MPLS Poll Finder</a></h1>
         <p class="precinct-info">
-          Hmm...<b
+          Hmm...
+          <b
             ><a href="{{gmaps}}" rel="noopener" target="_blank"
               >some formatted address</a
             ></b
-          >doesn&#39;t appear to be in Minneapolis!<br /><br />In any case,
+          >
+          doesn&#39;t appear to be in Minneapolis!<br /><br />In any case,
           here&#39;s some info about your electoral boundaries!
         </p>
         <ul class="precinct-info">
