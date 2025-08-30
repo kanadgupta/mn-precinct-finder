@@ -100,7 +100,10 @@ app.get('/', async c => {
     params.mplsPollingPlace21 = getPollingPlace(params.precinct.Precinct);
   }
 
-  if (req.query('format') === 'json' || !browser.name) return replyWithJsonParams(params, c);
+  const isGoogleSheetsRequest = req.header('User-Agent')?.includes('GoogleDocs; apps-spreadsheets');
+
+  if (!isGoogleSheetsRequest && (req.query('format') === 'json' || !browser.name))
+    return replyWithJsonParams(params, c);
 
   return c.html(<Page seo={seo} {...params} />);
 });
