@@ -7,6 +7,11 @@ import app from '../src/server.js';
 const browserUserAgent =
   'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36';
 
+const curlUserAgent = 'curl/8.7.1';
+
+// example google sheets user agent
+const googleSheetsUserAgent = 'Mozilla/5.0 (compatible; GoogleDocs; apps-spreadsheets; +http://docs.google.com)';
+
 describe('server tests', () => {
   beforeAll(() => {
     nock.disableNetConnect();
@@ -25,6 +30,28 @@ describe('server tests', () => {
 
       const formatted = await format(await response.text(), { parser: 'html' });
       expect(formatted).toMatchSnapshot();
+      expect(response.status).toBe(200);
+    });
+
+    it('should return 200 with standard template for google sheets user agent', async () => {
+      const response = await app.request('/', {
+        method: 'GET',
+        headers: { 'user-agent': googleSheetsUserAgent },
+      });
+
+      const formatted = await format(await response.text(), { parser: 'html' });
+      expect(formatted).toMatchSnapshot();
+      expect(response.status).toBe(200);
+    });
+
+    it('should return 200 with JSON for a google sheets user-agent', async () => {
+      const response = await app.request('/', {
+        method: 'GET',
+        headers: { 'user-agent': curlUserAgent },
+      });
+
+      const formatted = await response.json();
+      expect(formatted).toStrictEqual({});
       expect(response.status).toBe(200);
     });
 
