@@ -7,6 +7,9 @@ import shortenAddress from './shorten-address.js';
 
 const googlemaps = new Client({});
 
+/**
+ * Takes an address string and returns a formatted address, a Google Maps URL, and the corresponding precinct.
+ */
 export async function forwardGeocode(
   /**
    * The Google Maps API key.
@@ -56,6 +59,9 @@ export async function forwardGeocode(
     });
 }
 
+/**
+ * Takes latitude and longitude coordinates and returns a formatted address and a Google Maps URL.
+ */
 export async function reverseGeocode(
   /**
    * The Google Maps API key.
