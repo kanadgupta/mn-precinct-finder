@@ -17,6 +17,7 @@ export async function forwardGeocode(
   // @ts-expect-error TS doesn't like the `.catch`
   return googlemaps
     .geocode({
+      adapter: 'fetch',
       params: {
         address,
         bounds: { southwest: { lat: 44.889222, lng: -93.330446 }, northeast: { lat: 45.055223, lng: -93.20494 } },

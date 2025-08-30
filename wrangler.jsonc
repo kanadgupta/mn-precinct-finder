@@ -1,0 +1,6 @@
+{
+  "assets": { "directory": "public" },
+  "compatibility_date": "2025-08-23",
+  "main": "src/server.tsx",
+  "name": "mn-precinct-finder",
+}

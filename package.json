@@ -8,6 +8,7 @@
     "build": "tsc",
     "deno": "deno run -q -A --unstable bin/postprocess.js src/lib/data/precinct-table.xlsx",
     "dev": "tsx watch --inspect --env-file=.env src/node-server.ts",
+    "dev:cf": "wrangler dev",
     "lint": "npm run lint:ts && prettier -c . && tsc --noEmit && tsc -p __test__ && knip",
     "lint:ts": "biome check --error-on-warnings",
     "prebuild": "rm -rf dist",
@@ -33,7 +34,8 @@
     "prettier": "^3.5.3",
     "tsx": "^4.19.2",
     "typescript": "^5.7.3",
-    "vitest": "^3.1.1"
+    "vitest": "^3.1.1",
+    "wrangler": "^4.33.1"
   },
   "prettier": "@readme/standards/prettier"
 }
