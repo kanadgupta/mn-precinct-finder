@@ -54,14 +54,14 @@
   "workspace": {
     "packageJson": {
       "dependencies": [
+        "npm:@biomejs/biome@^2.2.2",
         "npm:@googlemaps/google-maps-services-js@^3.2.5",
         "npm:@hono/node-server@^1.13.7",
-        "npm:@readme/eslint-config@^14.6.0",
+        "npm:@readme/standards@^2.1.1",
         "npm:@turf/boolean-within@^7.2.0",
         "npm:@turf/helpers@^7.2.0",
         "npm:@types/geojson@^7946.0.15",
-        "npm:@types/node@^22.10.5",
-        "npm:eslint@^8.57.1",
+        "npm:@types/node@^24.3.0",
         "npm:hono@^4.6.16",
         "npm:knip@^5.47.0",
         "npm:nock@^14.0.3",

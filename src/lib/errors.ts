@@ -13,7 +13,7 @@ export default class GeocodingError extends Error {
   public suggestion: string;
 
   constructor(results: GeocodeResult[], query: string, opts: { message?: string; status?: StatusCode } = {}) {
-    let message;
+    let message = '';
     let suggestion = '';
     let status = opts.status ?? 404;
 

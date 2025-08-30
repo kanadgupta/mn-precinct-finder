@@ -1,0 +1,5 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // explicitly disable ESLint to avoid conflicts with Biome
+  "eslint.enable": false
+}

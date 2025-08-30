@@ -1,6 +1,6 @@
 import nock from 'nock';
 import { format } from 'prettier';
-import { describe, it, expect, beforeAll, afterAll } from 'vitest';
+import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 
 import app from '../src/server.js';
 

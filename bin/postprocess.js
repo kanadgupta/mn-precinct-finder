@@ -1,7 +1,8 @@
 // Derived from here: https://github.com/githubocto/flat-demo-xlsx
+/** biome-ignore-all lint/suspicious/noConsole: only used as a build step, not in production logs */
 // Helper library written for useful postprocessing tasks with Flat Data
 // Has helper functions for manipulating csv, txt, json, excel, zip, and image files
-import { xlsx, readXLSX, writeJSON } from 'https://deno.land/x/flat@0.0.15/mod.ts';
+import { readXLSX, writeJSON, xlsx } from 'https://deno.land/x/flat@0.0.15/mod.ts';
 
 // Get the downloaded_filename as the first argument
 const inputFilename = Deno.args[0];

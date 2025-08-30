@@ -38,15 +38,13 @@ export async function forwardGeocode(
         place_id: placeId,
       } = filtered[0];
 
-      let precinct;
       try {
-        precinct = findPrecinct([location.lng, location.lat]);
-      } catch (err) {
+        const precinct = findPrecinct([location.lng, location.lat]);
+        const gmaps = buildMapsUrl(formattedAddress, placeId);
+        return { address: shortenAddress(formattedAddress), gmaps, precinct, type: 'success' };
+      } catch {
         throw new GeocodingError([], address);
       }
-      const gmaps = buildMapsUrl(formattedAddress, placeId);
-
-      return { address: shortenAddress(formattedAddress), gmaps, precinct, type: 'success' };
     })
     .catch(err => {
       if (err instanceof GeocodingError) throw err;

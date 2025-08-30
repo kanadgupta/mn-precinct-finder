@@ -1,0 +1,23 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "extends": ["@readme/standards/biome"],
+  "root": true,
+  "files": {
+    "ignoreUnknown": false,
+    "includes": [
+      "**/*.{js,ts}",
+
+      // Biome's `vcs.useIgnoreFile` config should be able to pick these up but it doesn't.
+      "!coverage",
+      "!dist",
+    ],
+  },
+  "linter": {
+    "domains": {
+      // These domains are configured in our core standards package but Biome `extends` seems to
+      // not load it in so we have to redefine them.
+      "project": "all",
+      "test": "all",
+    },
+  },
+}

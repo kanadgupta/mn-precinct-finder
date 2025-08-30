@@ -8,7 +8,8 @@
     "build": "tsc",
     "deno": "deno run -q -A --unstable bin/postprocess.js src/lib/data/precinct-table.xlsx",
     "dev": "tsx watch --inspect --env-file=.env src/node-server.ts",
-    "lint": "eslint . --ext js,ts,tsx && prettier -c . && tsc --noEmit && tsc -p __test__ && knip",
+    "lint": "npm run lint:ts && prettier -c . && tsc --noEmit && tsc -p __test__ && knip",
+    "lint:ts": "biome check --error-on-warnings",
     "prebuild": "rm -rf dist",
     "pretest": "npm run lint",
     "start": "node dist/node-server.js",
@@ -23,10 +24,10 @@
     "ua-parser-js": "^2.0.0"
   },
   "devDependencies": {
-    "@readme/eslint-config": "^14.6.0",
+    "@biomejs/biome": "^2.2.2",
+    "@readme/standards": "^2.1.1",
     "@types/geojson": "^7946.0.15",
     "@types/node": "^24.3.0",
-    "eslint": "^8.57.1",
     "knip": "^5.47.0",
     "nock": "^14.0.3",
     "prettier": "^3.5.3",
@@ -34,5 +35,5 @@
     "typescript": "^5.7.3",
     "vitest": "^3.1.1"
   },
-  "prettier": "@readme/eslint-config/prettier"
+  "prettier": "@readme/standards/prettier"
 }

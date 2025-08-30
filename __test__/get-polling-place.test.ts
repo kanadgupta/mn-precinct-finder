@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, expect, it } from 'vitest';
 
 import precinctData from '../src/lib/data/mn-precincts.json' with { type: 'json' };
 import pollingPlacesData from '../src/lib/data/mpls-2021-polling-places.json' with { type: 'json' };

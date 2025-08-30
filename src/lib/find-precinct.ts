@@ -49,7 +49,7 @@ export default function findPrecinct(coordinates: Point | [number, number]): Ext
   const precinctMatches = (geojson as FeatureCollection<Geometry, PrecinctProps>).features.filter(feat => {
     try {
       return booleanWithin(processedPoint, feat);
-    } catch (e) {
+    } catch {
       return false;
     }
   });

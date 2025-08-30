@@ -1,5 +1,5 @@
 import nock from 'nock';
-import { describe, it, expect, beforeAll, afterAll } from 'vitest';
+import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 
 import { forwardGeocode, reverseGeocode } from '../src/lib/geocode-address.js';
 

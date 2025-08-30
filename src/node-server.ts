@@ -8,6 +8,6 @@ app.use('*', serveStatic({ root: 'public' }));
 
 // port 3000 is what we specify for fly.io (see Dockerfile and fly.toml)
 serve({ fetch: app.fetch, port: Number(process.env.PORT) || 3000 }, info => {
-  // eslint-disable-next-line no-console
+  // biome-ignore lint/suspicious/noConsole: used for startup logs
   console.log(`Listening on http://localhost:${info.port}`);
 });
