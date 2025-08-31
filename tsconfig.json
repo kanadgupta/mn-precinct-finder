@@ -8,6 +8,7 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
+    "types": ["./worker-configuration.d.ts"],
     "useUnknownInCatchVariables": false,
     "verbatimModuleSyntax": true
   },

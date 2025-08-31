@@ -3,4 +3,10 @@
   "compatibility_date": "2025-08-23",
   "main": "src/server.tsx",
   "name": "mn-precinct-finder",
+  "kv_namespaces": [
+    {
+      "binding": "GOOGLE_MAPS_RESULTS",
+      "id": "15075e4f83b54e2a84818b9917fa19c1",
+    },
+  ],
 }

@@ -1,7 +1,7 @@
 import type { ContentfulStatusCode } from 'hono/utils/http-status';
 
 import { Hono, type Context } from 'hono';
-import { env } from 'hono/adapter';
+import { env as adapterEnv } from 'hono/adapter';
 import { logger } from 'hono/logger';
 import { UAParser } from 'ua-parser-js';
 
@@ -59,7 +59,7 @@ app.get('/', async c => {
   const latQuery = req.query('lat');
   const longQuery = req.query('long');
 
-  const { GOOGLE_MAPS_API_KEY } = env<{ GOOGLE_MAPS_API_KEY: string }>(c);
+  const env = adapterEnv<Env>(c);
 
   const { browser } = UAParser(req.header('User-Agent'));
 
@@ -71,7 +71,7 @@ app.get('/', async c => {
   } else if (latQuery && longQuery) {
     try {
       const precinct = findPrecinct([Number(longQuery), Number(latQuery)]);
-      const { address, gmaps } = await reverseGeocode(GOOGLE_MAPS_API_KEY, longQuery, latQuery);
+      const { address, gmaps } = await reverseGeocode(env, longQuery, latQuery);
       params = {
         address,
         gmaps,
@@ -87,7 +87,7 @@ app.get('/', async c => {
     }
   } else if (addressQuery) {
     try {
-      params = await forwardGeocode(GOOGLE_MAPS_API_KEY, addressQuery);
+      params = await forwardGeocode(env, addressQuery);
     } catch (error) {
       if (error instanceof GeocodingError) {
         c.status(error.status);

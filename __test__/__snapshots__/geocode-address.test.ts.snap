@@ -3,6 +3,7 @@
 exports[`#forwardGeocode > should return valid data for valid query 1`] = `
 {
   "address": "some formatted address",
+  "cache": "MISS",
   "gmaps": "https://www.google.com/maps/search/?api=1&query=some+formatted+address&query_place_id=test",
   "precinct": {
     "CongDist": "5",

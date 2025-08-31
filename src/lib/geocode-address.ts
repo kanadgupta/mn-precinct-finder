@@ -1,4 +1,5 @@
 import { Client, ReverseGeocodingLocationType } from '@googlemaps/google-maps-services-js';
+import { getRuntimeKey } from 'hono/adapter';
 
 import buildMapsUrl from './build-maps-url.js';
 import GeocodingError from './errors.js';
@@ -7,27 +8,47 @@ import shortenAddress from './shorten-address.js';
 
 const googlemaps = new Client({});
 
+interface GeocodeResult {
+  address: string;
+  cache: 'HIT' | 'MISS';
+  gmaps: string;
+  precinct: ExtendedPrecinctProps;
+  type: 'success';
+}
+
 /**
  * Takes an address string and returns a formatted address, a Google Maps URL, and the corresponding precinct.
  */
 export async function forwardGeocode(
-  /**
-   * The Google Maps API key.
-   */
-  key: string,
+  /** The current environment. May or may not contain Cloudflare KV bindings */
+  env: Env,
   address: string,
-): Promise<{ address: string; gmaps: string; precinct: ExtendedPrecinctProps; type: 'success' }> {
-  // @ts-expect-error TS doesn't like the `.catch`
+): Promise<GeocodeResult> {
+  const runtime = getRuntimeKey();
+
+  // if we're on Cloudflare Workers and have a KV binding, check for a cached result and return it if found
+  if (runtime === 'workerd' && env.GOOGLE_MAPS_RESULTS) {
+    const cached = await env.GOOGLE_MAPS_RESULTS.get(address);
+    if (cached) {
+      try {
+        return { ...JSON.parse(cached), cache: 'HIT' } as GeocodeResult;
+      } catch {
+        // delete bad record and fetch a new result
+        await env.GOOGLE_MAPS_RESULTS.delete(address);
+      }
+    }
+  }
+
   return googlemaps
     .geocode({
       adapter: 'fetch',
       params: {
         address,
         bounds: { southwest: { lat: 44.889222, lng: -93.330446 }, northeast: { lat: 45.055223, lng: -93.20494 } },
-        key,
+        key: env.GOOGLE_MAPS_API_KEY,
       },
     })
-    .then(({ data }) => {
+    .then(async ({ data }) => {
       if (data?.status !== 'OK') throw new GeocodingError(data.results || [], address);
 
       const { results } = data;
@@ -45,7 +66,19 @@ export async function forwardGeocode(
       try {
         const precinct = findPrecinct([location.lng, location.lat]);
         const gmaps = buildMapsUrl(formattedAddress, placeId);
-        return { address: shortenAddress(formattedAddress), gmaps, precinct, type: 'success' };
+        const result = {
+          address: shortenAddress(formattedAddress),
+          cache: 'MISS',
+          gmaps,
+          precinct,
+          type: 'success',
+        } as const satisfies GeocodeResult;
+
+        // cache the result if we're on Cloudflare Workers and have a KV binding
+        if (runtime === 'workerd' && env.GOOGLE_MAPS_RESULTS) {
+          await env.GOOGLE_MAPS_RESULTS.put(address, JSON.stringify(result));
+        }
+        return result;
       } catch {
         throw new GeocodingError([], address);
       }
@@ -61,19 +94,19 @@ export async function forwardGeocode(
 
 /**
  * Takes latitude and longitude coordinates and returns a formatted address and a Google Maps URL.
+ *
+ * @deprecated I don't think we need to support this anymore.
  */
 export async function reverseGeocode(
-  /**
-   * The Google Maps API key.
-   */
-  key: string,
+  /** The current environment. May or may not contain Cloudflare KV bindings */
+  env: Env,
   long: number | string,
   lat: number | string,
 ) {
   return googlemaps
     .reverseGeocode({
       params: {
-        key,
+        key: env.GOOGLE_MAPS_API_KEY,
         latlng: `${lat}, ${long}`,
         location_type: [ReverseGeocodingLocationType.ROOFTOP],
       },
