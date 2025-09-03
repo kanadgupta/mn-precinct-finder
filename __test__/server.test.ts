@@ -44,7 +44,7 @@ describe('server tests', () => {
       expect(response.status).toBe(200);
     });
 
-    it('should return 200 with JSON for a google sheets user-agent', async () => {
+    it('should return 200 with JSON for curl user-agent', async () => {
       const response = await app.request('/', {
         method: 'GET',
         headers: { 'user-agent': curlUserAgent },
