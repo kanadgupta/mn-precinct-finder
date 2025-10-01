@@ -16,12 +16,14 @@ interface GeocodeResult {
   type: 'success';
 }
 
+type GoogleMapsEnv = Pick<Env, 'GOOGLE_MAPS_API_KEY' | 'GOOGLE_MAPS_RESULTS'>;
+
 /**
  * Takes an address string and returns a formatted address, a Google Maps URL, and the corresponding precinct.
  */
 export async function forwardGeocode(
   /** The current environment. May or may not contain Cloudflare KV bindings */
-  env: Env,
+  env: GoogleMapsEnv,
   address: string,
 ): Promise<GeocodeResult> {
   const runtime = getRuntimeKey();
@@ -99,7 +101,7 @@ export async function forwardGeocode(
  */
 export async function reverseGeocode(
   /** The current environment. May or may not contain Cloudflare KV bindings */
-  env: Env,
+  env: GoogleMapsEnv,
   long: number | string,
   lat: number | string,
 ) {
