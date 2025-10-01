@@ -1,6 +1,7 @@
 {
   "assets": { "directory": "public" },
   "compatibility_date": "2025-08-23",
+  "compatibility_flags": ["nodejs_compat", "nodejs_compat_populate_process_env"],
   "main": "src/server.tsx",
   "name": "mn-precinct-finder",
   "kv_namespaces": [

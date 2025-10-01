@@ -2,6 +2,7 @@ import type { ContentfulStatusCode } from 'hono/utils/http-status';
 
 import { Hono, type Context } from 'hono';
 import { env as adapterEnv } from 'hono/adapter';
+import { basicAuth } from 'hono/basic-auth';
 import { logger } from 'hono/logger';
 import { UAParser } from 'ua-parser-js';
 
@@ -48,6 +49,17 @@ function replyWithJsonParams(params: Params, c: Context) {
     default:
       return c.json({});
   }
+}
+
+if (process.env.USERNAME || process.env.PASSWORD) {
+  app.use(
+    basicAuth({
+      verifyUser: (username, password, c) => {
+        const env = adapterEnv<Env>(c);
+        return username === env.USERNAME && password === env.PASSWORD;
+      },
+    }),
+  );
 }
 
 app.get('/', async c => {

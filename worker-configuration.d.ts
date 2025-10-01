@@ -5,6 +5,10 @@ declare namespace Cloudflare {
   interface Env extends Record<string, unknown> {
     GOOGLE_MAPS_RESULTS?: KVNamespace; // marked this as optional since this app is runtime-agnostic and KV might not be available
     GOOGLE_MAPS_API_KEY: string;
+
+    /** Basic Auth Credentials */
+    USERNAME: string;
+    PASSWORD: string;
   }
 }
 interface Env extends Cloudflare.Env {}
