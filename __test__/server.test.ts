@@ -28,9 +28,9 @@ describe('server tests', () => {
         headers: { 'user-agent': browserUserAgent },
       });
 
+      expect(response.status).toBe(200);
       const formatted = await format(await response.text(), { parser: 'html' });
       expect(formatted).toMatchSnapshot();
-      expect(response.status).toBe(200);
     });
 
     it('should return 200 with standard template for google sheets user agent', async () => {
@@ -39,9 +39,9 @@ describe('server tests', () => {
         headers: { 'user-agent': googleSheetsUserAgent },
       });
 
+      expect(response.status).toBe(200);
       const formatted = await format(await response.text(), { parser: 'html' });
       expect(formatted).toMatchSnapshot();
-      expect(response.status).toBe(200);
     });
 
     it('should return 200 with JSON for curl user-agent', async () => {
@@ -50,9 +50,9 @@ describe('server tests', () => {
         headers: { 'user-agent': curlUserAgent },
       });
 
+      expect(response.status).toBe(200);
       const formatted = await response.json();
       expect(formatted).toStrictEqual({});
-      expect(response.status).toBe(200);
     });
 
     it('should return 200 when requesting JSON via query param (browser user agent)', async () => {
@@ -61,8 +61,8 @@ describe('server tests', () => {
         headers: { 'user-agent': browserUserAgent },
       });
 
-      await expect(response.text()).resolves.toBe('{}');
       expect(response.status).toBe(200);
+      await expect(response.text()).resolves.toBe('{}');
     });
 
     it('should return 200 when requesting JSON via query param (no user agent)', async () => {
@@ -70,8 +70,8 @@ describe('server tests', () => {
         method: 'GET',
       });
 
-      await expect(response.text()).resolves.toBe('{}');
       expect(response.status).toBe(200);
+      await expect(response.text()).resolves.toBe('{}');
     });
   });
 
@@ -82,9 +82,9 @@ describe('server tests', () => {
         headers: { 'user-agent': browserUserAgent },
       });
 
+      expect(response.status).toBe(200);
       const formatted = await format(await response.text(), { parser: 'html' });
       expect(formatted).toMatchSnapshot();
-      expect(response.status).toBe(200);
     });
 
     it('should return 200 when requesting JSON', async () => {
@@ -92,8 +92,8 @@ describe('server tests', () => {
         method: 'GET',
       });
 
-      await expect(response.json()).resolves.toMatchSnapshot();
       expect(response.status).toBe(200);
+      await expect(response.json()).resolves.toMatchSnapshot();
     });
   });
 
@@ -122,11 +122,11 @@ describe('server tests', () => {
         headers: { 'user-agent': browserUserAgent },
       });
 
-      mock.done();
-
+      expect(response.status).toBe(200);
       const formatted = await format(await response.text(), { parser: 'html' });
       expect(formatted).toMatchSnapshot();
-      expect(response.status).toBe(200);
+
+      mock.done();
     });
 
     it('should return 200 for valid mpls precinct with polling place', async () => {
@@ -152,11 +152,11 @@ describe('server tests', () => {
         headers: { 'user-agent': browserUserAgent },
       });
 
-      mock.done();
-
+      expect(response.status).toBe(200);
       const formatted = await format(await response.text(), { parser: 'html' });
       expect(formatted).toMatchSnapshot();
-      expect(response.status).toBe(200);
+
+      mock.done();
     });
 
     it.todo('should return 404 for invalid mpls precinct');
