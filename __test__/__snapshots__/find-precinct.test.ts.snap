@@ -6,7 +6,7 @@ exports[`#findPrecinct > should return precinct data if passed as array 1`] = `
   "County": "Hennepin",
   "CountyID": "27",
   "CtyComDist": "03",
-  "Hospital": "No data",
+  "Hospital": "no data",
   "Judicial": "04",
   "MCDCode": "135",
   "MCDName": "Minneapolis",
@@ -16,7 +16,7 @@ exports[`#findPrecinct > should return precinct data if passed as array 1`] = `
   "Precinct": "Minneapolis W-7 P-11",
   "PrecinctCode": "1705",
   "PrecinctID": "270531705",
-  "SoilAndWater": "No data",
+  "SoilAndWater": "no data",
   "Ward": "W-07",
 }
 `;
@@ -27,7 +27,7 @@ exports[`#findPrecinct > should return precinct data if passed as geojson coordi
   "County": "Hennepin",
   "CountyID": "27",
   "CtyComDist": "03",
-  "Hospital": "No data",
+  "Hospital": "no data",
   "Judicial": "04",
   "MCDCode": "135",
   "MCDName": "Minneapolis",
@@ -37,7 +37,7 @@ exports[`#findPrecinct > should return precinct data if passed as geojson coordi
   "Precinct": "Minneapolis W-7 P-11",
   "PrecinctCode": "1705",
   "PrecinctID": "270531705",
-  "SoilAndWater": "No data",
+  "SoilAndWater": "no data",
   "Ward": "W-07",
 }
 `;
