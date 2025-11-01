@@ -2,7 +2,10 @@
 /** biome-ignore-all lint/suspicious/noConsole: only used as a build step, not in production logs */
 // Helper library written for useful postprocessing tasks with Flat Data
 // Has helper functions for manipulating csv, txt, json, excel, zip, and image files
-import { readXLSX, writeJSON, xlsx } from 'https://deno.land/x/flat@0.0.15/mod.ts';
+
+import fs from 'node:fs/promises';
+
+import { readXLSX, xlsx } from 'https://deno.land/x/flat@0.0.15/mod.ts';
 
 // Get the downloaded_filename as the first argument
 const inputFilename = Deno.args[0];
@@ -38,4 +41,4 @@ precincts.forEach(precinct => {
 });
 
 // write to json
-await writeJSON(outputFilename, precinctObject);
+await fs.writeFile(outputFilename, JSON.stringify(precinctObject, null, 2));
