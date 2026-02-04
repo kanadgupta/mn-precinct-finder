@@ -14,8 +14,8 @@ to this section's matching END comment to see page-specific styles.
   --wrapper-height: 87vh;
   --image-max-width: 300px;
   --image-margin: 3rem;
-  --font-family: 'HK Grotesk';
-  --font-family-header: 'HK Grotesk';
+  --font-family: 'Hanken Grotesk', sans-serif;
+  --font-family-header: 'Hanken Grotesk', sans-serif;
 }
 
 /* Basic page style resets */
@@ -24,19 +24,6 @@ to this section's matching END comment to see page-specific styles.
 }
 [hidden] {
   display: none !important;
-}
-
-/* Import fonts */
-@font-face {
-  font-family: HK Grotesk;
-  src: url('https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Regular.otf?v=1603136326027')
-    format('opentype');
-}
-@font-face {
-  font-family: HK Grotesk;
-  font-weight: bold;
-  src: url('https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Bold.otf?v=1603136323437')
-    format('opentype');
 }
 
 /* Navigation grid */
@@ -67,7 +54,7 @@ END Glitch hello-app default styles
 ******************************************************************************/
 
 body {
-  font-family: HK Grotesk;
+  font-family: 'Hanken Grotesk', sans-serif;
   background-color: var(--color-bg);
   margin: 0;
 }
@@ -112,7 +99,7 @@ li.hidden {
 /* Title h1 style */
 .title {
   color: #2800ff !important;
-  font-family: HK Grotesk;
+  font-family: 'Hanken Grotesk', sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 60px;

@@ -31,6 +31,11 @@ const Page: FC<Props> = ({ seo, ...props }) => {
         <meta property="og:description" content={seo.description} />
         <meta name="twitter:card" content="summary" />
 
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');`,
+          }}
+        />
         {/* Import the webpage's stylesheet */}
         <link rel="stylesheet" href="/style.css" />
       </head>
