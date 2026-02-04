@@ -25,6 +25,9 @@ exports[`server tests > GET / > should return 200 with standard template 1`] = `
       content="An open-source, API-backed poll finder that (mostly) doesn&#39;t suck ❤️"
     />
     <meta name="twitter:card" content="summary" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap");
+    </style>
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
@@ -274,6 +277,9 @@ exports[`server tests > GET / > should return 200 with standard template for goo
       content="An open-source, API-backed poll finder that (mostly) doesn&#39;t suck ❤️"
     />
     <meta name="twitter:card" content="summary" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap");
+    </style>
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
@@ -555,6 +561,9 @@ exports[`server tests > GET /?example=go > should return 200 with standard templ
       content="An open-source, API-backed poll finder that (mostly) doesn&#39;t suck ❤️"
     />
     <meta name="twitter:card" content="summary" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap");
+    </style>
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
@@ -854,6 +863,9 @@ exports[`server tests > GET actual precinct data > should return 200 for valid m
       content="An open-source, API-backed poll finder that (mostly) doesn&#39;t suck ❤️"
     />
     <meta name="twitter:card" content="summary" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap");
+    </style>
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
@@ -1136,6 +1148,9 @@ exports[`server tests > GET actual precinct data > should return 200 for valid m
       content="An open-source, API-backed poll finder that (mostly) doesn&#39;t suck ❤️"
     />
     <meta name="twitter:card" content="summary" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap");
+    </style>
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
