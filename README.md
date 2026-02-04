@@ -4,7 +4,7 @@ A REST API and minimal web interface for finding a Minnesota precinct and return
 
 It returns JSON data if the `format=json` query parameter is passed.
 
-The server is written with [Hono](https://hono.dev/) so it can be deployed via a variety of JavaScript runtimes, including Node.js and Cloudflare Workers.
+The server is written with [Hono](https://hono.dev/) so it supports a variety of JavaScript runtimes, including Node.js and Cloudflare Workers.
 
 ## What's in this project?
 
@@ -20,11 +20,9 @@ The server is written with [Hono](https://hono.dev/) so it can be deployed via a
 
 ← `src/node-server.ts`: A thin wrapper around `src/server.tsx` that serves as the entrypoint for Node.js.
 
-← `src/server.tsx`: The Hono server entrypoint.
+← `src/server.tsx`: The main Hono server entrypoint.
 
 ← `src/seo.json`: When you're ready to share your new site or add a custom domain, change SEO/meta settings in here.
-
-← `wrangler.jsonc`: A thin configuration file that serves as the entrypoint for Cloudflare Workers.
 
 ## Credits
 
