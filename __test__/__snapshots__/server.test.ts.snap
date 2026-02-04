@@ -164,15 +164,6 @@ exports[`server tests > GET / > should return 200 with standard template 1`] = `
               >
             </li>
           </ul>
-          <p>
-            We also have API reference docs available —
-            <a href="https://dev.mpls.vote" rel="noopener" target="_blank"
-              >check &#39;em out here</a
-            >! (Disclaimer: the docs are hosted via
-            <a href="https://readme.com" rel="noopener" target="_blank"
-              >ReadMe</a
-            >, which is my employer 🦉)
-          </p>
           <h3>Do you have a privacy policy?</h3>
           <p>
             This is a humble proof-of-concept so it doesn&#39;t have any
@@ -416,15 +407,6 @@ exports[`server tests > GET / > should return 200 with standard template for goo
               >
             </li>
           </ul>
-          <p>
-            We also have API reference docs available —
-            <a href="https://dev.mpls.vote" rel="noopener" target="_blank"
-              >check &#39;em out here</a
-            >! (Disclaimer: the docs are hosted via
-            <a href="https://readme.com" rel="noopener" target="_blank"
-              >ReadMe</a
-            >, which is my employer 🦉)
-          </p>
           <h3>Do you have a privacy policy?</h3>
           <p>
             This is a humble proof-of-concept so it doesn&#39;t have any
@@ -750,15 +732,6 @@ exports[`server tests > GET /?example=go > should return 200 with standard templ
               >
             </li>
           </ul>
-          <p>
-            We also have API reference docs available —
-            <a href="https://dev.mpls.vote" rel="noopener" target="_blank"
-              >check &#39;em out here</a
-            >! (Disclaimer: the docs are hosted via
-            <a href="https://readme.com" rel="noopener" target="_blank"
-              >ReadMe</a
-            >, which is my employer 🦉)
-          </p>
           <h3>Do you have a privacy policy?</h3>
           <p>
             This is a humble proof-of-concept so it doesn&#39;t have any
@@ -1035,15 +1008,6 @@ exports[`server tests > GET actual precinct data > should return 200 for valid m
               >
             </li>
           </ul>
-          <p>
-            We also have API reference docs available —
-            <a href="https://dev.mpls.vote" rel="noopener" target="_blank"
-              >check &#39;em out here</a
-            >! (Disclaimer: the docs are hosted via
-            <a href="https://readme.com" rel="noopener" target="_blank"
-              >ReadMe</a
-            >, which is my employer 🦉)
-          </p>
           <h3>Do you have a privacy policy?</h3>
           <p>
             This is a humble proof-of-concept so it doesn&#39;t have any
@@ -1337,15 +1301,6 @@ exports[`server tests > GET actual precinct data > should return 200 for valid m
               >
             </li>
           </ul>
-          <p>
-            We also have API reference docs available —
-            <a href="https://dev.mpls.vote" rel="noopener" target="_blank"
-              >check &#39;em out here</a
-            >! (Disclaimer: the docs are hosted via
-            <a href="https://readme.com" rel="noopener" target="_blank"
-              >ReadMe</a
-            >, which is my employer 🦉)
-          </p>
           <h3>Do you have a privacy policy?</h3>
           <p>
             This is a humble proof-of-concept so it doesn&#39;t have any

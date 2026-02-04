@@ -283,17 +283,6 @@ const Page: FC<Props> = ({ seo, ...props }) => {
                   <code>=IMPORTXML("{seo.url}?address="&ENCODEURL("100 Main St"),"//*[@id='mplsPollingPlace21']")</code>
                 </li>
               </ul>
-              <p>
-                We also have API reference docs available —{' '}
-                <a href="https://dev.mpls.vote" rel="noopener" target="_blank">
-                  check 'em out here
-                </a>
-                ! (Disclaimer: the docs are hosted via{' '}
-                <a href="https://readme.com" rel="noopener" target="_blank">
-                  ReadMe
-                </a>
-                , which is my employer 🦉)
-              </p>
               <h3>Do you have a privacy policy?</h3>
               <p>
                 This is a humble proof-of-concept so it doesn't have any official privacy policy legalese, but this
