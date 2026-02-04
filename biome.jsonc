@@ -21,5 +21,16 @@
       "project": "all",
       "test": "all",
     },
+    "rules": {
+      "correctness": {
+        "useImportExtensions": {
+          "level": "error",
+          // we compile using `tsc` so we need this option. annoying!
+          "options": {
+            "forceJsExtensions": true,
+          },
+        },
+      },
+    },
   },
 }

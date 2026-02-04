@@ -1,4 +1,5 @@
 import buildMapsUrl from './build-maps-url.js';
+// biome-ignore lint/correctness/useImportExtensions: JSON imports with attributes get biome all crossed up
 import data from './data/mpls-2021-polling-places.json' with { type: 'json' };
 
 export type PollingPlace = {

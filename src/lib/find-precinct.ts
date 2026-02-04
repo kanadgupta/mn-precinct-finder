@@ -3,7 +3,9 @@ import type { FeatureCollection, Geometry, Point } from 'geojson';
 import { booleanWithin } from '@turf/boolean-within';
 import { point } from '@turf/helpers';
 
+// biome-ignore lint/correctness/useImportExtensions: JSON imports with attributes get biome all crossed up
 import geojson from './data/mn-precincts.json' with { type: 'json' };
+// biome-ignore lint/correctness/useImportExtensions: JSON imports with attributes get biome all crossed up
 import precinctData from './data/precinct-table-processed.json' with { type: 'json' };
 
 /**

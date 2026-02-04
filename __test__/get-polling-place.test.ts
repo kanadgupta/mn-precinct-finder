@@ -1,6 +1,8 @@
 import { describe, expect, it } from 'vitest';
 
+// biome-ignore lint/correctness/useImportExtensions: JSON imports with attributes get biome all crossed up
 import precinctData from '../src/lib/data/mn-precincts.json' with { type: 'json' };
+// biome-ignore lint/correctness/useImportExtensions: JSON imports with attributes get biome all crossed up
 import pollingPlacesData from '../src/lib/data/mpls-2021-polling-places.json' with { type: 'json' };
 import getPollingPlace from '../src/lib/get-polling-place.js';
 
