@@ -12,6 +12,7 @@
 - [x] [Schema Validation](https://www.fastify.io/docs/latest/Validation-and-Serialization/)
 - [x] OpenAPI generation via [`fastify-swagger`](https://github.com/fastify/fastify-swagger)
 - [x] Docs on ReadMe! :owl:
+- [ ] Remove Google fonts in favor of local fonts
 - [ ] Remove reverse geocoder, link to coordinates instead
 - [ ] Separate coordinates and example into separate endpoints
 - [ ] Add address verification prior to running through geocoder to sanitize geocoder API requests
